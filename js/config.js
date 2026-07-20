@@ -11,7 +11,7 @@ const CONFIG = {
   site: {
     name: 'Samuel Gentile',
     url: 'https://samuelgentile.dev',
-    email: 'info@samuelgentile.dev'
+    email: 'samuel.studiodev@gmail.com'
   },
   
   // Social media links
