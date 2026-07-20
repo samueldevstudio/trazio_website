@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samuelgentile.dev/sitemap.xml
+Sitemap: https://samueldevstudio.github.io/portfolio/sitemap.xml

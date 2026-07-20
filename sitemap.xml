@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://samuelgentile.dev/index.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/about.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/about.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/services.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/services.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/projects.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/projects.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/contact.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/contact.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/projects/lucifero.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/projects/lucifero.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/projects/toolkit.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/projects/toolkit.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/projects/training.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/projects/training.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://samuelgentile.dev/projects/molinari.html</loc>
+    <loc>https://samueldevstudio.github.io/portfolio/projects/molinari.html</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
