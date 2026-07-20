@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Gentile | Web Developer & Digital Solutions</title>
+  <meta name="description" content="Samuel Gentile — Web Developer. Sviluppo siti web moderni, landing page e soluzioni digitali su misura per far crescere il tuo business online.">
+  <meta name="keywords" content="web developer, sviluppatore web, siti web, landing page, digital solutions">
+  <meta name="author" content="Samuel Gentile">
+
+  <!-- Open Graph (anteprima link su social/whatsapp) -->
+  <meta property="og:title" content="Samuel Gentile | Web Developer">
+  <meta property="og:description" content="Sviluppo siti web moderni e soluzioni digitali su misura.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://samuelgentile.dev/">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loader">
+    <div class="loader__logo">Samuel<span class="text-gradient">.dev</span></div>
+  </div>
+
+  <!-- BARRA PROGRESSO SCROLL -->
+  <div class="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Samuel<span class="text-gradient">.</span></a>
+
+      <nav class="navbar__links">
+        <a href="#home" class="is-active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Servizi</a>
+        <a href="#projects">Progetti</a>
+        <a href="#skills">Competenze</a>
+        <a href="#contact">Contatti</a>
+      </nav>
+
+      <button class="navbar__hamburger" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <canvas class="hero__bg"></canvas>
+      <div class="hero__glow"></div>
+
+      <div class="container hero__content">
+        <div class="hero__eyebrow"><span class="dot"></span> Disponibile per nuovi progetti</div>
+
+        <h1 class="hero__title">
+          Samuel Gentile<br>
+          <span class="text-gradient" data-typing="Web Developer, Digital Solutions, Technology"></span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Progetto e sviluppo siti web moderni e soluzioni digitali che aiutano
+          le aziende a costruire una presenza online solida e professionale.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">Vedi i Progetti</a>
+          <a href="#contact" class="btn btn--secondary">Contattami</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-indicator__wheel"><span></span></div>
+        Scorri
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Chi sono</span>
+          <h2 class="section-title">Studente di Informatica, sviluppatore per passione</h2>
+          <p class="section-subtitle">
+            Unisco curiosità tecnica e attenzione al dettaglio per costruire soluzioni digitali concrete.
+          </p>
+        </div>
+
+        <div class="grid grid--2" style="align-items:center; gap: var(--space-3xl);">
+          <div class="reveal">
+            <p class="u-mb-lg">
+              Sono uno studente di Informatica con un interesse profondo per lo sviluppo web,
+              lo sviluppo software, l'intelligenza artificiale e il networking. Mi piace capire
+              come le cose funzionano "sotto il cofano", e trasformare quella comprensione in
+              prodotti digitali utili.
+            </p>
+            <p>
+              Oltre alla programmazione, mi occupo anche di sistemi audio, video e di illuminazione:
+              un mix che mi ha insegnato a lavorare bene sotto pressione e a risolvere problemi
+              in tempo reale — competenze che porto anche nello sviluppo software.
+            </p>
+          </div>
+
+          <div class="grid grid--2 reveal" data-delay="150">
+            <div class="card">
+              <div class="service-card__icon">💻</div>
+              <h3 class="service-card__title">Sviluppo</h3>
+              <p>Web development, software, problem solving quotidiano.</p>
+            </div>
+            <div class="card">
+              <div class="service-card__icon">🤖</div>
+              <h3 class="service-card__title">AI & Rete</h3>
+              <p>Intelligenza artificiale, networking, tecnologia in generale.</p>
+            </div>
+            <div class="card">
+              <div class="service-card__icon">🎛️</div>
+              <h3 class="service-card__title">Audio/Video</h3>
+              <p>Sistemi audio, video e illuminazione per eventi.</p>
+            </div>
+            <div class="card">
+              <div class="service-card__icon">📚</div>
+              <h3 class="service-card__title">Apprendimento</h3>
+              <p>Formazione continua, sempre alla ricerca di nuove sfide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" class="section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Cosa faccio</span>
+          <h2 class="section-title">Servizi</h2>
+          <p class="section-subtitle">Soluzioni digitali su misura, dal concept al deploy.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card reveal">
+            <div class="service-card__icon">🌐</div>
+            <h3 class="service-card__title">Siti Web Moderni</h3>
+            <p>Design pulito, performance elevate, esperienza utente curata nei minimi dettagli.</p>
+          </div>
+          <div class="card reveal" data-delay="100">
+            <div class="service-card__icon">🚀</div>
+            <h3 class="service-card__title">Landing Page</h3>
+            <p>Pagine ad alta conversione pensate per campagne marketing e lanci di prodotto.</p>
+          </div>
+          <div class="card reveal" data-delay="200">
+            <div class="service-card__icon">📱</div>
+            <h3 class="service-card__title">Menu Digitali</h3>
+            <p>Menu interattivi e responsive per ristoranti e attività commerciali.</p>
+          </div>
+          <div class="card reveal" data-delay="300">
+            <div class="service-card__icon">📐</div>
+            <h3 class="service-card__title">Design Responsive</h3>
+            <p>Layout perfetti su ogni dispositivo: desktop, tablet, smartphone.</p>
+          </div>
+          <div class="card reveal" data-delay="400">
+            <div class="service-card__icon">🔄</div>
+            <h3 class="service-card__title">Redesign Siti Esistenti</h3>
+            <p>Rinnovo l'aspetto e le performance di siti già esistenti.</p>
+          </div>
+          <div class="card reveal" data-delay="500">
+            <div class="service-card__icon">⚙️</div>
+            <h3 class="service-card__title">Soluzioni Custom</h3>
+            <p>Strumenti digitali su misura per esigenze specifiche del tuo business.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Portfolio</span>
+          <h2 class="section-title">Progetti Selezionati</h2>
+          <p class="section-subtitle">Alcuni dei progetti su cui ho lavorato o sto lavorando.</p>
+        </div>
+
+        <div class="grid grid--2 projects-grid">
+          <!-- I progetti vengono caricati dinamicamente da js/projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" class="section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Competenze</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+
+        <div class="grid grid--2" style="gap: var(--space-3xl);">
+          <div class="reveal">
+            <h3 class="service-card__title u-mb-lg">Web Development</h3>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>HTML</span><span>90%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="90"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>CSS</span><span>85%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="85"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>JavaScript</span><span>80%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="80"></div></div>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="150">
+            <h3 class="service-card__title u-mb-lg">Programmazione & Sistemi</h3>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>C++</span><span>70%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="70"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>Firebase</span><span>65%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="65"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__label"><span>Linux / Networking</span><span>75%</span></div>
+              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="75"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid--4 reveal" style="margin-top: var(--space-4xl); text-align:center;">
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="4">0</div>
+            <div class="stat-item__label">Progetti</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="3">0</div>
+            <div class="stat-item__label">Linguaggi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="1">0</div>
+            <div class="stat-item__label">Freelance</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="100">0</div>
+            <div class="stat-item__label">% Impegno</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Percorso</span>
+          <h2 class="section-title">Timeline</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">2025</div>
+            <h3 class="timeline-item__title">Audio Video Lighting Technician</h3>
+            <p>Esperienza tecnica in ambito audio, video e illuminazione per eventi.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">2025</div>
+            <h3 class="timeline-item__title">Primo Progetto Freelance</h3>
+            <p>Primo incarico da sviluppatore freelance.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">2026</div>
+            <h3 class="timeline-item__title">Cybersecurity Toolkit</h3>
+            <p>Sviluppo del toolkit personale per lo studio della cybersecurity.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">2026</div>
+            <h3 class="timeline-item__title">Smart Training Planner</h3>
+            <p>Progettazione di un pianificatore intelligente di allenamenti.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">2026</div>
+            <h3 class="timeline-item__title">Portfolio Website</h3>
+            <p>Sviluppo di questo sito personale.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-item__dot"></div>
+            <div class="timeline-item__year">Futuro</div>
+            <h3 class="timeline-item__title">...</h3>
+            <p>Nuove sfide in arrivo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" class="section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Contatti</span>
+          <h2 class="section-title">Parliamo del tuo progetto</h2>
+          <p class="section-subtitle">Hai un'idea in mente? Scrivimi, troviamo insieme la soluzione migliore.</p>
+        </div>
+
+        <div class="grid grid--2" style="gap: var(--space-3xl); align-items:start;">
+          <form class="contact-form reveal">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required placeholder="Il tuo nome">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tuaemail@esempio.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" required placeholder="Raccontami del tuo progetto..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Invia Messaggio</button>
+          </form>
+
+          <div class="reveal" data-delay="150">
+            <div class="card u-mb-lg">
+              <h3 class="service-card__title">Contatto Diretto</h3>
+              <p class="u-mb-lg">Preferisci un contatto diretto? Usa uno di questi canali.</p>
+              <div class="link-list">
+                <a href="mailto:info@samuelgentile.dev" class="btn btn--secondary" >✉️ info@samuelgentile.dev</a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn--secondary" >🐙 GitHub</a>
+                <a href="#" class="btn btn--secondary" >💼 LinkedIn</a>
+                <a href="#" class="btn btn--secondary" >📄 Scarica CV</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__socials">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+        <a href="mailto:info@samuelgentile.dev" aria-label="Email">✉</a>
+      </div>
+      <p>&copy; 2026 Samuel Gentile. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

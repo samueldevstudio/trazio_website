@@ -1,0 +1,129 @@
+/* ============================================================
+   VARIABLES.CSS
+   Design System — Samuel Gentile Portfolio
+   Tutte le variabili globali del sito. Ogni altro file CSS
+   deve attingere da qui, MAI scrivere colori/valori "a mano".
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     COLORI — Palette principale
+     ---------------------------------------------------------- */
+  --color-bg: #0F1115;              /* sfondo principale, dark */
+  --color-bg-secondary: #14161C;    /* sfondo sezioni alternate, leggermente diverso dal principale per creare profondità */
+  --color-card: #1B1D24;            /* sfondo delle card (progetti, servizi, ecc.) */
+  --color-card-hover: #21242C;      /* sfondo card quando ci passi sopra col mouse */
+
+  --color-primary: #3B82F6;         /* blu principale del brand */
+  --color-primary-light: #60A5FA;   /* blu accento, usato per hover/gradienti */
+  --color-primary-dark: #2563EB;    /* blu più scuro, per stati "attivi/pressed" */
+
+  --color-white: #FFFFFF;
+  --color-text-primary: #F3F4F6;    /* testo principale, bianco "sporco" per non affaticare gli occhi */
+  --color-text-secondary: #9CA3AF;  /* testo secondario/paragrafi, grigio */
+  --color-text-muted: #6B7280;      /* testo terziario, meno importante (didascalie, note) */
+
+  --color-border: rgba(255, 255, 255, 0.08);       /* bordi sottili quasi invisibili, tipici del glassmorphism */
+  --color-border-hover: rgba(255, 255, 255, 0.16); /* bordo più visibile in hover */
+
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+
+  /* ----------------------------------------------------------
+     GRADIENTI — usati per glow, hero background, testo evidenziato
+     ---------------------------------------------------------- */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  --gradient-text: linear-gradient(90deg, #FFFFFF, var(--color-primary-light));
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA
+     ---------------------------------------------------------- */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Scala tipografica: ogni dimensione ha un ruolo preciso.
+     Usare SEMPRE queste variabili invece di px sparsi a caso. */
+  --fs-hero: clamp(2.5rem, 6vw, 5rem);      /* titolo hero, si adatta allo schermo */
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.2;   /* line-height stretto, per titoli */
+  --lh-normal: 1.6;  /* line-height normale, per paragrafi leggibili */
+
+  /* ----------------------------------------------------------
+     SPAZIATURE — scala basata su multipli di 4px
+     Coerenza visiva: ogni margine/padding del sito usa questi valori.
+     ---------------------------------------------------------- */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+  --space-5xl: 8rem;     /* 128px */
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  --container-max: 1200px;   /* larghezza massima del contenuto centrato */
+  --container-padding: clamp(1.25rem, 5vw, 3rem); /* padding laterale responsive */
+  --navbar-height: 80px;
+
+  /* ----------------------------------------------------------
+     BORDI E RAGGI — angoli arrotondati "premium"
+     ---------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;   /* per pulsanti/badge completamente arrotondati */
+
+  /* ----------------------------------------------------------
+     OMBRE — usate per profondità e glow
+     ---------------------------------------------------------- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.25); /* bagliore blu, usato su hover di card/bottoni */
+
+  /* ----------------------------------------------------------
+     GLASSMORPHISM — effetto vetro smerigliato (navbar, card)
+     ---------------------------------------------------------- */
+  --glass-bg: rgba(27, 29, 36, 0.6);
+  --glass-blur: blur(16px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* ----------------------------------------------------------
+     TRANSIZIONI — durate coerenti in tutto il sito
+     ---------------------------------------------------------- */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ----------------------------------------------------------
+     Z-INDEX — gestione ordine di sovrapposizione elementi
+     ---------------------------------------------------------- */
+  --z-behind: -1;
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-navbar: 500;
+  --z-overlay: 800;
+  --z-modal: 900;
+  --z-cursor: 9999;
+  --z-loader: 10000;
+}

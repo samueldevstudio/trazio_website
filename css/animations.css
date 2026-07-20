@@ -1,0 +1,64 @@
+/* ============================================================
+   ANIMATIONS.CSS — keyframes riutilizzati in tutto il sito
+   ============================================================ */
+
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes scrollWheel {
+  0% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 0; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@keyframes loaderProgress {
+  to { width: 100%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes typingCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Applicata all'entrata della hero (main.js aggiunge questa classe dopo il loader) */
+.hero__eyebrow, .hero__title, .hero__subtitle, .hero__actions {
+  opacity: 0;
+}
+
+.hero.is-loaded .hero__eyebrow { animation: fadeInUp 0.8s ease 0.1s forwards; }
+.hero.is-loaded .hero__title { animation: fadeInUp 0.9s ease 0.25s forwards; }
+.hero.is-loaded .hero__subtitle { animation: fadeInUp 0.9s ease 0.4s forwards; }
+.hero.is-loaded .hero__actions { animation: fadeInUp 0.9s ease 0.55s forwards; }
+
+.hero__glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Cursore lampeggiante usato dall'effetto "typing" nel titolo hero */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  background: var(--color-primary-light);
+  margin-left: 4px;
+  animation: typingCursor 0.8s step-end infinite;
+}

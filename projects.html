@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progetti | Samuel Gentile - Portfolio</title>
+  <meta name="description" content="Portfolio progetti di Samuel Gentile: Lucifero Service, Cybersecurity Toolkit, Smart Training Planner, Molinari Connect.">
+  <meta name="keywords" content="portfolio, progetti, web development, cybersecurity, training planner">
+  <meta name="author" content="Samuel Gentile">
+  <link rel="canonical" href="https://samuelgentile.dev/projects.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://samuelgentile.dev/projects.html">
+  <meta property="og:title" content="Progetti | Samuel Gentile - Portfolio">
+  <meta property="og:description" content="Portfolio progetti di Samuel Gentile: Lucifero Service, Cybersecurity Toolkit, Smart Training Planner, Molinari Connect.">
+  <meta property="og:image" content="https://samuelgentile.dev/assets/images/og-cover.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://samuelgentile.dev/projects.html">
+  <meta name="twitter:title" content="Progetti | Samuel Gentile - Portfolio">
+  <meta name="twitter:description" content="Portfolio progetti di Samuel Gentile: Lucifero Service, Cybersecurity Toolkit, Smart Training Planner, Molinari Connect.">
+  <meta name="twitter:image" content="https://samuelgentile.dev/assets/images/og-cover.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="loader"><div class="loader__logo">Samuel<span class="text-gradient">.dev</span></div></div>
+  <div class="scroll-progress"></div>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Samuel<span class="text-gradient">.</span></a>
+      <nav class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Servizi</a>
+        <a href="projects.html" class="is-active">Progetti</a>
+        <a href="contact.html">Contatti</a>
+      </nav>
+      <button class="navbar__hamburger" aria-label="Apri menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--page-top">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Portfolio</span>
+          <h1 class="section-title">Tutti i Progetti</h1>
+          <p class="section-subtitle">Una selezione dei lavori realizzati e in sviluppo.</p>
+        </div>
+
+        <div class="grid grid--2 projects-grid">
+          <!-- I progetti vengono caricati dinamicamente da js/projects.json -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__socials">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+        <a href="mailto:info@samuelgentile.dev" aria-label="Email">✉</a>
+      </div>
+      <p>&copy; 2026 Samuel Gentile. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti | Samuel Gentile - Web Developer</title>
+  <meta name="description" content="Contatta Samuel Gentile per il tuo prossimo progetto digitale. Sviluppo web, landing page e soluzioni digitali su misura.">
+  <meta name="keywords" content="contatti, web developer, sviluppo web, preventivo, collaborazione">
+  <meta name="author" content="Samuel Gentile">
+  <link rel="canonical" href="https://samuelgentile.dev/contact.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://samuelgentile.dev/contact.html">
+  <meta property="og:title" content="Contatti | Samuel Gentile - Web Developer">
+  <meta property="og:description" content="Contatta Samuel Gentile per il tuo prossimo progetto digitale. Sviluppo web, landing page e soluzioni digitali su misura.">
+  <meta property="og:image" content="https://samuelgentile.dev/assets/images/og-cover.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://samuelgentile.dev/contact.html">
+  <meta name="twitter:title" content="Contatti | Samuel Gentile - Web Developer">
+  <meta name="twitter:description" content="Contatta Samuel Gentile per il tuo prossimo progetto digitale. Sviluppo web, landing page e soluzioni digitali su misura.">
+  <meta name="twitter:image" content="https://samuelgentile.dev/assets/images/og-cover.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="loader"><div class="loader__logo">Samuel<span class="text-gradient">.dev</span></div></div>
+  <div class="scroll-progress"></div>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Samuel<span class="text-gradient">.</span></a>
+      <nav class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Servizi</a>
+        <a href="projects.html">Progetti</a>
+        <a href="contact.html" class="is-active">Contatti</a>
+      </nav>
+      <button class="navbar__hamburger" aria-label="Apri menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--page-top">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Contatti</span>
+          <h1 class="section-title">Parliamo del tuo progetto</h1>
+          <p class="section-subtitle">Hai un'idea in mente? Scrivimi, troviamo insieme la soluzione migliore.</p>
+        </div>
+
+        <div class="grid grid--2" style="gap: var(--space-3xl); align-items:start;">
+          <form class="contact-form reveal">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required placeholder="Il tuo nome">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tuaemail@esempio.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" required placeholder="Raccontami del tuo progetto..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Invia Messaggio</button>
+          </form>
+
+          <div class="reveal" data-delay="150">
+            <div class="card">
+              <h3 class="service-card__title">Contatto Diretto</h3>
+              <p class="u-mb-lg">Preferisci un contatto diretto? Usa uno di questi canali.</p>
+              <div class="link-list">
+                <a href="mailto:info@samuelgentile.dev" class="btn btn--secondary" >✉️ info@samuelgentile.dev</a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn--secondary" >🐙 GitHub</a>
+                <a href="#" class="btn btn--secondary" >💼 LinkedIn</a>
+                <a href="#" class="btn btn--secondary" >📄 Scarica CV</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__socials">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+        <a href="mailto:info@samuelgentile.dev" aria-label="Email">✉</a>
+      </div>
+      <p>&copy; 2026 Samuel Gentile. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

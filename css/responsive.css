@@ -1,0 +1,100 @@
+/* ============================================================
+   RESPONSIVE.CSS
+   Approccio: stile base scritto per desktop in style.css,
+   qui adattiamo verso il basso (tablet -> mobile).
+   ============================================================ */
+
+/* ---------- TABLET (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- MOBILE LARGE (<= 768px) ---------- */
+@media (max-width: 768px) {
+
+  .grid--2, .grid--3, .grid--4 {
+    grid-template-columns: 1fr; /* su mobile tutto si impila in singola colonna */
+  }
+
+  /* Menu di navigazione: da orizzontale a pannello full-screen a comparsa */
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(80vw, 320px);
+    background: var(--color-bg-secondary);
+    border-left: 1px solid var(--color-border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--space-3xl) var(--space-xl);
+    gap: var(--space-xl);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    z-index: var(--z-navbar);
+  }
+
+  .navbar__links.is-open {
+    transform: translateX(0);
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .section {
+    padding-block: var(--space-3xl);
+  }
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+}
+
+/* ---------- MOBILE SMALL (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: var(--space-md);
+  }
+
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .footer__socials {
+    gap: var(--space-md);
+  }
+}
+
+/* Disattiva il cursore custom e alcuni effetti pesanti su touch device
+   (già gestito parzialmente in JS, qui rinforziamo via CSS) */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
+
+/* Rispetta la preferenza di sistema "riduci animazioni" per accessibilità */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
