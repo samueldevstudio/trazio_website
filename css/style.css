@@ -950,3 +950,8 @@ p { color: var(--color-text-secondary); }
 .faq-item p {
   color: var(--color-text-secondary);
 }
+
+.package-card__list + .btn {
+  margin-top: var(--space-xl);
+}
+

@@ -17,7 +17,6 @@ const CONFIG = {
   // Social media links
   social: {
     github: 'https://github.com/',
-    linkedin: '#',
     // Aggiungi altri social se necessario
   }
 };
