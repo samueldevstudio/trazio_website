@@ -10,7 +10,7 @@ const CONFIG = {
   // Informazioni del sito
   site: {
     name: 'Samuel Gentile',
-    url: 'https://samuelgentile.dev',
+    url: 'https://samueldevstudio.github.io/portfolio',
     email: 'samuel.studiodev@gmail.com'
   },
   
