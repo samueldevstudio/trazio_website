@@ -16,7 +16,7 @@ const CONFIG = {
   
   // Social media links
   social: {
-    github: 'https://github.com/',
+    github: 'https://github.com/samueldevstudio',
     // Aggiungi altri social se necessario
   }
 };

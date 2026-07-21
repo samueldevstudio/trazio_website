@@ -955,3 +955,14 @@ p { color: var(--color-text-secondary); }
   margin-top: var(--space-xl);
 }
 
+
+/* ---------- WHY CHOOSE ME ---------- */
+
+.section--alt .card h3 {
+  margin-bottom: var(--space-md);
+}
+
+.section--alt .card p {
+  line-height: 1.7;
+}
+
