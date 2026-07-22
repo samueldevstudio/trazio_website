@@ -100,15 +100,23 @@ function initContactForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
 
+    // Raccoglie automaticamente tutti i campi del form
+    // (nome, email, azienda, tipo di progetto, messaggio, ecc.)
+    const formData = new FormData(form);
+    const dataToSend = Object.fromEntries(formData.entries());
+
     // Validazione base
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const message = form.querySelector('#message').value.trim();
+    const name = dataToSend.name?.trim();
+    const email = dataToSend.email?.trim();
+    const message = dataToSend.message?.trim();
 
     if (!name || !email || !message) {
-      alert('Per favore compila tutti i campi.');
+      alert('Per favore compila tutti i campi obbligatori.');
       return;
     }
+
+    // Subject personalizzato
+    dataToSend._subject = 'Nuova richiesta dal portfolio - ' + name;
 
     // Stato di caricamento
     submitBtn.textContent = 'Invio in corso...';
@@ -121,12 +129,7 @@ function initContactForm() {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message,
-          _subject: 'Nuovo messaggio dal portfolio - ' + name
-        })
+        body: JSON.stringify(dataToSend)
       });
 
       const data = await response.json();
