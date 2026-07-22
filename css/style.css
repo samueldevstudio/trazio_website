@@ -1021,3 +1021,21 @@ select option {
   margin-bottom:40px;
 }
 
+
+
+
+/* PRICING_PACKAGES_CSS_START */
+
+.package-card__note {
+  margin-top: auto;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+.package-card__list {
+  flex-grow: 1;
+}
+
+/* PRICING_PACKAGES_CSS_END */
