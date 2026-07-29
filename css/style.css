@@ -106,6 +106,7 @@ input, textarea {
 
 /* ---------- TIPOGRAFIA ---------- */
 h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
 }
@@ -136,7 +137,7 @@ p { color: var(--color-text-secondary); }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 50px rgba(18, 107, 255, 0.45);
 }
 
 .btn--secondary {
@@ -215,8 +216,14 @@ p { color: var(--color-text-secondary); }
 }
 
 .navbar__logo {
-  font-size: 1.25rem;
-  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar__logo img {
+  height: 32px;
+  width: auto;
 }
 
 .navbar__links {
@@ -303,7 +310,38 @@ p { color: var(--color-text-secondary); }
   pointer-events: none;
 }
 
-.hero__content { max-width: 760px; }
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  width: 100%;
+}
+
+.hero__content { max-width: 600px; }
+
+.hero__visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(18, 107, 255, 0.2) 100%);
+  pointer-events: none;
+}
 
 .hero__eyebrow {
   display: inline-flex;
@@ -592,7 +630,7 @@ p { color: var(--color-text-secondary); }
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(18, 107, 255, 0.15);
 }
 
 .form-group textarea { resize: vertical; min-height: 140px; }
@@ -716,17 +754,21 @@ p { color: var(--color-text-secondary); }
 }
 
 .loader__logo {
-  font-size: 1.5rem;
-  font-weight: var(--fw-bold);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.loader__logo img {
+  height: 40px;
+  width: auto;
 }
 
 .loader__logo::after {
   content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
+  width: 120px;
   height: 2px;
   background: rgba(255,255,255,0.1);
 }
@@ -734,12 +776,105 @@ p { color: var(--color-text-secondary); }
 .loader__logo::before {
   content: '';
   position: absolute;
-  bottom: -10px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0%;
   height: 2px;
   background: var(--gradient-primary);
   animation: loaderProgress 1.4s ease forwards;
+}
+
+/* ---------- STUDIO / BUSINESS COMPONENTS ---------- */
+.value-card {
+  text-align: center;
+}
+
+.value-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(18, 107, 255, 0.1);
+  border: 1px solid rgba(18, 107, 255, 0.2);
+  font-size: 1.5rem;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-step__number {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: var(--space-md);
+}
+
+.cta-banner {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/symbol-color.svg') no-repeat right -20px bottom -20px;
+  background-size: 200px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.cta-banner h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 520px;
+  margin: 0 auto var(--space-xl);
+}
+
+.cta-banner .btn--secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+}
+
+.cta-banner .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__brand {
+  margin-bottom: var(--space-lg);
+}
+
+.footer__brand img {
+  height: 28px;
+  width: auto;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.footer__tagline {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-lg);
 }
 
 /* Classe generica applicata via JS agli elementi che devono comparire allo scroll (scroll.js) */

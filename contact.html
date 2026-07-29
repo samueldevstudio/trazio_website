@@ -4,43 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti | TRAZIO - Digital Growth Studio</title>
-  <meta name="description" content="Contatta TRAZIO per il tuo prossimo progetto digitale.">
-  <meta name="keywords" content="contatti, web developer, sviluppo web, preventivo, collaborazione">
+  <meta name="description" content="Contatta TRAZIO per il tuo prossimo progetto digitale. Prima consulenza gratuita.">
+  <meta name="keywords" content="contatti, preventivo, consulenza, sviluppo web, TRAZIO">
   <meta name="author" content="TRAZIO">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://samueldevstudio.github.io/portfolio/contact.html">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://samueldevstudio.github.io/portfolio/contact.html">
   <meta property="og:title" content="Contatti | TRAZIO - Digital Growth Studio">
-  <meta property="og:description" content="Contatta TRAZIO per il tuo prossimo progetto digitale.">
-  <meta property="og:image" content="https://samueldevstudio.github.io/portfolio/assets/images/og-cover.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://samueldevstudio.github.io/portfolio/contact.html">
-  <meta name="twitter:title" content="Contatti | TRAZIO - Digital Growth Studio">
-  <meta name="twitter:description" content="Contatta TRAZIO per il tuo prossimo progetto digitale.">
-  <meta name="twitter:image" content="https://samueldevstudio.github.io/portfolio/assets/images/og-cover.jpg">
+  <meta property="og:description" content="Contatta TRAZIO per il tuo prossimo progetto digitale. Prima consulenza gratuita.">
+  <meta property="og:image" content="https://samueldevstudio.github.io/portfolio/assets/images/og-cover.png">
 
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <div class="loader"><div class="loader__logo">TRAZIO</div></div>
+  <div class="loader">
+    <div class="loader__logo">
+      <img src="assets/images/logo-light.svg" alt="TRAZIO">
+    </div>
+  </div>
   <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">TRAZIO<span class="text-gradient">.</span></a>
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/images/logo-light.svg" alt="TRAZIO">
+      </a>
       <nav class="navbar__links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">Chi siamo</a>
         <a href="services.html">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html" class="is-active">Contatti</a>
@@ -59,45 +57,47 @@
         </div>
 
         <div class="grid grid--2" style="gap: var(--space-3xl); align-items:start;">
-          
-<form 
-class="contact-form reveal"
-action="https://formspree.io/f/xwvgbkjb"
-method="POST">
 
-<input type="hidden" name="_subject" value="Nuova richiesta dal sito TRAZIO">
+          <form
+            class="contact-form reveal"
+            action="https://formspree.io/f/xwvgbkjb"
+            method="POST">
 
-<div class="form-group">
-<label for="name">Nome</label>
-<input type="text" id="name" name="name" required placeholder="Il tuo nome">
-</div>
+            <input type="hidden" name="_subject" value="Nuova richiesta dal sito TRAZIO">
 
-<div class="form-group">
-<label for="email">Email</label>
-<input type="email" id="email" name="email" required placeholder="tuaemail@esempio.com">
-</div>
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required placeholder="Il tuo nome">
+            </div>
 
-<div class="form-group">
-<label for="message">Messaggio</label>
-<textarea id="message" name="message" required placeholder="Descrivi la tua attività, il tuo obiettivo e cosa vorresti migliorare..."></textarea>
-</div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tuaemail@esempio.com">
+            </div>
 
-<button type="submit" class="btn btn--primary">
-Richiedi una consulenza
-</button>
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" required placeholder="Descrivi la tua attività, il tuo obiettivo e cosa vorresti migliorare..."></textarea>
+            </div>
 
-</form>
+            <button type="submit" class="btn btn--primary">
+              Richiedi una consulenza
+            </button>
 
+          </form>
 
           <div class="reveal" data-delay="150">
-            <div class="card">
-              <h3 class="service-card__title">Contatto Diretto</h3>
-              <p class="u-mb-lg">Preferisci un contatto diretto? Usa uno di questi canali.</p>
+            <div class="card u-mb-lg">
+              <h3 class="service-card__title">Contatto diretto</h3>
+              <p class="u-mb-lg">Preferisci scriverci direttamente? Usa il nostro indirizzo email.</p>
               <div class="link-list">
-                <a href="mailto:info@trazio.it" class="btn btn--secondary" >✉️ info@trazio.it</a>
-                <a href="https://github.com/samueldevstudio" target="_blank" rel="noopener" class="btn btn--secondary" >🐙 GitHub</a>
-                <a href="assets/files/curriculum.pdf" target="_blank" class="btn btn--secondary" >📄 Scarica CV</a>
+                <a href="mailto:info@trazio.it" class="btn btn--secondary">info@trazio.it</a>
               </div>
+            </div>
+            <div class="card">
+              <h3 class="service-card__title">Cosa aspettarti</h3>
+              <p class="u-mb-md">Rispondiamo entro 24 ore lavorative.</p>
+              <p>La prima consulenza è gratuita e senza impegno: ci conosciamo, capiamo le tue esigenze e ti proponiamo la soluzione più adatta.</p>
             </div>
           </div>
         </div>
@@ -107,9 +107,12 @@ Richiedi una consulenza
 
   <footer class="footer">
     <div class="container">
+      <div class="footer__brand">
+        <img src="assets/images/logo-light.svg" alt="TRAZIO">
+      </div>
+      <p class="footer__tagline">Digital Growth Studio</p>
       <div class="footer__socials">
-        <a href="https://github.com/samueldevstudio" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-        <a href="mailto:info@trazio.it" aria-label="Email">✉</a>
+        <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
       </div>
       <p>&copy; 2026 TRAZIO. Tutti i diritti riservati.</p>
     </div>

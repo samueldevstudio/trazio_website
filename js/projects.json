@@ -3,7 +3,7 @@
     {
       "id": "lucifero",
       "title": "Lucifero Service",
-      "description": "Sito web per un'azienda di organizzazione eventi.",
+      "description": "Sito web professionale per un'azienda di organizzazione eventi — design moderno e presenza online curata.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "status": "in_development",
       "image": "assets/images/lucifero-cover.png",
@@ -13,40 +13,40 @@
       "privateNote": ""
     },
     {
-      "id": "toolkit",
-      "title": "Cybersecurity Toolkit",
-      "description": "Toolkit personale per lo studio della cybersecurity.",
-      "technologies": ["Python", "Networking"],
-      "status": "completed",
-      "image": "assets/images/toolkit-cover.png",
+      "id": "molinari",
+      "title": "Molinari Connect",
+      "description": "Piattaforma digitale scolastica — concept e sviluppo iniziale per la gestione della comunicazione istituzionale.",
+      "technologies": ["Web App", "UI/UX"],
+      "status": "early_development",
+      "image": "assets/images/molinari-cover.png",
       "externalLink": null,
       "githubLink": null,
       "isPrivate": true,
-      "privateNote": "Disponibile per dimostrazione su richiesta"
+      "privateNote": "Demo disponibile su richiesta"
     },
     {
       "id": "training",
       "title": "Smart Training Planner",
-      "description": "Pianificatore intelligente di allenamenti.",
+      "description": "Applicazione web per la pianificazione intelligente degli allenamenti — soluzione custom su misura.",
       "technologies": ["JavaScript", "Firebase"],
       "status": "completed",
       "image": "assets/images/training-cover.png",
       "externalLink": null,
       "githubLink": null,
       "isPrivate": true,
-      "privateNote": "Disponibile per dimostrazione su richiesta"
+      "privateNote": "Demo disponibile su richiesta"
     },
     {
-      "id": "molinari",
-      "title": "Molinari Connect",
-      "description": "Piattaforma digitale scolastica — concept e sviluppo iniziale.",
-      "technologies": ["Concept"],
-      "status": "early_development",
-      "image": "assets/images/molinari-cover.png",
+      "id": "toolkit",
+      "title": "Cybersecurity Toolkit",
+      "description": "Strumento interno per analisi e studio della cybersecurity — sviluppo su misura.",
+      "technologies": ["Python", "Networking"],
+      "status": "completed",
+      "image": "assets/images/toolkit-cover.png",
       "externalLink": null,
       "githubLink": null,
       "isPrivate": true,
-      "privateNote": "Disponibile per dimostrazione su richiesta"
+      "privateNote": "Demo disponibile su richiesta"
     }
   ]
 }

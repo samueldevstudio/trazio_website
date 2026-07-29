@@ -46,7 +46,7 @@ class ProjectsManager {
     
     // Note privato
     const privateNote = project.isPrivate && project.privateNote
-      ? `<p class="project-card__private-note">🔒 ${project.privateNote}</p>`
+      ? `<p class="project-card__private-note">${project.privateNote}</p>`
       : '';
 
     // Link esterno
@@ -56,7 +56,7 @@ class ProjectsManager {
 
     // Link GitHub
     const githubLink = project.githubLink
-      ? `<a href="${project.githubLink}" target="_blank" rel="noopener" class="project-card__github" aria-label="GitHub">🐙</a>`
+      ? `<a href="${project.githubLink}" target="_blank" rel="noopener" class="project-card__github" aria-label="GitHub">GitHub</a>`
       : '';
 
     return `

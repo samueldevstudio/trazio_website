@@ -1,51 +1,50 @@
 /* ============================================================
    VARIABLES.CSS
-   Design System — Samuel Gentile Portfolio
-   Tutte le variabili globali del sito. Ogni altro file CSS
-   deve attingere da qui, MAI scrivere colori/valori "a mano".
+   Design System — TRAZIO Digital Growth Studio
    ============================================================ */
 
 :root {
 
   /* ----------------------------------------------------------
-     COLORI — Palette principale
+     COLORI — Palette TRAZIO Brand Kit
      ---------------------------------------------------------- */
-  --color-bg: #0F1115;              /* sfondo principale, dark */
-  --color-bg-secondary: #14161C;    /* sfondo sezioni alternate, leggermente diverso dal principale per creare profondità */
-  --color-card: #1B1D24;            /* sfondo delle card (progetti, servizi, ecc.) */
-  --color-card-hover: #21242C;      /* sfondo card quando ci passi sopra col mouse */
+  --color-bg: #08111F;
+  --color-bg-secondary: #0B1320;
+  --color-card: #0F1A2E;
+  --color-card-hover: #152238;
 
-  --color-primary: #3B82F6;         /* blu principale del brand */
-  --color-primary-light: #60A5FA;   /* blu accento, usato per hover/gradienti */
-  --color-primary-dark: #2563EB;    /* blu più scuro, per stati "attivi/pressed" */
+  --color-primary: #126BFF;
+  --color-primary-light: #2991FF;
+  --color-primary-dark: #084BCB;
 
   --color-white: #FFFFFF;
-  --color-text-primary: #F3F4F6;    /* testo principale, bianco "sporco" per non affaticare gli occhi */
-  --color-text-secondary: #9CA3AF;  /* testo secondario/paragrafi, grigio */
-  --color-text-muted: #6B7280;      /* testo terziario, meno importante (didascalie, note) */
+  --color-ice: #E9EEF5;
+  --color-text-primary: #E9EEF5;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
 
-  --color-border: rgba(255, 255, 255, 0.08);       /* bordi sottili quasi invisibili, tipici del glassmorphism */
-  --color-border-hover: rgba(255, 255, 255, 0.16); /* bordo più visibile in hover */
+  --color-border: rgba(233, 238, 245, 0.08);
+  --color-border-hover: rgba(233, 238, 245, 0.16);
 
   --color-success: #22C55E;
   --color-error: #EF4444;
   --color-warning: #F59E0B;
 
   /* ----------------------------------------------------------
-     GRADIENTI — usati per glow, hero background, testo evidenziato
+     GRADIENTI
      ---------------------------------------------------------- */
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(circle, rgba(18, 107, 255, 0.18) 0%, transparent 70%);
   --gradient-text: linear-gradient(90deg, #FFFFFF, var(--color-primary-light));
+  --gradient-hero: linear-gradient(135deg, rgba(8, 17, 31, 0.95) 0%, rgba(8, 17, 31, 0.6) 50%, rgba(18, 107, 255, 0.15) 100%);
 
   /* ----------------------------------------------------------
      TIPOGRAFIA
      ---------------------------------------------------------- */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Scala tipografica: ogni dimensione ha un ruolo preciso.
-     Usare SEMPRE queste variabili invece di px sparsi a caso. */
-  --fs-hero: clamp(2.5rem, 6vw, 5rem);      /* titolo hero, si adatta allo schermo */
+  --fs-hero: clamp(2.5rem, 5.5vw, 4.5rem);
   --fs-h1: clamp(2rem, 4vw, 3rem);
   --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
   --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
@@ -59,64 +58,63 @@
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  --lh-tight: 1.2;   /* line-height stretto, per titoli */
-  --lh-normal: 1.6;  /* line-height normale, per paragrafi leggibili */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
 
   /* ----------------------------------------------------------
-     SPAZIATURE — scala basata su multipli di 4px
-     Coerenza visiva: ogni margine/padding del sito usa questi valori.
+     SPAZIATURE
      ---------------------------------------------------------- */
-  --space-2xs: 0.25rem;  /* 4px */
-  --space-xs: 0.5rem;    /* 8px */
-  --space-sm: 0.75rem;   /* 12px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 4rem;     /* 64px */
-  --space-4xl: 6rem;     /* 96px */
-  --space-5xl: 8rem;     /* 128px */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
 
   /* ----------------------------------------------------------
      LAYOUT
      ---------------------------------------------------------- */
-  --container-max: 1200px;   /* larghezza massima del contenuto centrato */
-  --container-padding: clamp(1.25rem, 5vw, 3rem); /* padding laterale responsive */
+  --container-max: 1200px;
+  --container-padding: clamp(1.25rem, 5vw, 3rem);
   --navbar-height: 80px;
 
   /* ----------------------------------------------------------
-     BORDI E RAGGI — angoli arrotondati "premium"
+     BORDI E RAGGI
      ---------------------------------------------------------- */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
-  --radius-full: 9999px;   /* per pulsanti/badge completamente arrotondati */
+  --radius-full: 9999px;
 
   /* ----------------------------------------------------------
-     OMBRE — usate per profondità e glow
+     OMBRE
      ---------------------------------------------------------- */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.25); /* bagliore blu, usato su hover di card/bottoni */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(18, 107, 255, 0.3);
 
   /* ----------------------------------------------------------
-     GLASSMORPHISM — effetto vetro smerigliato (navbar, card)
+     GLASSMORPHISM
      ---------------------------------------------------------- */
-  --glass-bg: rgba(27, 29, 36, 0.6);
+  --glass-bg: rgba(11, 19, 32, 0.75);
   --glass-blur: blur(16px);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-border: 1px solid rgba(233, 238, 245, 0.08);
 
   /* ----------------------------------------------------------
-     TRANSIZIONI — durate coerenti in tutto il sito
+     TRANSIZIONI
      ---------------------------------------------------------- */
   --transition-fast: 0.2s ease;
   --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ----------------------------------------------------------
-     Z-INDEX — gestione ordine di sovrapposizione elementi
+     Z-INDEX
      ---------------------------------------------------------- */
   --z-behind: -1;
   --z-base: 1;

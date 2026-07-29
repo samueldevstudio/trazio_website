@@ -2,15 +2,13 @@
 <html lang="it">
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"Organization",
- "name":"TRAZIO",
- "jobTitle":"Digital Growth Studio",
- "url":"https://samueldevstudio.github.io/portfolio/",
- "email":"info@trazio.it",
- "sameAs":[
- "https://github.com/samueldevstudio"
- ]
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TRAZIO",
+  "description": "Digital Growth Studio — siti web, automazioni e soluzioni digitali per far crescere il tuo business.",
+  "url": "https://samueldevstudio.github.io/portfolio/",
+  "email": "info@trazio.it",
+  "logo": "https://samueldevstudio.github.io/portfolio/assets/images/logo-light.svg"
 }
 </script>
 <head>
@@ -22,16 +20,15 @@
   <meta name="author" content="TRAZIO">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (anteprima link su social/whatsapp) -->
   <meta property="og:title" content="TRAZIO | Digital Growth Studio">
   <meta property="og:description" content="Diamo trazione al tuo business con strategia, tecnologia e soluzioni digitali.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <meta property="og:image" content="/assets/images/og-cover.png">
   <meta property="og:url" content="https://samueldevstudio.github.io/portfolio/">
 
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
@@ -40,25 +37,25 @@
 </head>
 <body>
 
-  <!-- LOADING SCREEN -->
   <div class="loader">
-    <div class="loader__logo">TRAZIO</div>
+    <div class="loader__logo">
+      <img src="assets/images/logo-light.svg" alt="TRAZIO">
+    </div>
   </div>
 
-  <!-- BARRA PROGRESSO SCROLL -->
   <div class="scroll-progress"></div>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">TRAZIO<span class="text-gradient">.</span></a>
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/images/logo-light.svg" alt="TRAZIO">
+      </a>
 
       <nav class="navbar__links">
         <a href="#home" class="is-active">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">Chi siamo</a>
         <a href="services.html">Servizi</a>
         <a href="#projects">Progetti</a>
-        <a href="#skills">Competenze</a>
         <a href="#contact">Contatti</a>
       </nav>
 
@@ -75,24 +72,27 @@
       <canvas class="hero__bg"></canvas>
       <div class="hero__glow"></div>
 
-      <div class="container hero__content">
-        <div class="hero__eyebrow"><span class="dot"></span> Disponibile per nuovi progetti</div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__eyebrow"><span class="dot"></span> Accettiamo nuovi progetti</div>
 
-        <h1 class="hero__title">
-          TRAZIO<br>
-          <span class="text-gradient" data-typing="Digital Growth Studio, Web & AI, Automazioni"></span>
-        </h1>
+          <h1 class="hero__title">
+            Diamo <span class="text-gradient">trazione</span><br>
+            al tuo business
+          </h1>
 
-        <p class="hero__subtitle">
-          Progetto e sviluppo siti web moderni e soluzioni digitali che aiutano
-          le aziende a costruire una presenza online solida e professionale.
-        </p>
+          <p class="hero__subtitle">
+            Siamo TRAZIO, un digital growth studio che progetta siti web, automazioni
+            e soluzioni digitali su misura per aiutare aziende e professionisti a crescere online.
+          </p>
 
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">Vedi i Progetti</a>
-          <a href="#contact" class="btn btn--secondary">Contattami</a>
+          <div class="hero__actions">
+            <a href="services.html" class="btn btn--primary">Scopri i servizi</a>
+            <a href="#contact" class="btn btn--secondary">Richiedi consulenza</a>
+          </div>
         </div>
-      </div>
+
+              </div>
 
       <div class="scroll-indicator">
         <div class="scroll-indicator__wheel"><span></span></div>
@@ -100,258 +100,183 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- CHI SIAMO -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">Chi sono</span>
-          <h2 class="section-title">Studente di Informatica, sviluppatore per passione</h2>
+          <span class="section-eyebrow">Chi siamo</span>
+          <h2 class="section-title">Uno studio digitale, un obiettivo chiaro</h2>
           <p class="section-subtitle">
-            Unisco curiosità tecnica e attenzione al dettaglio per costruire soluzioni digitali concrete.
+            TRAZIO nasce dall'unione di competenze complementari in sviluppo web,
+            design e tecnologia — per offrire soluzioni digitali concrete, non solo belle da vedere.
           </p>
         </div>
 
         <div class="grid grid--2" style="align-items:center; gap: var(--space-3xl);">
           <div class="reveal">
             <p class="u-mb-lg">
-              Sono uno studente di Informatica con un interesse profondo per lo sviluppo web,
-              lo sviluppo software, l'intelligenza artificiale e il networking. Mi piace capire
-              come le cose funzionano "sotto il cofano", e trasformare quella comprensione in
-              prodotti digitali utili.
+              Siamo un team giovane e orientato ai risultati. Lavoriamo con attività locali,
+              professionisti e aziende che vogliono una presenza online professionale e strumenti
+              digitali che funzionano davvero.
             </p>
             <p>
-              Oltre alla programmazione, mi occupo anche di sistemi audio, video e di illuminazione:
-              un mix che mi ha insegnato a lavorare bene sotto pressione e a risolvere problemi
-              in tempo reale — competenze che porto anche nello sviluppo software.
+              Ogni progetto parte dall'ascolto: capiamo le tue esigenze, definiamo obiettivi chiari
+              e costruiamo soluzioni su misura — dal sito web alla landing page, dalle automazioni
+              ai sistemi personalizzati.
             </p>
           </div>
 
           <div class="grid grid--2 reveal" data-delay="150">
-            <div class="card">
-              <div class="service-card__icon">💻</div>
-              <h3 class="service-card__title">Sviluppo</h3>
-              <p>Web development, software, problem solving quotidiano.</p>
+            <div class="card value-card">
+              
+              <h3 class="service-card__title">Orientati al cliente</h3>
+              <p>Ogni soluzione nasce dalle esigenze reali del tuo business.</p>
             </div>
-            <div class="card">
-              <div class="service-card__icon">🤖</div>
-              <h3 class="service-card__title">AI & Rete</h3>
-              <p>Intelligenza artificiale, networking, tecnologia in generale.</p>
+            <div class="card value-card">
+              
+              <h3 class="service-card__title">Tecnologia moderna</h3>
+              <p>Siti veloci, responsive e ottimizzati per ogni dispositivo.</p>
             </div>
-            <div class="card">
-              <div class="service-card__icon">🎛️</div>
-              <h3 class="service-card__title">Audio/Video</h3>
-              <p>Sistemi audio, video e illuminazione per eventi.</p>
+            <div class="card value-card">
+              
+              <h3 class="service-card__title">Partnership</h3>
+              <p>Non siamo fornitori: siamo partner nel tuo percorso di crescita.</p>
             </div>
-            <div class="card">
-              <div class="service-card__icon">📚</div>
-              <h3 class="service-card__title">Apprendimento</h3>
-              <p>Formazione continua, sempre alla ricerca di nuove sfide.</p>
+            <div class="card value-card">
+              
+              <h3 class="service-card__title">Crescita continua</h3>
+              <p>Soluzioni pensate per evolvere insieme alla tua attività.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    
-
-<!-- WHY CHOOSE ME -->
-
-<section class="section section--alt">
-
-<div class="container">
-
-<div class="section-header reveal">
-
-<span class="section-eyebrow">
-Perché scegliere me
-</span>
-
-<h2 class="section-title">
-Un approccio moderno e personalizzato
-</h2>
-
-<p class="section-subtitle">
-Non realizzo semplici siti web: creo strumenti digitali pensati per aiutare attività e professionisti a crescere online.
-</p>
-
-</div>
-
-
-<div class="grid grid--4">
-
-<div class="card reveal">
-<h3>🎯 Soluzioni su misura</h3>
-<p>
-Ogni progetto nasce dalle esigenze reali del cliente, senza modelli preconfezionati.
-</p>
-</div>
-
-
-<div class="card reveal">
-<h3>⚡ Performance</h3>
-<p>
-Siti veloci, responsive e ottimizzati per offrire una migliore esperienza agli utenti.
-</p>
-</div>
-
-
-<div class="card reveal">
-<h3>🔧 Supporto continuo</h3>
-<p>
-Dallo sviluppo alla pubblicazione, con possibilità di manutenzione e aggiornamenti.
-</p>
-</div>
-
-
-<div class="card reveal">
-<h3>🚀 Crescita futura</h3>
-<p>
-Creo basi solide che possono evolvere insieme alla tua attività.
-</p>
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROJECTS -->
-    <section class="section" id="projects">
+    <!-- SERVIZI PREVIEW -->
+    <section class="section section--alt">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">Portfolio</span>
-          <h2 class="section-title">Progetti Selezionati</h2>
-          <p class="section-subtitle">Alcuni dei progetti su cui ho lavorato o sto lavorando.</p>
+          <span class="section-eyebrow">Servizi</span>
+          <h2 class="section-title">Cosa facciamo per te</h2>
+          <p class="section-subtitle">
+            Dalla presenza online alla crescita digitale: soluzioni complete per ogni fase del tuo percorso.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card reveal">
+            
+            <h3 class="service-card__title">Siti Web</h3>
+            <p>Design professionale, responsive e ottimizzato per convertire visitatori in clienti.</p>
+          </div>
+          <div class="card reveal" data-delay="100">
+            
+            <h3 class="service-card__title">Landing Page</h3>
+            <p>Pagine focalizzate su prodotti, servizi e campagne con obiettivo di conversione.</p>
+          </div>
+          <div class="card reveal" data-delay="200">
+            
+            <h3 class="service-card__title">Automazioni & Custom</h3>
+            <p>Strumenti su misura, integrazioni e sistemi che semplificano il tuo lavoro.</p>
+          </div>
+        </div>
+
+        <div class="reveal u-text-center u-mt-3xl">
+          <a href="services.html" class="btn btn--secondary">Vedi tutti i servizi e i pacchetti</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Case study</span>
+          <h2 class="section-title">Progetti realizzati</h2>
+          <p class="section-subtitle">Alcuni dei lavori che abbiamo portato avanti per i nostri clienti.</p>
         </div>
 
         <div class="grid grid--2 projects-grid">
-          <!-- I progetti vengono caricati dinamicamente da js/projects.json -->
+          <!-- Caricati da js/projects.json -->
+        </div>
+
+        <div class="reveal u-text-center u-mt-3xl">
+          <a href="projects.html" class="btn btn--secondary">Vedi tutti i progetti</a>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills" class="section--alt">
+    <!-- METODO -->
+    <section class="section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">Competenze</span>
-          <h2 class="section-title">Skills</h2>
+          <span class="section-eyebrow">Metodo</span>
+          <h2 class="section-title">Come lavoriamo</h2>
+          <p class="section-subtitle">Un processo chiaro, dalla prima call alla messa online.</p>
         </div>
 
-        <div class="grid grid--2" style="gap: var(--space-3xl);">
-          <div class="reveal">
-            <h3 class="service-card__title u-mb-lg">Web Development</h3>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>HTML</span><span>90%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="90"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>CSS</span><span>85%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="85"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>JavaScript</span><span>80%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="80"></div></div>
-            </div>
+        <div class="grid grid--4">
+          <div class="card process-step reveal">
+            <div class="process-step__number">01</div>
+            <h3>Analisi</h3>
+            <p>Comprendiamo le tue esigenze, obiettivi e target di riferimento.</p>
           </div>
-
-          <div class="reveal" data-delay="150">
-            <h3 class="service-card__title u-mb-lg">Programmazione & Sistemi</h3>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>C++</span><span>70%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="70"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>Firebase</span><span>65%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="65"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__label"><span>Linux / Networking</span><span>75%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-percent="75"></div></div>
-            </div>
+          <div class="card process-step reveal">
+            <div class="process-step__number">02</div>
+            <h3>Progettazione</h3>
+            <p>Definiamo struttura, design e funzionalità del progetto.</p>
+          </div>
+          <div class="card process-step reveal">
+            <div class="process-step__number">03</div>
+            <h3>Sviluppo</h3>
+            <p>Realizziamo, testiamo e ottimizziamo ogni dettaglio.</p>
+          </div>
+          <div class="card process-step reveal">
+            <div class="process-step__number">04</div>
+            <h3>Lancio</h3>
+            <p>Pubblichiamo online e restiamo al tuo fianco per il supporto.</p>
           </div>
         </div>
 
         <div class="grid grid--4 reveal" style="margin-top: var(--space-4xl); text-align:center;">
           <div class="stat-item">
-            <div class="stat-item__number" data-count="4">0</div>
-            <div class="stat-item__label">Progetti</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-item__number" data-count="3">0</div>
-            <div class="stat-item__label">Linguaggi</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-item__number" data-count="1">0</div>
-            <div class="stat-item__label">Freelance</div>
+            <div class="stat-item__number" data-count="10">0</div>
+            <div class="stat-item__label">Progetti completati</div>
           </div>
           <div class="stat-item">
             <div class="stat-item__number" data-count="100">0</div>
-            <div class="stat-item__label">% Impegno</div>
+            <div class="stat-item__label">% Responsive</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="2">0</div>
+            <div class="stat-item__label">Settimane medie</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="100">0</div>
+            <div class="stat-item__label">% Dedizione</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
-    <section class="section" id="timeline">
+    <!-- CTA -->
+    <section class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Percorso</span>
-          <h2 class="section-title">Timeline</h2>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">2025</div>
-            <h3 class="timeline-item__title">Audio Video Lighting Technician</h3>
-            <p>Esperienza tecnica in ambito audio, video e illuminazione per eventi.</p>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">2025</div>
-            <h3 class="timeline-item__title">Primo Progetto Freelance</h3>
-            <p>Primo incarico da sviluppatore freelance.</p>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">2026</div>
-            <h3 class="timeline-item__title">Cybersecurity Toolkit</h3>
-            <p>Sviluppo del toolkit personale per lo studio della cybersecurity.</p>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">2026</div>
-            <h3 class="timeline-item__title">Smart Training Planner</h3>
-            <p>Progettazione di un pianificatore intelligente di allenamenti.</p>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">2026</div>
-            <h3 class="timeline-item__title">Portfolio Website</h3>
-            <p>Sviluppo di questo sito personale.</p>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-item__dot"></div>
-            <div class="timeline-item__year">Futuro</div>
-            <h3 class="timeline-item__title">...</h3>
-            <p>Nuove sfide in arrivo.</p>
-          </div>
+        <div class="cta-banner reveal">
+          <h2>Pronto a far crescere il tuo business?</h2>
+          <p>Raccontaci la tua idea. Analizzeremo insieme la soluzione più adatta alle tue esigenze.</p>
+          <a href="#contact" class="btn btn--secondary">Inizia ora — è gratuito</a>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact" class="section--alt">
+    <!-- CONTATTI -->
+    <section class="section section--alt" id="contact">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Contatti</span>
           <h2 class="section-title">Parliamo del tuo progetto</h2>
-          <p class="section-subtitle">Hai un'idea in mente? Scrivimi, troviamo insieme la soluzione migliore.</p>
+          <p class="section-subtitle">Hai un'idea in mente? Scrivici, troviamo insieme la soluzione migliore.</p>
         </div>
 
         <div class="grid grid--2" style="gap: var(--space-3xl); align-items:start;">
@@ -366,20 +291,22 @@ Creo basi solide che possono evolvere insieme alla tua attività.
             </div>
             <div class="form-group">
               <label for="message">Messaggio</label>
-              <textarea id="message" name="message" required placeholder="Raccontami del tuo progetto..."></textarea>
+              <textarea id="message" name="message" required placeholder="Raccontaci del tuo progetto..."></textarea>
             </div>
-            <button type="submit" class="btn btn--primary">Invia Messaggio</button>
+            <button type="submit" class="btn btn--primary">Invia richiesta</button>
           </form>
 
           <div class="reveal" data-delay="150">
             <div class="card u-mb-lg">
-              <h3 class="service-card__title">Contatto Diretto</h3>
-              <p class="u-mb-lg">Preferisci un contatto diretto? Usa uno di questi canali.</p>
+              <h3 class="service-card__title">Contatto diretto</h3>
+              <p class="u-mb-lg">Preferisci scriverci direttamente? Ecco i nostri canali.</p>
               <div class="link-list">
-                <a href="mailto:info@trazio.it" class="btn btn--secondary" >✉️ info@trazio.it</a>
-                <a href="https://github.com/samueldevstudio" target="_blank" rel="noopener" class="btn btn--secondary" >🐙 GitHub</a>
-                <a href="assets/files/curriculum.pdf" target="_blank"class="btn btn--secondary" >📄 Scarica CV</a>
+                <a href="mailto:info@trazio.it" class="btn btn--secondary">info@trazio.it</a>
               </div>
+            </div>
+            <div class="card">
+              <h3 class="service-card__title">Tempi di risposta</h3>
+              <p>Rispondiamo entro 24 ore lavorative. La prima consulenza è sempre gratuita e senza impegno.</p>
             </div>
           </div>
         </div>
@@ -388,12 +315,14 @@ Creo basi solide che possono evolvere insieme alla tua attività.
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
+      <div class="footer__brand">
+        <img src="assets/images/logo-light.svg" alt="TRAZIO">
+      </div>
+      <p class="footer__tagline">Digital Growth Studio</p>
       <div class="footer__socials">
-        <a href="https://github.com/samueldevstudio" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-        <a href="mailto:info@trazio.it" aria-label="Email">✉</a>
+        <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
       </div>
       <p>&copy; 2026 TRAZIO. Tutti i diritti riservati.</p>
     </div>
