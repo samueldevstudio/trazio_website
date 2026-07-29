@@ -9,9 +9,9 @@ const CONFIG = {
   
   // Informazioni del sito
   site: {
-    name: 'Samuel Gentile',
+    name: 'TRAZIO',
     url: 'https://samueldevstudio.github.io/portfolio',
-    email: 'samuel.studiodev@gmail.com'
+    email: 'info@trazio.it'
   },
   
   // Social media links
