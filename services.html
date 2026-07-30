@@ -636,6 +636,59 @@ funzionalità vengono valutati separatamente.
 
 <!-- MAINTENANCE_PLANS_END -->
 
+<!-- CALCOLATORE PREVENTIVO -->
+<section class="section" id="calculator">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Preventivo rapido</span>
+      <h2 class="section-title">Calcola una stima in tempo reale</h2>
+      <p class="section-subtitle">Scegli pacchetto e opzioni: il totale si aggiorna subito. Nessun dato viene inviato, è solo una stima indicativa.</p>
+    </div>
+
+    <div class="card calculator-box reveal" id="price-calculator">
+      <div class="calculator-box__row">
+        <h3 class="service-card__title">Pacchetto base</h3>
+        <label class="calc-option"><input type="radio" name="package" value="start" checked> START — 590€</label>
+        <label class="calc-option"><input type="radio" name="package" value="business"> BUSINESS — 1190€</label>
+      </div>
+
+      <div class="calculator-box__row">
+        <h3 class="service-card__title">Extra</h3>
+        <details class="calc-dropdown" open>
+          <summary>Seleziona funzionalità aggiuntive</summary>
+          <label class="calc-option"><input type="checkbox" name="extra" value="ecommerce"> E-commerce — +400€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="multilang"> Multilingua — +250€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="booking"> Sistema prenotazioni — +300€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="blog"> Blog / area news (CMS) — +250€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="chatbot"> Chatbot AI per assistenza clienti — +350€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="newsletter"> Integrazione newsletter — +150€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="copywriting"> Copywriting professionale testi — +200€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="branding"> Logo e identità visiva — +300€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="hosting"> Gestione hosting e dominio (1 anno) — +120€</label>
+          <label class="calc-option"><input type="checkbox" name="extra" value="rush"> Consegna prioritaria — +250€</label>
+        </details>
+      </div>
+
+      <div class="calculator-box__row">
+        <h3 class="service-card__title">Manutenzione mensile</h3>
+        <label class="calc-option"><input type="radio" name="maintenance" value="none" checked> Nessuna</label>
+        <label class="calc-option"><input type="radio" name="maintenance" value="base"> BASE — 49€/mese</label>
+        <label class="calc-option"><input type="radio" name="maintenance" value="standard"> STANDARD — 99€/mese</label>
+        <label class="calc-option"><input type="radio" name="maintenance" value="premium"> PREMIUM — 199€/mese</label>
+      </div>
+
+      <div class="calculator-box__total">
+        <span>Totale stimato</span>
+        <div><strong id="calc-total">590€</strong> <span id="calc-maint"></span></div>
+      </div>
+
+      <a href="contact.html" class="btn btn--primary">Richiedi preventivo dettagliato</a>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- PROCESSO -->
 
 
@@ -728,7 +781,7 @@ Sì, ogni progetto viene sviluppato responsive per desktop, tablet e mobile.
 <div class="card faq-item reveal">
 <h3>Posso modificare il sito dopo?</h3>
 <p>
-Sì, offro supporto e manutenzione per aggiornamenti futuri.
+Sì, offriamo supporto e manutenzione per aggiornamenti futuri.
 </p>
 </div>
 
@@ -744,7 +797,7 @@ Il prezzo dipende dalle funzionalità richieste. Ogni progetto viene valutato in
 <div class="card faq-item reveal">
 <h3>Dominio e hosting sono inclusi?</h3>
 <p>
-Posso occuparmi della configurazione e consigliarti la soluzione più adatta per pubblicare il sito online.
+Possiamo occuparmi della configurazione e consigliarti la soluzione più adatta per pubblicare il sito online.
 </p>
 </div>
 
@@ -791,6 +844,7 @@ Richiedi un preventivo
   <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
+  <script src="js/calculator.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
