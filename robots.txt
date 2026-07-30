@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samueldevstudio.github.io/portfolio/sitemap.xml
+Sitemap: https://www.trazio.it/sitemap.xml
