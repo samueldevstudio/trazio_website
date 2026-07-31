@@ -44,7 +44,7 @@
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --fs-hero: clamp(2.5rem, 5.5vw, 4.5rem);
+  --fs-hero: clamp(3.2rem, 8vw, 6.5rem);
   --fs-h1: clamp(2rem, 4vw, 3rem);
   --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
   --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
