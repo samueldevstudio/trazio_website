@@ -17,6 +17,8 @@
   <meta property="og:image" content="https://www.trazio.it/assets/images/og-cover.png">
 
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
@@ -24,6 +26,8 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
+
   <div class="loader">
     <div class="loader__logo">
       <img src="assets/images/logo-light.svg" alt="TRAZIO">
@@ -47,7 +51,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="section section--page-top">
       <div class="container">
         <div class="section-header reveal">
@@ -78,6 +82,15 @@
             <div class="form-group">
               <label for="message">Messaggio</label>
               <textarea id="message" name="message" required placeholder="Descrivi la tua attività, il tuo obiettivo e cosa vorresti migliorare..."></textarea>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" name="privacy_consent" required>
+                <span>
+                  Ho letto e accetto la <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> e il trattamento dei miei dati personali per rispondere alla richiesta.
+                </span>
+              </label>
             </div>
 
             <button type="submit" class="btn btn--primary">
@@ -114,6 +127,11 @@
       <div class="footer__socials">
         <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
       </div>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
       <p>&copy; 2026 TRAZIO. Tutti i diritti riservati.</p>
     </div>
   </footer>
@@ -122,6 +140,7 @@
 
   <script src="js/config.js"></script>
   <script src="js/projects.js"></script>
+  <script src="js/cookie-consent.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js"></script>

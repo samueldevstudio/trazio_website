@@ -6,7 +6,7 @@ const CONFIG = {
   site: {
     name: 'TRAZIO',
     tagline: 'Digital Growth Studio',
-    url: 'https://samueldevstudio.github.io/portfolio',
+    url: 'https://www.trazio.it',
     email: 'info@trazio.it'
   },
 

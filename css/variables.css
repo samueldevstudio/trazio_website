@@ -6,7 +6,7 @@
 :root {
 
   /* ----------------------------------------------------------
-     COLORI — Palette TRAZIO Brand Kit
+     COLORI — Palette TRAZIO Brand Kit (WCAG AA compliant)
      ---------------------------------------------------------- */
   --color-bg: #08111F;
   --color-bg-secondary: #0B1320;
@@ -19,9 +19,9 @@
 
   --color-white: #FFFFFF;
   --color-ice: #E9EEF5;
-  --color-text-primary: #E9EEF5;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748B;
+  --color-text-primary: #F1F5F9; /* Maggiore contrasto per WCAG AA */
+  --color-text-secondary: #CBD5E1; /* Maggiore contrasto per WCAG AA */
+  --color-text-muted: #94A3B8;
 
   --color-border: rgba(233, 238, 245, 0.08);
   --color-border-hover: rgba(233, 238, 245, 0.16);

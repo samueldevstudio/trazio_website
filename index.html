@@ -8,7 +8,73 @@
   "description": "Digital Growth Studio — siti web, automazioni e soluzioni digitali per far crescere il tuo business.",
   "url": "https://www.trazio.it/",
   "email": "info@trazio.it",
-  "logo": "https://www.trazio.it/assets/images/logo-light.svg"
+  "logo": "https://www.trazio.it/assets/images/logo-light.svg",
+  "sameAs": [],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@trazio.it",
+    "contactType": "customer service",
+    "availableLanguage": "Italian"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "TRAZIO Digital Growth Studio",
+  "description": "Digital Growth Studio specializzato in sviluppo web, automazioni e soluzioni digitali per aziende e professionisti.",
+  "url": "https://www.trazio.it/",
+  "email": "info@trazio.it",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IT"
+  },
+  "priceRange": "€€",
+  "openingHours": "Mo-Fr 09:00-18:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Sviluppo Siti Web",
+  "description": "Realizzazione di siti web professionali, moderni e ottimizzati per la presenza online.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TRAZIO"
+  },
+  "serviceType": "Web Development"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Landing Page",
+  "description": "Progettazione di landing page ottimizzate per la conversione e il marketing digitale.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TRAZIO"
+  },
+  "serviceType": "Digital Marketing"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automazioni Digitali",
+  "description": "Creazione di automazioni e soluzioni digitali personalizzate per migliorare i processi aziendali.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TRAZIO"
+  },
+  "serviceType": "Business Automation"
 }
 </script>
 <head>
@@ -28,6 +94,7 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/variables.css">
@@ -36,6 +103,7 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
   <div class="loader">
     <div class="loader__logo">
@@ -65,7 +133,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- HERO -->
     <section class="hero" id="home">
@@ -77,6 +145,8 @@
             Diamo <span class="text-gradient">trazione</span><br>
             al tuo business
           </h1>
+
+          <img src="assets/images/hero-section.jpg" alt="TRAZIO Digital Growth Studio - soluzioni digitali per il business" width="1200" height="630" fetchpriority="high" class="hero__image u-sr-only">
 
           <p class="hero__subtitle">
             Siamo TRAZIO, un digital growth studio che progetta siti web, automazioni
@@ -406,6 +476,13 @@
           </a>
         </div>
 
+        <div>
+          <h4>Legale</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+
       </div>
 
       <p>&copy; 2026 TRAZIO. Tutti i diritti riservati.</p>
@@ -417,6 +494,7 @@
 
   <script src="js/config.js"></script>
   <script src="js/projects.js"></script>
+  <script src="js/cookie-consent.js"></script>
   <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js"></script>
