@@ -36,4 +36,16 @@
     <loc>https://www.trazio.it/projects/molinari.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.trazio.it/privacy-policy.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.trazio.it/cookie-policy.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.trazio.it/terms-of-service.html</loc>
+    <priority>0.5</priority>
+  </url>
 </urlset>
