@@ -100,23 +100,28 @@ function initContactForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
 
-    // Recupera solo i tre campi principali del form
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const message = form.querySelector('#message').value.trim();
+    const nameField = form.querySelector('#name');
+    const emailField = form.querySelector('#email');
+    const messageField = form.querySelector('#message');
+    const name = nameField ? nameField.value.trim() : '';
+    const email = emailField ? emailField.value.trim() : '';
+    const message = messageField ? messageField.value.trim() : '';
 
     if (!name || !email || !message) {
       alert('Per favore compila tutti i campi obbligatori.');
       return;
     }
 
-    // Dati da inviare a Formspree
-    const dataToSend = {
-      name: name,
-      email: email,
-      message: message,
-      _subject: 'Nuova richiesta dal portfolio - ' + name
-    };
+    // Costruisce il payload da TUTTI i campi presenti nel form (inclusi
+    // checkbox come il consenso privacy), non solo dai tre principali,
+    // altrimenti dati come il consenso non arrivano mai a Formspree
+    const dataToSend = {};
+    new FormData(form).forEach((value, key) => {
+      dataToSend[key] = value;
+    });
+    if (!dataToSend._subject) {
+      dataToSend._subject = 'Nuova richiesta dal sito TRAZIO - ' + name;
+    }
 
     // Stato di caricamento
     submitBtn.textContent = 'Invio in corso...';

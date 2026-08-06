@@ -68,7 +68,7 @@ class CookieConsent {
           <div class="cookie-banner__actions">
             <button class="btn btn--secondary cookie-banner__btn--accept-all">Accetta Tutti</button>
             <button class="btn btn--secondary cookie-banner__btn--accept-selected">Accetta Selezionati</button>
-            <button class="btn btn--secondary cookie-banner__btn--reject">Rifiutta Tutti</button>
+            <button class="btn btn--secondary cookie-banner__btn--reject">Rifiuta Tutti</button>
           </div>
           <button class="cookie-banner__close" aria-label="Chiudi banner">×</button>
         </div>
