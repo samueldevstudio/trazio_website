@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512">
+  <title>TRAZIO</title>
+  <desc>TRAZIO brand symbol</desc>
+  <g transform="translate(54.4 27.1) scale(4.2)">
+    <path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/>
+    <path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/>
+    <path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/>
+    <path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/>
+    <path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/>
+  </g>
+</svg>
