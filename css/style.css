@@ -300,14 +300,15 @@ p { color: var(--color-text-secondary); }
 
 .hero__glow {
   position: absolute;
-  width: 800px;
-  height: 800px;
-  background: var(--gradient-glow);
-  border-radius: 50%;
-  top: -200px;
-  right: -200px;
+  inset: 0;
+  background-image: url('../assets/images/brand-pattern.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
   z-index: var(--z-behind);
   pointer-events: none;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 .hero__inner {
@@ -432,7 +433,29 @@ p { color: var(--color-text-secondary); }
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-lg);
-  font-size: 1.4rem;
+  color: #fff;
+}
+
+.service-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.why-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  color: #fff;
+}
+
+.why-card__icon svg {
+  width: 26px;
+  height: 26px;
 }
 
 .service-card__title {
@@ -1006,14 +1029,23 @@ p { color: var(--color-text-secondary); }
   margin-right: var(--space-sm);
 }
 
+/* Card "Funzionalità Principali" nelle pagine progetto */
+.feature-item p {
+  margin: 0;
+}
+
+.feature-item p::before {
+  content: "✓";
+  color: var(--color-primary-light);
+  font-weight: var(--fw-bold);
+  margin-right: var(--space-sm);
+}
+
 .package-card--featured {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-glow);
 }
 
-.process-grid {
-  margin-top: var(--space-3xl);
-}
 .package-card--featured {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-glow);
@@ -1073,18 +1105,46 @@ p { color: var(--color-text-secondary); }
 }
 
 
-/* ---------- FAQ ---------- */
+/* ---------- FAQ (accordion basato su <details>/<summary>, nativo e accessibile) ---------- */
 
-.faq-grid {
+.faq-list {
   margin-top: var(--space-3xl);
+  max-width: 760px;
 }
 
-.faq-item h3 {
-  margin-bottom: var(--space-sm);
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body-lg);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary .faq-item__chevron {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary .faq-item__chevron {
+  transform: rotate(180deg);
 }
 
 .faq-item p {
   color: var(--color-text-secondary);
+  padding-bottom: var(--space-lg);
+  max-width: 640px;
 }
 
 .package-card__list + .btn {

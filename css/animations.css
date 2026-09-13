@@ -30,11 +30,6 @@
   to { transform: rotate(360deg); }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
 @keyframes typingCursor {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -49,10 +44,6 @@
 .hero.is-loaded .hero__title { animation: fadeInUp 0.9s ease 0.25s forwards; }
 .hero.is-loaded .hero__subtitle { animation: fadeInUp 0.9s ease 0.4s forwards; }
 .hero.is-loaded .hero__actions { animation: fadeInUp 0.9s ease 0.55s forwards; }
-
-.hero__glow {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
 
 /* Cursore lampeggiante usato dall'effetto "typing" nel titolo hero */
 .typing-cursor {
