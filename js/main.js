@@ -11,22 +11,48 @@
    in un ordine controllato e leggibile.
    ============================================================ */
 
+// Esegue ogni init in isolamento: se uno di questi moduli lancia un
+// errore (es. su un browser particolare), non deve bloccare gli altri —
+// altrimenti sezioni come initScrollReveal non partirebbero mai e il
+// contenuto (che parte da opacity:0 via CSS) resterebbe invisibile.
+function runSafe(fn, name) {
+  try {
+    fn();
+  } catch (err) {
+    console.error(`Errore nell'inizializzazione di "${name}":`, err);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  initLoader();
-  initCustomCursor();   // da cursor.js
-  initNavbar();          // da navbar.js
-  initScrollReveal();    // da scroll.js
-  initScrollProgress();  // da scroll.js
-  initBackToTop();       // da scroll.js
-  initParallax();        // da scroll.js
-  initSkillBars();       // da scroll.js
-  initStatCounters();    // da scroll.js
-  initParticles();       // da animations.js
-  initTypingEffect();    // da animations.js
-  initButtonRipple();
-  initContactForm();
-  initImageFallback();
+  runSafe(initLoader, 'initLoader');
+  runSafe(initCustomCursor, 'initCustomCursor');   // da cursor.js
+  runSafe(initNavbar, 'initNavbar');                // da navbar.js
+  runSafe(initScrollReveal, 'initScrollReveal');    // da scroll.js
+  runSafe(initScrollProgress, 'initScrollProgress'); // da scroll.js
+  runSafe(initBackToTop, 'initBackToTop');          // da scroll.js
+  runSafe(initParallax, 'initParallax');            // da scroll.js
+  runSafe(initSkillBars, 'initSkillBars');          // da scroll.js
+  runSafe(initStatCounters, 'initStatCounters');    // da scroll.js
+  runSafe(initParticles, 'initParticles');          // da animations.js
+  runSafe(initTypingEffect, 'initTypingEffect');    // da animations.js
+  runSafe(initButtonRipple, 'initButtonRipple');
+  runSafe(initContactForm, 'initContactForm');
+  runSafe(initImageFallback, 'initImageFallback');
+  runSafe(initRevealFallback, 'initRevealFallback');
 });
+
+/* --- Rete di sicurezza per le animazioni allo scroll: gli elementi
+   .reveal partono a opacity:0 via CSS e dipendono da initScrollReveal
+   (IntersectionObserver) per diventare visibili. Se per qualsiasi
+   motivo quell'osservatore non li raggiunge mai, dopo un breve timeout
+   li rendo comunque visibili invece di lasciarli invisibili per sempre. --- */
+function initRevealFallback() {
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => {
+      el.classList.add('is-visible');
+    });
+  }, 2500);
+}
 
 /* --- Fallback immagini: se un'immagine progetto non carica (404),
    nascondo l'icona "rotta" del browser e mostro uno sfondo elegante
@@ -43,20 +69,25 @@ function initImageFallback() {
   });
 }
 
-/* --- Loading screen: nascosto dopo che la pagina è pronta,
-   con un piccolo delay minimo per evitare un "flash" troppo rapido
-   che sembrerebbe un bug più che un caricamento --- */
+/* --- Loading screen: nascosto non appena la pagina è pronta. La
+   dissolvenza è già gestita dalla transition CSS di 0.6s su .is-hidden,
+   quindi non serve un ulteriore ritardo artificiale prima di toglierlo:
+   rallenterebbe solo la percezione di velocità del sito. --- */
 function initLoader() {
   const loader = document.querySelector('.loader');
   const hero = document.querySelector('.hero');
   if (!loader) return;
 
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('is-hidden');
-      if (hero) hero.classList.add('is-loaded'); // fa partire le animazioni di entrata della hero
-    }, 600);
-  });
+  const hide = () => {
+    loader.classList.add('is-hidden');
+    if (hero) hero.classList.add('is-loaded'); // fa partire le animazioni di entrata della hero
+  };
+
+  if (document.readyState === 'complete') {
+    hide();
+  } else {
+    window.addEventListener('load', hide);
+  }
 }
 
 /* --- Effetto ripple sui bottoni: genera un cerchio che si espande
