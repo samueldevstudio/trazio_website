@@ -1,7 +1,8 @@
 /* ============================================================
    RESPONSIVE.CSS
    Approccio: stile base scritto per desktop in style.css,
-   qui adattiamo verso il basso (tablet -> mobile).
+   qui adattiamo verso il basso (tablet -> mobile). Il mobile non è
+   una versione "stretta" del desktop: dove serve cambia struttura.
    ============================================================ */
 
 /* ---------- TABLET (<= 1024px) ---------- */
@@ -14,11 +15,13 @@
     gap: var(--space-2xl);
   }
 
-  .hero__visual {
-    max-width: 560px;
-    margin-inline: auto;
-    order: -1;
+  /* Piani manutenzione: nome+prezzo sopra, contenuto sotto, azione a fondo */
+  .plan {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
+
+  .plan__action { align-self: start; }
 }
 
 /* ---------- MOBILE LARGE (<= 768px) ---------- */
@@ -28,12 +31,13 @@
     grid-template-columns: 1fr; /* su mobile tutto si impila in singola colonna */
   }
 
-  /* Menu di navigazione: da orizzontale a pannello full-screen a comparsa */
+  /* Menu di navigazione: da orizzontale a pannello a comparsa */
   .navbar__links {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
+    height: 100dvh;
     width: min(80vw, 320px);
     background: var(--color-bg-secondary);
     border-left: 1px solid var(--color-border);
@@ -47,12 +51,17 @@
     z-index: var(--z-navbar);
   }
 
-  .navbar__links.is-open {
-    transform: translateX(0);
-  }
+  .navbar__links.is-open { transform: translateX(0); }
 
-  .navbar__hamburger {
-    display: flex;
+  .navbar__links a { font-size: var(--fs-body-lg); }
+
+  .navbar__hamburger { display: flex; }
+
+  /* Hero: niente 100vh forzato (lasciava una fascia vuota sotto i bottoni) */
+  .hero {
+    min-height: 0;
+    padding-top: calc(var(--navbar-height) + var(--space-3xl));
+    padding-bottom: var(--space-3xl);
   }
 
   .hero__actions {
@@ -60,13 +69,59 @@
     align-items: stretch;
   }
 
-  .hero__actions .btn {
-    width: 100%;
+  .hero__actions .btn { width: 100%; }
+
+  .section { padding-block: var(--space-3xl); }
+
+  .section--page-top { padding-top: calc(var(--navbar-height) + var(--space-3xl)); }
+
+  /* Liste numerate: il numero resta a sinistra ma più compatto */
+  .service-row {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
   }
 
-  .section {
-    padding-block: var(--space-3xl);
+  .service-arrow { display: none; }
+
+  .service-content h3 { font-size: 1.5rem; }
+
+  .method-item,
+  .value-item {
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .method-number,
+  .value-number {
+    font-size: 3rem;
+    min-width: 0;
+  }
+
+  .method-item h3,
+  .value-item h3 { font-size: 1.5rem; }
+
+  .facts {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .plan__list { grid-template-columns: 1fr; }
+
+  .pricing-table-wrapper { border-radius: var(--radius-md); }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--fs-small);
+  }
+
+  .cta-banner { padding: var(--space-2xl) var(--space-lg); }
 
   .back-to-top {
     width: 42px;
@@ -78,26 +133,13 @@
 
 /* ---------- MOBILE SMALL (<= 480px) ---------- */
 @media (max-width: 480px) {
-  .container {
-    padding-inline: var(--space-md);
-  }
+  .container { padding-inline: var(--space-md); }
 
-  .card {
-    padding: var(--space-lg);
-  }
+  .card { padding: var(--space-lg); }
 
-  .footer__socials {
-    gap: var(--space-md);
-  }
-}
+  .brand-word { font-size: 0.95rem; }
 
-/* Disattiva il cursore custom e alcuni effetti pesanti su touch device
-   (già gestito parzialmente in JS, qui rinforziamo via CSS) */
-@media (hover: none) and (pointer: coarse) {
-  .custom-cursor,
-  .custom-cursor-ring {
-    display: none;
-  }
+  .footer__socials { gap: var(--space-md); }
 }
 
 /* Rispetta la preferenza di sistema "riduci animazioni" per accessibilità */
@@ -107,5 +149,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

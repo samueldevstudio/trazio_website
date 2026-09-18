@@ -29,25 +29,21 @@
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
   <div class="loader">
-    <div class="loader__logo">
-      <img src="assets/images/logo-light.svg" alt="TRAZIO">
-    </div>
+    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
   </div>
   <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </a>
-      <nav class="navbar__links">
+      <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
+      <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="about.html">Chi siamo</a>
         <a href="services.html">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html">Contatti</a>
       </nav>
-      <button class="navbar__hamburger" aria-label="Apri menu"><span></span><span></span><span></span></button>
+      <button class="navbar__hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -61,8 +57,8 @@
         </div>
 
         <div class="card reveal u-mb-3xl">
-          <p class="u-mb-lg"><strong>Ultimo aggiornamento:</strong> 13 Settembre 2026</p>
-          <p>Questa policy spiega cosa sono i cookie, come li utilizziamo e come puoi gestire le tue preferenze.</p>
+          <p class="u-mb-lg"><strong>Ultimo aggiornamento:</strong> 18 Settembre 2026</p>
+          <p>Questa policy spiega cosa sono i cookie e quali tecnologie utilizza questo sito. In sintesi: <strong>il sito non installa cookie propri</strong> e non usa strumenti di tracciamento o analisi statistica; per questo motivo non viene mostrato alcun banner di consenso.</p>
         </div>
 
         <div class="reveal u-mb-3xl">
@@ -79,25 +75,19 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">2. Tipi di Cookie Utilizzati</h2>
+          <h2 class="service-card__title u-mb-md">2. Cookie Utilizzati da Questo Sito</h2>
           <div class="card">
-            <p class="u-mb-md">Il nostro sito utilizza i seguenti tipi di cookie:</p>
-            
-            <h3 class="u-mb-md">2.1 Cookie Tecnici (Essenziali)</h3>
-            <p class="u-mb-md">Questi cookie sono necessari per il funzionamento del sito e non possono essere disabilitati:</p>
-            <ul class="u-mb-lg">
-              <li><strong>Cookie di sessione:</strong> mantengono lo stato della navigazione</li>
-              <li><strong>Cookie di preferenze:</strong> ricordano le scelte dell'utente (es. consenso cookie)</li>
-              <li><strong>Cookie di sicurezza:</strong> proteggono da attacchi e frodi</li>
-            </ul>
+            <h3 class="u-mb-md">2.1 Cookie Tecnici Propri</h3>
+            <p class="u-mb-lg"><strong>Nessuno.</strong> Il sito è composto da pagine statiche e non imposta cookie né salva dati nel browser per il proprio funzionamento. Non esistono cookie di sessione, di preferenze o di profilazione impostati da TRAZIO.</p>
 
-            <h3 class="u-mb-md">2.2 Cookie Analytics</h3>
-            <p class="u-mb-md"><strong>Al momento non utilizziamo Google Analytics né altri strumenti di analisi statistica.</strong> Il banner cookie include comunque un'opzione "Cookie Analytics" predisposta per un eventuale utilizzo futuro: se in seguito decidessimo di attivare strumenti di analisi, aggiorneremo questa pagina con il dettaglio dei cookie utilizzati e chiederemo il tuo consenso preventivo tramite il banner, nel rispetto della scelta che avrai espresso.</p>
+            <h3 class="u-mb-md">2.2 Cookie Analytics e di Profilazione</h3>
+            <p class="u-mb-lg"><strong>Non utilizzati.</strong> Non impieghiamo Google Analytics né altri strumenti di analisi statistica, pubblicità o tracciamento. Se in futuro decidessimo di attivarne uno, aggiorneremo questa pagina e chiederemo il tuo consenso preventivo tramite un apposito banner, prima di qualsiasi raccolta di dati.</p>
 
-            <h3 class="u-mb-md">2.3 Cookie di Terze Parti</h3>
-            <p class="u-mb-md">Cookie impostati da servizi terzi che utilizziamo:</p>
+            <h3 class="u-mb-md">2.3 Servizi di Terze Parti</h3>
+            <p class="u-mb-md">Alcune funzionalità del sito si appoggiano a servizi esterni, che potrebbero impostare tecnologie proprie sul loro dominio secondo le rispettive policy:</p>
             <ul>
-              <li><strong>Google Fonts:</strong> per il caricamento dei font</li>
+              <li><strong>Google Fonts:</strong> caricamento dei caratteri tipografici (vedi punto 6.1)</li>
+              <li><strong>Formspree:</strong> gestione dell'invio del modulo di contatto, attivo solo quando invii il modulo (vedi punto 6.2)</li>
             </ul>
           </div>
         </div>
@@ -105,84 +95,60 @@
         <div class="reveal u-mb-3xl">
           <h2 class="service-card__title u-mb-md">3. Dettaglio dei Cookie Specifici</h2>
           <div class="card">
-            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+            <table class="legal-table">
               <thead>
-                <tr style="border-bottom: 1px solid var(--color-border);">
-                  <th style="text-align: left; padding: 1rem; color: var(--color-primary);">Nome Cookie</th>
-                  <th style="text-align: left; padding: 1rem; color: var(--color-primary);">Tipo</th>
-                  <th style="text-align: left; padding: 1rem; color: var(--color-primary);">Durata</th>
-                  <th style="text-align: left; padding: 1rem; color: var(--color-primary);">Scopo</th>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Durata</th>
+                  <th scope="col">Scopo</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding: 1rem;">trazio_cookie_consent</td>
-                  <td style="padding: 1rem;">Tecnico</td>
-                  <td style="padding: 1rem;">Nessuna scadenza (fino a cancellazione manuale)</td>
-                  <td style="padding: 1rem;">Memorizza le preferenze cookie dell'utente. Nota: non è un cookie HTTP in senso stretto, ma un dato salvato tramite localStorage del browser</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td>Il sito non imposta alcun cookie proprio</td>
                 </tr>
               </tbody>
             </table>
-            <p class="u-mt-md">Quando invii il modulo di contatto, i dati vengono trasmessi a Formspree, che può a sua volta impostare propri cookie o tecnologie simili sul suo dominio secondo la sua privacy policy (vedi punto 6.3).</p>
+            <p class="u-mt-md">Quando invii il modulo di contatto, i dati vengono trasmessi a Formspree, che può a sua volta impostare propri cookie o tecnologie simili sul suo dominio secondo la sua privacy policy (vedi punto 6.2).</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">4. Gestione delle Preferenze Cookie</h2>
+          <h2 class="service-card__title u-mb-md">4. Gestione dei Cookie</h2>
           <div class="card">
-            <p class="u-mb-md">Puoi gestire le tue preferenze cookie in diversi modi:</p>
-            
-            <h3 class="u-mb-md">4.1 Tramite il Banner Cookie</h3>
-            <p class="u-mb-lg">Alla prima visita del sito, appare un banner che ti permette di:</p>
-            <ul class="u-mb-lg">
-              <li><strong>Accetta tutti:</strong> accetta tutti i cookie</li>
-              <li><strong>Accetta essenziali:</strong> accetta solo i cookie tecnici necessari</li>
-              <li><strong>Rifiuta tutti:</strong> rifiuta tutti i cookie non essenziali</li>
-              <li><strong>Gestisci preferenze:</strong> scegliere singolarmente quali cookie accettare</li>
+            <p class="u-mb-lg">Poiché il sito non installa cookie propri, non è necessario alcun banner né alcuna scelta da parte tua. Puoi comunque controllare e cancellare in qualsiasi momento i cookie impostati da servizi terzi direttamente dal tuo browser:</p>
+            <ul>
+              <li><strong>Chrome:</strong> Impostazioni > Privacy e sicurezza > Cookie</li>
+              <li><strong>Firefox:</strong> Impostazioni > Privacy e sicurezza > Cookie</li>
+              <li><strong>Safari:</strong> Preferenze > Privacy > Gestisci dati siti web</li>
+              <li><strong>Edge:</strong> Impostazioni > Cookie e autorizzazioni sito</li>
             </ul>
-
-            <h3 class="u-mb-md">4.2 Tramite Impostazioni Browser</h3>
-            <p class="u-mb-lg">Puoi anche gestire i cookie direttamente dal tuo browser:</p>
-            <ul class="u-mb-lg">
-              <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies</li>
-              <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies</li>
-              <li><strong>Safari:</strong> Preferences > Privacy > Manage Website Data</li>
-              <li><strong>Edge:</strong> Settings > Cookies and site permissions</li>
-            </ul>
-
-            <h3 class="u-mb-md">4.3 Tramite il Link "Gestisci Cookie"</h3>
-            <p>Puoi modificare le tue preferenze in qualsiasi momento cliccando sul link "Gestisci Cookie" presente nel footer del sito.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
           <h2 class="service-card__title u-mb-md">5. Disabilitare i Cookie</h2>
           <div class="card">
-            <p class="u-mb-md">Se decidi di disabilitare i cookie, tieni presente che:</p>
-            <ul>
-              <li>Alcune funzionalità del sito potrebbero non funzionare correttamente</li>
-              <li>L'esperienza di navigazione potrebbe essere ridotta</li>
-              <li>Le tue preferenze non verranno salvate</li>
-              <li>Non potremo raccogliere dati statistici per migliorare il sito</li>
-            </ul>
+            <p>Puoi bloccare tutti i cookie dalle impostazioni del browser: il sito continuerà a funzionare normalmente, perché non dipende da alcun cookie. L'unica funzionalità che coinvolge un servizio esterno è il modulo di contatto, gestito da Formspree.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
           <h2 class="service-card__title u-mb-md">6. Cookie di Terze Parti</h2>
           <div class="card">
-            <p class="u-mb-md">Utilizziamo i seguenti servizi di terze parti che possono impostare cookie:</p>
+            <p class="u-mb-md">Utilizziamo i seguenti servizi di terze parti, che possono impostare cookie o tecnologie simili sui propri domini:</p>
             
-            <h3 class="u-mb-md">6.1 Google Analytics</h3>
-            <p class="u-mb-lg">Non attualmente utilizzato. Se in futuro lo attivassimo, questa sezione verrà aggiornata con i dettagli e il consenso verrà richiesto tramite il banner cookie prima di qualsiasi raccolta dati.</p>
-
-            <h3 class="u-mb-md">6.2 Google Fonts</h3>
+            <h3 class="u-mb-md">6.1 Google Fonts</h3>
             <p class="u-mb-md"><strong>Scopo:</strong> Caricamento dei font utilizzati nel sito</p>
-            <p class="u-mb-lg"><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="btn btn--secondary" style="display:inline-block; padding: 0.5rem 1rem;">Google Privacy Policy</a></p>
+            <p class="u-mb-lg"><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="btn btn--secondary btn--inline">Google Privacy Policy</a></p>
 
-            <h3 class="u-mb-md">6.3 Formspree</h3>
+            <h3 class="u-mb-md">6.2 Formspree</h3>
             <p class="u-mb-md"><strong>Scopo:</strong> Gestione del modulo di contatto</p>
-            <p class="u-mb-lg"><strong>Privacy Policy:</strong> <a href="https://formspree.io/privacy" target="_blank" rel="noopener" class="btn btn--secondary" style="display:inline-block; padding: 0.5rem 1rem;">Formspree Privacy Policy</a></p>
+            <p class="u-mb-lg"><strong>Privacy Policy:</strong> <a href="https://formspree.io/privacy" target="_blank" rel="noopener" class="btn btn--secondary btn--inline">Formspree Privacy Policy</a></p>
           </div>
         </div>
 
@@ -213,9 +179,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__brand">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </div>
+      <div class="footer__brand"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></div>
       <p class="footer__tagline">Digital Growth Studio</p>
       <div class="footer__socials">
         <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
@@ -232,10 +196,8 @@
   <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
-  <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
