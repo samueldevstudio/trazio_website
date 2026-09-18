@@ -2,9 +2,8 @@
    MAIN.JS
    Obiettivo: punto di ingresso unico del sito. Aspetta che il DOM
    sia pronto e poi inizializza, in ordine logico, tutti i moduli
-   definiti negli altri file JS (cursor.js, navbar.js, scroll.js,
-   animations.js). Gestisce anche il loading screen e i ripple
-   sui bottoni.
+   definiti negli altri file JS (navbar.js, scroll.js). Gestisce
+   anche il loading screen e i ripple sui bottoni.
 
    Perché un solo entry point: evita di dover aggiungere N tag
    <script> con N "DOMContentLoaded" sparsi — tutto parte da qui,
@@ -25,16 +24,12 @@ function runSafe(fn, name) {
 
 document.addEventListener('DOMContentLoaded', () => {
   runSafe(initLoader, 'initLoader');
-  runSafe(initCustomCursor, 'initCustomCursor');   // da cursor.js
   runSafe(initNavbar, 'initNavbar');                // da navbar.js
   runSafe(initScrollReveal, 'initScrollReveal');    // da scroll.js
   runSafe(initScrollProgress, 'initScrollProgress'); // da scroll.js
   runSafe(initBackToTop, 'initBackToTop');          // da scroll.js
   runSafe(initParallax, 'initParallax');            // da scroll.js
-  runSafe(initSkillBars, 'initSkillBars');          // da scroll.js
   runSafe(initStatCounters, 'initStatCounters');    // da scroll.js
-  runSafe(initParticles, 'initParticles');          // da animations.js
-  runSafe(initTypingEffect, 'initTypingEffect');    // da animations.js
   runSafe(initButtonRipple, 'initButtonRipple');
   runSafe(initContactForm, 'initContactForm');
   runSafe(initImageFallback, 'initImageFallback');

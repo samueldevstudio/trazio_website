@@ -35,25 +35,21 @@
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
   <div class="loader">
-    <div class="loader__logo">
-      <img src="assets/images/logo-light.svg" alt="TRAZIO">
-    </div>
+    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
   </div>
   <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </a>
-      <nav class="navbar__links">
+      <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
+      <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="about.html" class="is-active">Chi siamo</a>
         <a href="services.html">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html">Contatti</a>
       </nav>
-      <button class="navbar__hamburger" aria-label="Apri menu"><span></span><span></span><span></span></button>
+      <button class="navbar__hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -66,7 +62,7 @@
           <p class="section-subtitle">Tecnologia, strategia e design al servizio della crescita del tuo business.</p>
         </div>
 
-        <div class="grid grid--2" style="gap: var(--space-3xl); align-items:center;">
+        <div class="grid grid--2 u-gap-3xl u-items-center">
           <div class="reveal">
             <h3 class="service-card__title u-mb-md">Come è nata TRAZIO</h3>
             <p class="u-mb-lg">
@@ -89,7 +85,7 @@
           </div>
 
           <div class="reveal" data-delay="150">
-            <div class="hero__visual" style="aspect-ratio: 4/3;">
+            <div class="hero__visual">
               <img src="assets/images/mockup-laptop.png" alt="TRAZIO — progetti digitali su misura">
             </div>
           </div>
@@ -145,7 +141,7 @@
         <div class="grid grid--2 reveal">
           <div class="card">
             <h3 class="service-card__title">Sviluppo Web</h3>
-            <div class="project-card__tags" style="margin-top: var(--space-md);">
+            <div class="project-card__tags u-mt-md">
               <span class="tag">HTML / CSS / JS</span>
               <span class="tag">Responsive Design</span>
               <span class="tag">Performance</span>
@@ -154,7 +150,7 @@
           </div>
           <div class="card">
             <h3 class="service-card__title">Soluzioni Digitali</h3>
-            <div class="project-card__tags" style="margin-top: var(--space-md);">
+            <div class="project-card__tags u-mt-md">
               <span class="tag">Automazioni</span>
               <span class="tag">Landing Page</span>
               <span class="tag">CRM</span>
@@ -168,9 +164,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__brand">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </div>
+      <div class="footer__brand"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></div>
       <p class="footer__tagline">Digital Growth Studio</p>
       <div class="footer__socials">
         <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
@@ -187,12 +181,8 @@
   <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/cookie-consent.js"></script>
-  <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

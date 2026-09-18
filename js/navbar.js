@@ -2,8 +2,8 @@
    NAVBAR.JS
    Obiettivo: 1) aggiungere l'effetto "vetro" alla navbar quando
    si scrolla oltre una certa soglia, 2) gestire l'apertura/chiusura
-   del menu mobile con l'hamburger animato, 3) evidenziare il link
-   della sezione attualmente visibile (active link on scroll).
+   del menu mobile con l'hamburger animato (stato esposto anche
+   agli screen reader via aria-expanded).
    ============================================================ */
 
 function initNavbar() {
@@ -24,49 +24,32 @@ function initNavbar() {
 
   // --- 2. Menu mobile (hamburger) ---
   if (hamburger && links) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('is-open');
+    const setOpen = (isOpen) => {
+      hamburger.classList.toggle('is-open', isOpen);
       links.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
       // Blocco lo scroll del body quando il menu è aperto, per non
       // avere due scroll contemporanei (pagina + menu)
       document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    hamburger.addEventListener('click', () => {
+      setOpen(!hamburger.classList.contains('is-open'));
     });
 
     // Chiudo il menu quando si clicca un link (utile su mobile:
     // altrimenti il menu resta aperto sopra la sezione appena raggiunta)
     links.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        links.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', () => setOpen(false));
     });
-  }
 
-  // --- 3. Link attivo in base alla sezione visibile ---
-  // Uso IntersectionObserver invece di calcolare a mano gli scrollY:
-  // è più performante perché non gira ad ogni singolo evento di scroll,
-  // ma solo quando una sezione entra/esce realmente dallo schermo.
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.navbar__links a[href^="#"]');
-
-  if (sections.length && navLinks.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navLinks.forEach((link) => {
-              link.classList.toggle(
-                'is-active',
-                link.getAttribute('href') === `#${entry.target.id}`
-              );
-            });
-          }
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px' } // considera "attiva" la sezione quando occupa la zona centrale dello schermo
-    );
-
-    sections.forEach((section) => observer.observe(section));
+    // Esc chiude il menu, come ci si aspetta da qualsiasi pannello
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.classList.contains('is-open')) {
+        setOpen(false);
+        hamburger.focus();
+      }
+    });
   }
 }

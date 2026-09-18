@@ -114,20 +114,16 @@
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
   <div class="loader">
-    <div class="loader__logo">
-      <img src="assets/images/logo-light.svg" alt="TRAZIO">
-    </div>
+    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
   </div>
 
   <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="index.html" class="navbar__logo">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </a>
+      <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
 
-      <nav class="navbar__links">
+      <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html" class="is-active">Home</a>
         <a href="about.html">Chi siamo</a>
         <a href="services.html">Servizi</a>
@@ -135,7 +131,7 @@
         <a href="contact.html">Contatti</a>
       </nav>
 
-      <button class="navbar__hamburger" aria-label="Apri menu">
+      <button class="navbar__hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -164,9 +160,7 @@
             <a href="contact.html" class="btn btn--secondary">Richiedi consulenza</a>
           </div>
         </div>
-
-              </div>
-
+      </div>
     </section>
 
     <!-- CHI SIAMO -->
@@ -181,7 +175,7 @@
           </p>
         </div>
 
-        <div class="grid grid--2" style="align-items:center; gap: var(--space-3xl);">
+        <div class="grid grid--2 u-items-center u-gap-3xl">
           <div class="reveal">
             <p class="u-mb-lg">
               Siamo un team giovane e orientato ai risultati. Lavoriamo con attività locali,
@@ -251,43 +245,42 @@
 
         <div class="services-list reveal">
 
-  <article class="service-row">
-    <span class="service-number">01</span>
-    <div class="service-content">
-      <h3>Siti Web</h3>
-      <p>
-        Realizziamo siti web professionali, veloci e responsive,
-        progettati per comunicare il valore della tua attività.
-      </p>
-    </div>
-    <span class="service-arrow">↗</span>
-  </article>
+          <a href="services.html#siti-web" class="service-row">
+            <span class="service-number">01</span>
+            <div class="service-content">
+              <h3>Siti Web</h3>
+              <p>
+                Realizziamo siti web professionali, veloci e responsive,
+                progettati per comunicare il valore della tua attività.
+              </p>
+            </div>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </a>
 
-  <article class="service-row">
-    <span class="service-number">02</span>
-    <div class="service-content">
-      <h3>Landing Page</h3>
-      <p>
-        Pagine mirate per presentare servizi, prodotti e campagne
-        con un obiettivo chiaro: trasformare visite in clienti.
-      </p>
-    </div>
-    <span class="service-arrow">↗</span>
-  </article>
+          <a href="services.html#landing-page" class="service-row">
+            <span class="service-number">02</span>
+            <div class="service-content">
+              <h3>Landing Page</h3>
+              <p>
+                Pagine mirate per presentare servizi, prodotti e campagne
+                con un obiettivo chiaro: trasformare visite in clienti.
+              </p>
+            </div>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </a>
 
-  <article class="service-row">
-    <span class="service-number">03</span>
-    <div class="service-content">
-      <h3>Automazioni & Custom</h3>
-      <p>
-        Creiamo strumenti digitali personalizzati per semplificare
-        processi e migliorare il lavoro quotidiano.
-      </p>
-    </div>
-    <span class="service-arrow">↗</span>
-  </article>
+          <a href="services.html#soluzioni-custom" class="service-row">
+            <span class="service-number">03</span>
+            <div class="service-content">
+              <h3>Automazioni & Custom</h3>
+              <p>
+                Creiamo strumenti digitali personalizzati per semplificare
+                processi e migliorare il lavoro quotidiano.
+              </p>
+            </div>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </a>
 
-</div>
         </div>
 
         <div class="reveal u-text-center u-mt-3xl">
@@ -372,16 +365,20 @@
 
         </div>
 
-        <div class="grid grid--2 reveal" style="margin-top: var(--space-4xl); text-align:center; max-width:500px; margin-inline:auto;">
-          <div class="stat-item">
-            <div class="stat-item__number">100%</div>
-            <div class="stat-item__label">Design responsive</div>
+        <dl class="facts reveal">
+          <div class="fact">
+            <dd>2 persone</dd>
+            <dt>su ogni progetto: nessun cliente viene seguito da uno solo di noi</dt>
           </div>
-          <div class="stat-item">
-            <div class="stat-item__number" data-count="2">0</div>
-            <div class="stat-item__label">Settimane medie di consegna</div>
+          <div class="fact">
+            <dd>24 ore</dd>
+            <dt>lavorative per una risposta alla tua richiesta</dt>
           </div>
-        </div>
+          <div class="fact">
+            <dd>Gratuita</dd>
+            <dt>la prima consulenza, senza impegno</dt>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -390,8 +387,8 @@
       <div class="container">
         <div class="cta-banner reveal">
           <h2>Hai un progetto in mente?</h2>
-          <p>Trasformiamo la tua idea in un prodotto digitale moderno, efficace e pensato per crescere.</p>
-          <a href="contact.html" class="btn btn--secondary">Inizia ora — è gratuito</a>
+          <p>Scrivici due righe su cosa fai e cosa vorresti ottenere: la prima consulenza è gratuita e ti rispondiamo entro 24 ore lavorative.</p>
+          <a href="contact.html" class="btn btn--secondary">Raccontaci il progetto</a>
         </div>
       </div>
     </section>
@@ -405,8 +402,9 @@
           <p class="section-subtitle">Hai un'idea in mente? Scrivici, troviamo insieme la soluzione migliore.</p>
         </div>
 
-        <div class="grid grid--2" style="gap: var(--space-3xl); align-items:start;">
-          <form class="contact-form reveal">
+        <div class="grid grid--2 u-gap-3xl u-items-start">
+          <form class="contact-form reveal" action="https://formspree.io/f/xwvgbkjb" method="POST">
+            <input type="hidden" name="_subject" value="Nuova richiesta dal sito TRAZIO">
             <div class="form-group">
               <label for="name">Nome</label>
               <input type="text" id="name" name="name" required placeholder="Il tuo nome">
@@ -418,6 +416,14 @@
             <div class="form-group">
               <label for="message">Messaggio</label>
               <textarea id="message" name="message" required placeholder="Raccontaci del tuo progetto..."></textarea>
+            </div>
+            <div class="form-group form-group--checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" name="privacy_consent" required>
+                <span>
+                  Ho letto e accetto la <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> e il trattamento dei miei dati personali per rispondere alla richiesta.
+                </span>
+              </label>
             </div>
             <button type="submit" class="btn btn--primary">Invia richiesta</button>
           </form>
@@ -444,9 +450,7 @@
   <footer class="footer">
     <div class="container">
 
-      <div class="footer__brand">
-        <img src="assets/images/logo-light.svg" alt="TRAZIO">
-      </div>
+      <div class="footer__brand"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></div>
       <p class="footer__tagline">Digital Growth Studio</p>
       <div class="footer__socials">
         <a href="mailto:info@trazio.it" aria-label="Email">Email</a>
@@ -465,11 +469,8 @@
 
   <script src="js/config.js"></script>
   <script src="js/projects.js"></script>
-  <script src="js/cookie-consent.js"></script>
-  <script src="js/cursor.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

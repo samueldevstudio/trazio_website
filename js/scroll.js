@@ -74,28 +74,6 @@ function initParallax() {
   }, { passive: true });
 }
 
-// --- Skill bars: animo il riempimento quando la sezione skills entra in vista ---
-function initSkillBars() {
-  const skillFills = document.querySelectorAll('.skill-bar__fill');
-  if (!skillFills.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          const percent = target.dataset.percent || '0';
-          target.style.width = `${percent}%`;
-          obs.unobserve(target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  skillFills.forEach((fill) => observer.observe(fill));
-}
-
 // --- Contatori statistici animati (0 -> valore finale) ---
 function initStatCounters() {
   const counters = document.querySelectorAll('.stat-item__number[data-count]');

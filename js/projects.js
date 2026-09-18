@@ -8,6 +8,8 @@ class ProjectsManager {
   }
 
   async init() {
+    // Nessuna griglia in pagina: niente fetch inutile
+    if (!document.querySelector('.projects-grid')) return;
     try {
       const response = await fetch('js/projects.json');
       const data = await response.json();
@@ -15,7 +17,6 @@ class ProjectsManager {
       this.renderProjects();
     } catch (error) {
       console.error('Errore nel caricamento dei progetti:', error);
-      this.renderFallback();
     }
   }
 
@@ -100,11 +101,6 @@ class ProjectsManager {
       'on_hold': 'In pausa'
     };
     return statusLabels[status] || '';
-  }
-
-  renderFallback() {
-    // Fallback se il JSON non carica - mostra i progetti hardcoded
-    console.warn('Usando fallback per i progetti');
   }
 }
 

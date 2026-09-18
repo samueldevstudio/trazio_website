@@ -1,41 +1,50 @@
 ## TRAZIO WEBSITE
 
+Sito statico (HTML, CSS, JavaScript vanilla) pubblicato su GitHub Pages con dominio `www.trazio.it`.
+
 ## Struttura del progetto
 
 ```
-portfolio/
-├── index.html
-├── about.html
-├── services.html
-├── projects.html
-├── contact.html
+TRAZIO/
+├── index.html              → home
+├── about.html              → chi siamo
+├── services.html           → servizi, pacchetti, manutenzione, calcolatore, FAQ
+├── projects.html           → progetti (caricati da js/projects.json)
+├── contact.html            → contatti (form Formspree)
 ├── 404.html
-├── robots.txt
-├── sitemap.xml
+├── privacy-policy.html · cookie-policy.html · terms-of-service.html
+├── robots.txt · sitemap.xml · CNAME
 ├── css/
-│   ├── variables.css   → design system (colori, font, spaziature)
-│   ├── style.css       → stili base e componenti
-│   ├── animations.css  → keyframes
-│   └── responsive.css  → media query mobile/tablet
+│   ├── variables.css       → design system (colori, font, spaziature)
+│   ├── style.css           → reset, layout e tutti i componenti
+│   ├── animations.css      → keyframes e animazione d'entrata della hero
+│   └── responsive.css      → media query tablet/mobile + reduced motion
 ├── js/
-│   ├── main.js         → entry point, orchestratore
-│   ├── cursor.js       → cursore custom
-│   ├── navbar.js       → navbar sticky + menu mobile
-│   ├── scroll.js       → reveal, progress bar, back-to-top, contatori
-│   └── animations.js   → particelle hero + typing effect
+│   ├── config.js           → endpoint Formspree e dati del sito
+│   ├── main.js             → entry point: loader, ripple, form, fallback immagini
+│   ├── navbar.js           → navbar sticky + menu mobile accessibile
+│   ├── scroll.js           → reveal, progress bar, back-to-top, parallax
+│   ├── projects.js         → render dei progetti da projects.json
+│   ├── projects.json       → dati dei progetti
+│   └── calculator.js       → calcolatore preventivo (solo services.html)
 ├── assets/
-│   ├── images/         
-│   ├── icons/          
-│   ├── videos/
-│   └── fonts/
-└── projects/
-    ├── lucifero.html
-    ├── toolkit.html
-    ├── training.html
-    └── molinari.html
+│   ├── images/             → cover progetti, pattern, og-cover (png + svg sorgente)
+│   ├── icons/favicon.svg
+│   └── files/curriculum.pdf
+├── projects/               → pagine dettaglio progetto
+└── TRAZIO_BRAND_KIT_3/     → brand kit (logo, simbolo, guidelines, mockup)
 ```
 
+## Note
 
-## Estensioni future (già previste dall'architettura)
+- **Logo**: in navbar, loader e footer il logo è composto da simbolo SVG inline + parola "TRAZIO" in Poppins (classi `.brand-mark` / `.brand-word`), così resta nitido a ogni dimensione. `assets/images/logo-white.svg` è il lockup completo per usi esterni su fondo scuro, `logo-light.svg` la versione per fondo chiaro (usata nei dati strutturati).
+- **Cookie**: il sito non imposta cookie propri e non usa analytics, quindi non c'è banner di consenso. Se in futuro si aggiunge un servizio di analytics, va reintrodotto un banner e aggiornata `cookie-policy.html`.
+- **Prezzi**: i prezzi del calcolatore (`js/calculator.js`) devono coincidere con quelli scritti in `services.html`.
 
-Grazie alla separazione in variabili CSS e moduli JS indipendenti, il progetto è pronto per essere esteso con: blog, dashboard cliente, autenticazione, CMS, multi-lingua, sistema di prenotazione, chatbot AI, filtri portfolio — senza dover riscrivere le fondamenta
+## Sviluppo locale
+
+```bash
+python3 -m http.server 8000
+```
+
+Poi apri http://localhost:8000. Vedi `README_DEV.md` per la guida completa e `DEPLOYMENT.md` per la pubblicazione.
