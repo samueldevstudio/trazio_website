@@ -31,19 +31,18 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
-  <div class="loader"><div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div></div>
-  <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="../index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
       <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="../index.html">Home</a>
-        <a href="../about.html">Chi siamo</a>
+        <a href="../about.html">Chi sono</a>
         <a href="../services.html">Servizi</a>
         <a href="../projects.html" class="is-active">Progetti</a>
         <a href="../contact.html">Contatti</a>
@@ -54,73 +53,67 @@
 
   <main id="main-content">
     <section class="section section--page-top">
-      <div class="container u-max-w-md">
-
-        <div class="reveal u-mb-2xl">
-          <span class="section-eyebrow">Progetto</span>
+      <div class="container">
+        <header class="project-hero reveal">
+          <span class="section-eyebrow">Sperimentazione</span>
           <h1 class="section-title">Smart Training Planner</h1>
-          <div class="project-card__tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Firebase</span>
+          <p class="project-hero__meta">JavaScript · Firebase</p>
+          <p class="section-subtitle">Applicazione web per pianificare allenamenti in modo intelligente, tenendo traccia dei progressi e adattando il piano nel tempo.</p>
+        </header>
+
+        <figure class="project-cover reveal">
+          <img src="../assets/images/training-cover.png" alt="Smart Training Planner - copertina progetto">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="container">
+        <div class="detail-rows">
+          <div class="detail-row reveal">
+            <h2>Il problema</h2>
+            <div>
+              <p>Pianificare allenamenti efficaci senza uno strumento dedicato porta spesso a piani disorganizzati o a perdere traccia dei progressi reali.</p>
+            </div>
+          </div>
+          <div class="detail-row reveal">
+            <h2>La soluzione</h2>
+            <div>
+              <p>Un planner digitale che organizza gli allenamenti, salva lo storico su Firebase e suggerisce progressioni in base ai dati inseriti.</p>
+            </div>
+          </div>
+          <div class="detail-row reveal">
+            <h2>Funzionalità principali</h2>
+            <div>
+              <ul class="check-list">
+                <li>Creazione piani di allenamento</li>
+                <li>Storico progressi salvato su cloud</li>
+                <li>Design responsive</li>
+                <li>Suggerimenti di progressione (in sviluppo)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="detail-row reveal">
+            <h2>Tecnologie utilizzate</h2>
+            <div>
+              <div class="project-card__tags"><span class="tag">JavaScript</span><span class="tag">Firebase</span><span class="tag">HTML/CSS</span></div>
+            </div>
+          </div>
+          <div class="detail-row reveal">
+            <h2>Cosa ho imparato</h2>
+            <div>
+              <p>Integrare un database cloud (Firebase) in un'applicazione front-end e gestire dati persistenti in modo affidabile.</p>
+            </div>
+          </div>
+          <div class="detail-row reveal">
+            <h2>Sviluppi futuri</h2>
+            <div>
+              <p>Aggiungere grafici di andamento dei progressi e suggerimenti automatici basati sui dati storici dell'utente.</p>
+            </div>
           </div>
         </div>
 
-        <div class="card reveal media-card">
-          <img src="../assets/images/training-cover.png" alt="Smart Training Planner - copertina progetto" >
-        </div>
-
-        <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">Overview</h2>
-          <p>Applicazione web per pianificare allenamenti in modo intelligente, tenendo traccia dei
-            progressi e adattando il piano nel tempo.</p>
-        </div>
-
-        <div class="grid grid--2 reveal u-mb-3xl">
-          <div class="card">
-            <h3 class="service-card__title">Il Problema</h3>
-            <p>Pianificare allenamenti efficaci senza uno strumento dedicato porta spesso a piani
-              disorganizzati o a perdere traccia dei progressi reali.</p>
-          </div>
-          <div class="card">
-            <h3 class="service-card__title">La Soluzione</h3>
-            <p>Un planner digitale che organizza gli allenamenti, salva lo storico su Firebase e
-              suggerisce progressioni in base ai dati inseriti.</p>
-          </div>
-        </div>
-
-        <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">Tecnologie Utilizzate</h2>
-          <div class="project-card__tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">HTML/CSS</span>
-          </div>
-        </div>
-
-        <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">Funzionalità Principali</h2>
-          <div class="grid grid--2">
-            <div class="card feature-item"><p>Creazione piani di allenamento</p></div>
-            <div class="card feature-item"><p>Storico progressi salvato su cloud</p></div>
-            <div class="card feature-item"><p>Design responsive</p></div>
-            <div class="card feature-item"><p>Suggerimenti di progressione (in sviluppo)</p></div>
-          </div>
-        </div>
-
-        <div class="grid grid--2 reveal u-mb-3xl">
-          <div class="card">
-            <h3 class="service-card__title">Cosa ho imparato</h3>
-            <p>Integrare un database cloud (Firebase) in un'applicazione front-end e gestire dati
-              persistenti in modo affidabile.</p>
-          </div>
-          <div class="card">
-            <h3 class="service-card__title">Sviluppi Futuri</h3>
-            <p>Aggiungere grafici di andamento dei progressi e suggerimenti automatici basati sui dati
-              storici dell'utente.</p>
-          </div>
-        </div>
-
-        <div class="reveal u-text-center">
+        <div class="u-mt-3xl reveal">
           <a href="../projects.html" class="btn btn--secondary">← Torna ai progetti</a>
         </div>
       </div>
@@ -143,7 +136,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+  <button class="back-to-top" aria-label="Torna su">↑</button>
 
   <script src="../js/config.js"></script>
   <script src="../js/navbar.js"></script>

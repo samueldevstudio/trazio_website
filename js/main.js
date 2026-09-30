@@ -2,8 +2,7 @@
    MAIN.JS
    Obiettivo: punto di ingresso unico del sito. Aspetta che il DOM
    sia pronto e poi inizializza, in ordine logico, tutti i moduli
-   definiti negli altri file JS (navbar.js, scroll.js). Gestisce
-   anche il loading screen e i ripple sui bottoni.
+   definiti negli altri file JS (navbar.js, scroll.js).
 
    Perché un solo entry point: evita di dover aggiungere N tag
    <script> con N "DOMContentLoaded" sparsi — tutto parte da qui,
@@ -23,14 +22,10 @@ function runSafe(fn, name) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  runSafe(initLoader, 'initLoader');
   runSafe(initNavbar, 'initNavbar');                // da navbar.js
   runSafe(initScrollReveal, 'initScrollReveal');    // da scroll.js
-  runSafe(initScrollProgress, 'initScrollProgress'); // da scroll.js
   runSafe(initBackToTop, 'initBackToTop');          // da scroll.js
-  runSafe(initParallax, 'initParallax');            // da scroll.js
-  runSafe(initStatCounters, 'initStatCounters');    // da scroll.js
-  runSafe(initButtonRipple, 'initButtonRipple');
+  runSafe(initMethodProgress, 'initMethodProgress'); // da scroll.js
   runSafe(initContactForm, 'initContactForm');
   runSafe(initImageFallback, 'initImageFallback');
   runSafe(initRevealFallback, 'initRevealFallback');
@@ -60,49 +55,6 @@ function initImageFallback() {
       wrapper.classList.add('is-missing');
       // Uso il testo alternativo dell'immagine come etichetta del placeholder
       wrapper.dataset.fallbackLabel = img.alt || 'Anteprima non disponibile';
-    });
-  });
-}
-
-/* --- Loading screen: nascosto non appena la pagina è pronta. La
-   dissolvenza è già gestita dalla transition CSS di 0.6s su .is-hidden,
-   quindi non serve un ulteriore ritardo artificiale prima di toglierlo:
-   rallenterebbe solo la percezione di velocità del sito. --- */
-function initLoader() {
-  const loader = document.querySelector('.loader');
-  const hero = document.querySelector('.hero');
-  if (!loader) return;
-
-  const hide = () => {
-    loader.classList.add('is-hidden');
-    if (hero) hero.classList.add('is-loaded'); // fa partire le animazioni di entrata della hero
-  };
-
-  if (document.readyState === 'complete') {
-    hide();
-  } else {
-    window.addEventListener('load', hide);
-  }
-}
-
-/* --- Effetto ripple sui bottoni: genera un cerchio che si espande
-   dal punto esatto del click, poi si rimuove da solo --- */
-function initButtonRipple() {
-  document.querySelectorAll('.btn').forEach((btn) => {
-    btn.addEventListener('click', function (e) {
-      const rect = this.getBoundingClientRect();
-      const ripple = document.createElement('span');
-      const size = Math.max(rect.width, rect.height);
-
-      ripple.className = 'btn__ripple';
-      ripple.style.width = ripple.style.height = `${size}px`;
-      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-
-      this.appendChild(ripple);
-      // Rimuovo l'elemento dopo la durata dell'animazione (0.6s in CSS),
-      // altrimenti si accumulano nodi inutili nel DOM
-      setTimeout(() => ripple.remove(), 600);
     });
   });
 }

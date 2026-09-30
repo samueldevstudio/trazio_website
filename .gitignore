@@ -2,3 +2,14 @@
 **/.DS_Store
 BACKUP_*/
 _backup/
+
+# Brand kit: resta solo in locale, non va pubblicato sul sito né su GitHub
+TRAZIO_BRAND_KIT_3/
+
+# Documentazione interna: resta solo in locale, non va pubblicata
+CLAUDE.md
+README_DEV.md
+DEPLOYMENT.md
+
+# Curriculum personale: resta solo in locale
+assets/files/
