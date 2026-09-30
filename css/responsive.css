@@ -54,11 +54,18 @@
     padding: var(--space-3xl) var(--space-xl);
     gap: var(--space-xl);
     transform: translateX(100%);
-    transition: transform var(--transition-base);
+    /* chiuso: nascosto anche a tastiera e screen reader (visibility),
+       ma solo dopo che il pannello è uscito, così l'animazione resta */
+    visibility: hidden;
+    transition: transform var(--transition-base), visibility 0s linear 0.35s;
     z-index: var(--z-navbar);
   }
 
-  .navbar__links.is-open { transform: translateX(0); }
+  .navbar__links.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform var(--transition-base), visibility 0s;
+  }
 
   .navbar__links a { font-size: var(--fs-body-lg); }
 
