@@ -35,7 +35,14 @@ function initNavbar() {
     };
 
     hamburger.addEventListener('click', () => {
-      setOpen(!hamburger.classList.contains('is-open'));
+      const willOpen = !hamburger.classList.contains('is-open');
+      setOpen(willOpen);
+      // All'apertura porto il focus sul primo link: nell'HTML i link
+      // vengono prima del bottone, quindi il Tab non ci arriverebbe
+      if (willOpen) {
+        const firstLink = links.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
     });
 
     // Chiudo il menu quando si clicca un link (utile su mobile:
