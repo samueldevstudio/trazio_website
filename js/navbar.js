@@ -1,6 +1,6 @@
 /* ============================================================
    NAVBAR.JS
-   Obiettivo: 1) aggiungere l'effetto "vetro" alla navbar quando
+   Obiettivo: 1) dare alla navbar uno sfondo pieno quando
    si scrolla oltre una certa soglia, 2) gestire l'apertura/chiusura
    del menu mobile con l'hamburger animato (stato esposto anche
    agli screen reader via aria-expanded).
@@ -12,7 +12,7 @@ function initNavbar() {
   const links = document.querySelector('.navbar__links');
   if (!navbar) return;
 
-  // --- 1. Effetto glass on scroll ---
+  // --- 1. Sfondo pieno on scroll ---
   // Uso una soglia (50px) invece di "scrollY > 0" per evitare che
   // l'effetto scatti con un minimo scroll accidentale (più naturale).
   const SCROLL_THRESHOLD = 50;

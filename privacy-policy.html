@@ -24,21 +24,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
-  <div class="loader">
-    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
-  </div>
-  <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
       <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
-        <a href="about.html">Chi siamo</a>
+        <a href="about.html">Chi sono</a>
         <a href="services.html">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html">Contatti</a>
@@ -49,35 +46,36 @@
 
   <main id="main-content">
     <section class="section section--page-top">
-      <div class="container">
+      <div class="container legal">
         <div class="section-header reveal">
           <span class="section-eyebrow">Legal</span>
           <h1 class="section-title">Privacy Policy</h1>
           <p class="section-subtitle">Informativa sul trattamento dei dati personali - Regolamento (UE) 2016/679 (GDPR)</p>
         </div>
 
-        <div class="card reveal u-mb-3xl">
-          <p class="u-mb-lg"><strong>Ultimo aggiornamento:</strong> 13 Settembre 2026</p>
-          <p>Questa informativa descrive come TRAZIO Digital Growth Studio raccoglie, utilizza e protegge i tuoi dati personali quando utilizzi il nostro sito web www.trazio.it.</p>
+        <div class="legal__intro reveal u-mb-3xl">
+          <p class="u-mb-lg"><strong>Ultimo aggiornamento:</strong> 30 Settembre 2026</p>
+          <p>Questa informativa descrive come Samuel Gentile, che opera con il marchio TRAZIO Digital Growth Studio, raccoglie, utilizza e protegge i tuoi dati personali quando utilizzi il sito web www.trazio.it.</p>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">1. Titolare del Trattamento</h2>
-          <div class="card">
-            <p class="u-mb-md"><strong>Titolare del trattamento:</strong> TRAZIO Digital Growth Studio</p>
+          <h2 class="legal__title">1. Titolare del Trattamento</h2>
+          <div class="legal__body">
+            <p class="u-mb-md"><strong>Titolare del trattamento:</strong> Samuel Gentile, che opera con il marchio TRAZIO Digital Growth Studio</p>
             <p class="u-mb-md"><strong>Contatti:</strong></p>
             <ul class="u-mb-md">
-              <li>Email: info@trazio.it</li>
+              <li>Email: <a href="mailto:info@trazio.it">info@trazio.it</a></li>
+              <li>Telefono: <a href="tel:+393505911023">+39 350 591 1023</a></li>
               <li>Sito web: www.trazio.it</li>
             </ul>
-            <p>Per qualsiasi domanda relativa al trattamento dei tuoi dati personali, puoi contattarci all'indirizzo email sopra indicato.</p>
+            <p>Per qualsiasi domanda relativa al trattamento dei tuoi dati personali, puoi scrivere all'indirizzo email sopra indicato.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">2. Dati Personali Raccolti</h2>
-          <div class="card">
-            <p class="u-mb-md">Raccogliamo i seguenti tipi di dati personali:</p>
+          <h2 class="legal__title">2. Dati Personali Raccolti</h2>
+          <div class="legal__body">
+            <p class="u-mb-md">TRAZIO raccoglie i seguenti tipi di dati personali:</p>
             
             <h3 class="u-mb-md">2.1 Dati forniti volontariamente</h3>
             <ul class="u-mb-lg">
@@ -88,39 +86,36 @@
 
             <h3 class="u-mb-md">2.2 Dati raccolti automaticamente</h3>
             <ul class="u-mb-lg">
-              <li><strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, sistema operativo, pagine visitate, tempo di permanenza</li>
+              <li><strong>Dati tecnici di connessione:</strong> l'indirizzo IP e i dati tecnici della richiesta (tipo di browser, sistema operativo) vengono ricevuti dai fornitori che erogano il sito — GitHub Pages (hosting) e Google Fonts (caratteri tipografici) — al solo scopo di mostrare le pagine. TRAZIO non ha accesso a questi dati e non li utilizza per analisi, statistiche o profilazione</li>
               <li><strong>Cookie:</strong> il sito non installa cookie propri né strumenti di analisi (vedi Cookie Policy)</li>
             </ul>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">3. Finalità del Trattamento</h2>
-          <div class="card">
+          <h2 class="legal__title">3. Finalità del Trattamento</h2>
+          <div class="legal__body">
             <p class="u-mb-md">I tuoi dati personali vengono trattati per le seguenti finalità:</p>
             
             <h3 class="u-mb-md">3.1 Finalità principali</h3>
             <ul class="u-mb-lg">
               <li><strong>Risposta alle richieste:</strong> rispondere alle tue richieste di informazioni inviate tramite il modulo di contatto</li>
               <li><strong>Prestazione dei servizi:</strong> fornire i servizi digitali richiesti (siti web, automazioni, consulenze)</li>
-              <li><strong>Comunicazione commerciale:</strong> inviare comunicazioni relative ai nostri servizi, previo consenso esplicito</li>
+              <li><strong>Comunicazione commerciale:</strong> inviare comunicazioni relative ai servizi di TRAZIO, previo consenso esplicito</li>
             </ul>
 
-            <h3 class="u-mb-md">3.2 Finalità secondarie</h3>
-            <ul>
-              <li><strong>Miglioramento del sito:</strong> analizzare i dati di navigazione per migliorare l'esperienza utente</li>
-              <li><strong>Analisi e statistiche:</strong> raccogliere dati statistici sull'utilizzo del sito</li>
-            </ul>
+            <h3 class="u-mb-md">3.2 Dati di navigazione</h3>
+            <p>I dati di navigazione non vengono trattati per finalità di analisi, statistica o profilazione: il sito non utilizza strumenti di questo tipo.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">4. Base Giuridica del Trattamento</h2>
-          <div class="card">
+          <h2 class="legal__title">4. Base Giuridica del Trattamento</h2>
+          <div class="legal__body">
             <p class="u-mb-md">Il trattamento dei tuoi dati personali si basa sulle seguenti basi giuridiche:</p>
             <ul>
               <li><strong>Consenso:</strong> per il trattamento dei dati forniti volontariamente tramite il modulo di contatto</li>
-              <li><strong>Interesse legittimo:</strong> per l'analisi dei dati di navigazione e il miglioramento del sito</li>
+              <li><strong>Interesse legittimo:</strong> per il funzionamento tecnico e la sicurezza del sito (erogazione delle pagine da parte dei fornitori tecnici)</li>
               <li><strong>Esecuzione di un contratto:</strong> per la prestazione dei servizi digitali richiesti</li>
               <li><strong>Obbligo di legge:</strong> per adempiere agli obblighi legali contabili e fiscali</li>
             </ul>
@@ -128,12 +123,13 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">5. Destinatari dei Dati</h2>
-          <div class="card">
+          <h2 class="legal__title">5. Destinatari dei Dati</h2>
+          <div class="legal__body">
             <p class="u-mb-md">I tuoi dati personali possono essere condivisi con:</p>
             <ul class="u-mb-lg">
+              <li><strong>GitHub (GitHub Pages):</strong> servizio di hosting che ospita il sito e riceve i dati tecnici di connessione necessari a mostrare le pagine</li>
               <li><strong>Formspree:</strong> servizio terzo per la gestione del modulo di contatto (vedi Cookie Policy)</li>
-              <li><strong>Google:</strong> per l'utilizzo di Google Fonts (caricamento dei caratteri tipografici del sito). Non utilizziamo attualmente Google Analytics (vedi Cookie Policy)</li>
+              <li><strong>Google:</strong> per l'utilizzo di Google Fonts (caricamento dei caratteri tipografici del sito). Google Analytics non è attualmente utilizzato (vedi Cookie Policy)</li>
               <li><strong>Partner tecnici:</strong> fornitori di servizi tecnici necessari per il funzionamento del sito</li>
             </ul>
             <p>I tuoi dati non verranno venduti a terze parti né trasferiti al di fuori dell'Unione Europea senza adeguate garanzie.</p>
@@ -141,12 +137,12 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">6. Periodo di Conservazione</h2>
-          <div class="card">
+          <h2 class="legal__title">6. Periodo di Conservazione</h2>
+          <div class="legal__body">
             <p class="u-mb-md">I tuoi dati personali vengono conservati per i seguenti periodi:</p>
             <ul class="u-mb-lg">
               <li><strong>Dati del modulo di contatto:</strong> fino a 2 anni dall'ultima comunicazione o fino a revoca del consenso</li>
-              <li><strong>Dati di navigazione:</strong> fino a 24 mesi per finalità statistiche</li>
+              <li><strong>Dati tecnici di connessione:</strong> non conservati da TRAZIO; i fornitori tecnici (GitHub, Google) li conservano secondo le rispettive policy</li>
               <li><strong>Dati contrattuali:</strong> per 10 anni come previsto dalle normative fiscali italiane</li>
             </ul>
             <p>Al termine del periodo di conservazione, i dati verranno cancellati o anonimizzati in modo sicuro.</p>
@@ -154,8 +150,8 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">7. I Tuoi Diritti</h2>
-          <div class="card">
+          <h2 class="legal__title">7. I Tuoi Diritti</h2>
+          <div class="legal__body">
             <p class="u-mb-md">In qualità di interessato, hai i seguenti diritti ai sensi del GDPR:</p>
             <ul class="u-mb-lg">
               <li><strong>Diritto di accesso:</strong> conoscere quali tuoi dati vengono trattati</li>
@@ -166,34 +162,34 @@
               <li><strong>Diritto di opposizione:</strong> opporti al trattamento per interessi legittimi</li>
               <li><strong>Diritto di revoca del consenso:</strong> revocare il consenso in qualsiasi momento</li>
             </ul>
-            <p>Per esercitare questi diritti, invia una richiesta a info@trazio.it. Risponderemo entro 30 giorni.</p>
+            <p>Per esercitare questi diritti, invia una richiesta a info@trazio.it. Riceverai risposta entro 30 giorni.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">8. Cookie</h2>
-          <div class="card">
-            <p class="u-mb-md">Il nostro sito non installa cookie propri e non utilizza strumenti di tracciamento o analisi statistica. Per i dettagli sui servizi terzi (Google Fonts, Formspree), consulta la nostra <a href="cookie-policy.html" class="btn btn--secondary btn--inline">Cookie Policy</a></p>
+          <h2 class="legal__title">8. Cookie</h2>
+          <div class="legal__body">
+            <p class="u-mb-md">Il sito non installa cookie propri e non utilizza strumenti di tracciamento o analisi statistica. Per i dettagli sui servizi terzi (Google Fonts, Formspree), consulta la <a href="cookie-policy.html" class="btn btn--secondary btn--inline">Cookie Policy</a></p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">9. Trasferimento Internazionale dei Dati</h2>
-          <div class="card">
-            <p class="u-mb-md">Alcuni dei nostri servizi terzi (Formspree, Google) possono trasferire i dati al di fuori dell'Unione Europea. Questi trasferimenti avvengono in conformità con le clausole contrattuali standard approvate dalla Commissione Europea o altre garanzie adeguate.</p>
+          <h2 class="legal__title">9. Trasferimento Internazionale dei Dati</h2>
+          <div class="legal__body">
+            <p class="u-mb-md">Alcuni dei servizi terzi utilizzati (GitHub, Formspree, Google) possono trasferire i dati al di fuori dell'Unione Europea. Questi trasferimenti avvengono in conformità con le clausole contrattuali standard approvate dalla Commissione Europea o altre garanzie adeguate.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">10. Modifiche alla Privacy Policy</h2>
-          <div class="card">
-            <p>Ci riserviamo il diritto di modificare questa privacy policy in qualsiasi momento. Le modifiche verranno pubblicate su questa pagina con l'indicazione della data di aggiornamento. Ti invitiamo a controllare periodicamente questa pagina per rimanere informato.</p>
+          <h2 class="legal__title">10. Modifiche alla Privacy Policy</h2>
+          <div class="legal__body">
+            <p>TRAZIO si riserva il diritto di modificare questa privacy policy in qualsiasi momento. Le modifiche verranno pubblicate su questa pagina con l'indicazione della data di aggiornamento. È consigliabile controllare periodicamente questa pagina per rimanere informato.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">11. Reclami</h2>
-          <div class="card">
+          <h2 class="legal__title">11. Reclami</h2>
+          <div class="legal__body">
             <p class="u-mb-md">Se ritieni che il trattamento dei tuoi dati violi le normative sulla protezione dei dati, hai il diritto di presentare reclamo all'Autorità Garante per la Protezione dei Dati Personali italiana:</p>
             <ul>
               <li>Sito web: www.garanteprivacy.it</li>
@@ -202,7 +198,7 @@
           </div>
         </div>
 
-        <div class="reveal u-text-center">
+        <div class="reveal">
           <a href="index.html" class="btn btn--primary">Torna alla Home</a>
         </div>
       </div>
@@ -225,7 +221,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+  <button class="back-to-top" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
   <script src="js/navbar.js"></script>

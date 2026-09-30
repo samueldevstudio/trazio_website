@@ -32,21 +32,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
-  <div class="loader">
-    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
-  </div>
-  <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
       <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
-        <a href="about.html">Chi siamo</a>
+        <a href="about.html">Chi sono</a>
         <a href="services.html" class="is-active">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html">Contatti</a>
@@ -55,26 +52,28 @@
     </div>
   </header>
 
-<main id="main-content">
+  <main id="main-content">
 
     <!-- INTRO + SERVIZI -->
     <section class="section section--page-top" id="servizi">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Servizi</span>
-          <h1 class="section-title">Siti web, landing page e strumenti su misura</h1>
-          <p class="section-subtitle">
-            Lavoriamo con aziende, professionisti e attività locali. Ogni progetto parte da
-            un'analisi, ha un prezzo definito prima di iniziare e finisce online.
-          </p>
+      <div class="container split">
+        <div class="split__aside reveal">
+          <div class="section-header">
+            <span class="section-eyebrow">Servizi</span>
+            <h1 class="section-title">Siti web, landing page e strumenti su misura</h1>
+            <p class="section-subtitle">
+              Lavoro con aziende, professionisti e attività locali. Ogni progetto parte da
+              un'analisi, ha un prezzo definito prima di iniziare e finisce online.
+            </p>
+          </div>
+          <a href="#pacchetti" class="link-arrow">Pacchetti e prezzi</a>
         </div>
 
-        <div class="services-list reveal">
+        <div class="services-list reveal stagger">
 
           <article class="service-row" id="siti-web">
-            <span class="service-number">01</span>
             <div class="service-content">
-              <h3>Siti web</h3>
+              <h2>Siti web</h2>
               <p>
                 Design professionale, responsive e ottimizzato per offrire
                 una presenza online efficace. Da 5 sezioni in su, con modulo contatti
@@ -84,9 +83,8 @@
           </article>
 
           <article class="service-row" id="landing-page">
-            <span class="service-number">02</span>
             <div class="service-content">
-              <h3>Landing page</h3>
+              <h2>Landing page</h2>
               <p>
                 Pagine studiate per presentare prodotti, servizi o campagne
                 con un focus sulla conversione: un solo obiettivo, un solo invito all'azione.
@@ -95,9 +93,8 @@
           </article>
 
           <article class="service-row" id="menu-digitali">
-            <span class="service-number">03</span>
             <div class="service-content">
-              <h3>Menu digitali</h3>
+              <h2>Menu digitali</h2>
               <p>
                 Menu consultabili da smartphone per ristoranti, bar e locali:
                 aggiornabili in autonomia, senza ristampare nulla.
@@ -106,9 +103,8 @@
           </article>
 
           <article class="service-row" id="restyling">
-            <span class="service-number">04</span>
             <div class="service-content">
-              <h3>Restyling</h3>
+              <h2>Restyling</h2>
               <p>
                 Rinnovo completo di siti esistenti migliorando
                 grafica, prestazioni e usabilità, senza perdere i contenuti che già funzionano.
@@ -117,9 +113,8 @@
           </article>
 
           <article class="service-row" id="soluzioni-custom">
-            <span class="service-number">05</span>
             <div class="service-content">
-              <h3>Soluzioni custom e automazioni</h3>
+              <h2>Soluzioni custom e automazioni</h2>
               <p>
                 Applicazioni web, dashboard, aree riservate, strumenti interni e integrazioni
                 con servizi esterni, costruiti sulle esigenze reali del tuo lavoro.
@@ -128,12 +123,11 @@
           </article>
 
           <article class="service-row" id="ottimizzazione">
-            <span class="service-number">06</span>
             <div class="service-content">
-              <h3>Ottimizzazione digitale</h3>
+              <h2>Ottimizzazione digitale</h2>
               <p>
                 SEO di base e locale, performance, contenuti multimediali:
-                miglioriamo quello che c'è già e ti affianchiamo nella crescita online.
+                miglioro quello che c'è già e ti affianco nella crescita online.
               </p>
             </div>
           </article>
@@ -143,10 +137,9 @@
     </section>
 
     <!-- PACCHETTI -->
-    <section class="section section--alt" id="pacchetti">
+    <section class="section section--light" id="pacchetti">
       <div class="container">
 
-        <!-- PRICING_PACKAGES_START -->
         <div class="section-header reveal">
           <span class="section-eyebrow">Pacchetti</span>
           <h2 class="section-title">Soluzioni chiare, pensate per la tua attività</h2>
@@ -156,117 +149,60 @@
           </p>
         </div>
 
-        <div class="grid grid--3 packages-grid">
-
-          <!-- START -->
-          <div class="card package-card reveal">
-            <h3 class="service-card__title">START</h3>
-            <p>
-              Per attività locali e professionisti che vogliono iniziare
-              a costruire una presenza online professionale.
-            </p>
-            <div class="package-card__price">da 590€</div>
-            <ul class="package-card__list">
-              <li>Analisi iniziale delle esigenze</li>
-              <li>Design personalizzato</li>
-              <li>Responsive per smartphone, tablet e desktop</li>
-              <li>Fino a 5 sezioni/pagine</li>
-              <li>Modulo contatti</li>
-              <li>Collegamento ai social</li>
-              <li>Pubblicazione online</li>
-            </ul>
-            <p class="package-card__note">Tempi indicativi: 1–2 settimane</p>
-            <a href="contact.html" class="btn btn--secondary">Richiedi informazioni</a>
-          </div>
-
-          <!-- BUSINESS -->
-          <div class="card package-card package-card--featured reveal" data-delay="150">
-            <div class="package-card__badge">Consigliato</div>
-            <h3 class="service-card__title">BUSINESS</h3>
-            <p>
-              Per aziende e attività che vogliono una presenza digitale
-              più completa, curata e orientata alla crescita.
-            </p>
-            <div class="package-card__price">da 1.190€</div>
-            <ul class="package-card__list">
-              <li>Tutto il pacchetto START</li>
-              <li>Struttura e contenuti personalizzati</li>
-              <li>Animazioni e interazioni avanzate</li>
-              <li>Ottimizzazione SEO di base</li>
-              <li>SEO locale</li>
-              <li>Galleria immagini e contenuti multimediali</li>
-              <li>Ottimizzazione delle performance</li>
-              <li>Configurazione dominio e pubblicazione</li>
-              <li>Supporto iniziale post-pubblicazione</li>
-            </ul>
-            <p class="package-card__note">Tempi indicativi: 2–4 settimane</p>
-            <a href="contact.html" class="btn btn--primary">Richiedi informazioni</a>
-          </div>
-
-          <!-- CUSTOM -->
-          <div class="card package-card reveal" data-delay="300">
-            <h3 class="service-card__title">CUSTOM</h3>
-            <p>
-              Per progetti che richiedono funzionalità specifiche
-              o una soluzione digitale costruita su misura.
-            </p>
-            <div class="package-card__price">Preventivo</div>
-            <ul class="package-card__list">
-              <li>Analisi approfondita del progetto</li>
-              <li>Applicazioni web personalizzate</li>
-              <li>Dashboard e aree riservate</li>
-              <li>Automazioni</li>
-              <li>Integrazioni con servizi esterni</li>
-              <li>Database e sistemi personalizzati</li>
-              <li>Progettazione e sviluppo su misura</li>
-            </ul>
-            <p class="package-card__note">Tempi: definiti in base alla complessità del progetto</p>
-            <a href="contact.html" class="btn btn--secondary">Parliamone</a>
-          </div>
-
-        </div>
-        <!-- PRICING_PACKAGES_END -->
-
-        <!-- PRICING_COMPARISON_START -->
-        <div class="section-header reveal u-mt-5xl">
-          <span class="section-eyebrow">Confronta i pacchetti</span>
-          <h2 class="section-title">Cosa include ogni soluzione</h2>
-          <p class="section-subtitle">
-            Un confronto rapido per aiutarti a scegliere il punto di partenza
-            più adatto alla tua attività.
-          </p>
-        </div>
-
+        <p class="pricing-table-hint" aria-hidden="true">Scorri la tabella per confrontare i pacchetti →</p>
         <div class="pricing-table-wrapper reveal">
           <table class="pricing-table">
+            <caption class="u-sr-only">Confronto tra i pacchetti START, BUSINESS e CUSTOM</caption>
             <thead>
               <tr>
-                <th scope="col">Caratteristica</th>
-                <th scope="col">START</th>
-                <th scope="col">BUSINESS</th>
-                <th scope="col">CUSTOM</th>
+                <td></td>
+                <th scope="col">
+                  <span class="pricing-table__name">START</span>
+                  <span class="pricing-table__price-head">da 590€</span>
+                  <span class="pricing-table__desc">Per attività locali e professionisti che vogliono iniziare a costruire una presenza online professionale.</span>
+                </th>
+                <th scope="col" class="is-featured">
+                  <span class="pricing-table__name">BUSINESS <span class="pricing-table__badge">Consigliato</span></span>
+                  <span class="pricing-table__price-head">da 1.190€</span>
+                  <span class="pricing-table__desc">Per aziende e attività che vogliono una presenza digitale più completa, curata e orientata alla crescita.</span>
+                </th>
+                <th scope="col">
+                  <span class="pricing-table__name">CUSTOM</span>
+                  <span class="pricing-table__price-head">Preventivo</span>
+                  <span class="pricing-table__desc">Per progetti che richiedono funzionalità specifiche o una soluzione digitale costruita su misura.</span>
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Analisi iniziale</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>Design personalizzato</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>Responsive mobile / tablet / desktop</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>Fino a 5 sezioni / pagine</td><td>✓</td><td>✓</td><td>Su misura</td></tr>
-              <tr><td>Modulo contatti</td><td>✓</td><td>✓</td><td>Su misura</td></tr>
-              <tr><td>Collegamento social</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>SEO di base</td><td>—</td><td>✓</td><td>Su misura</td></tr>
-              <tr><td>SEO locale</td><td>—</td><td>✓</td><td>Su richiesta</td></tr>
-              <tr><td>Animazioni avanzate</td><td>—</td><td>✓</td><td>Su misura</td></tr>
-              <tr><td>Ottimizzazione performance</td><td>Base</td><td>Avanzata</td><td>Su misura</td></tr>
-              <tr><td>Galleria e contenuti multimediali</td><td>—</td><td>✓</td><td>Su misura</td></tr>
-              <tr><td>Dominio e pubblicazione</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>Supporto post-pubblicazione</td><td>Iniziale</td><td>✓</td><td>Definito nel progetto</td></tr>
-              <tr><td>Tempi indicativi</td><td>1–2 settimane</td><td>2–4 settimane</td><td>Da definire</td></tr>
-              <tr class="pricing-table__price"><td>Prezzo</td><td>da 590€</td><td>da 1.190€</td><td>Preventivo</td></tr>
+              <tr><th scope="row">Analisi iniziale</th><td>✓</td><td class="is-featured">✓</td><td>Approfondita</td></tr>
+              <tr><th scope="row">Design personalizzato</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Responsive mobile / tablet / desktop</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Fino a 5 sezioni / pagine</th><td>✓</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">Struttura e contenuti personalizzati</th><td>—</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">Modulo contatti</th><td>✓</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">Collegamento social</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">SEO di base</th><td>—</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">SEO locale</th><td>—</td><td class="is-featured">✓</td><td>Su richiesta</td></tr>
+              <tr><th scope="row">Animazioni e interazioni avanzate</th><td>—</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">Ottimizzazione performance</th><td>Base</td><td class="is-featured">Avanzata</td><td>Su misura</td></tr>
+              <tr><th scope="row">Galleria e contenuti multimediali</th><td>—</td><td class="is-featured">✓</td><td>Su misura</td></tr>
+              <tr><th scope="row">Applicazioni web, dashboard e aree riservate</th><td>—</td><td class="is-featured">—</td><td>✓</td></tr>
+              <tr><th scope="row">Automazioni e integrazioni con servizi esterni</th><td>—</td><td class="is-featured">—</td><td>✓</td></tr>
+              <tr><th scope="row">Database e sistemi personalizzati</th><td>—</td><td class="is-featured">—</td><td>✓</td></tr>
+              <tr><th scope="row">Dominio e pubblicazione</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Supporto post-pubblicazione</th><td>Iniziale</td><td class="is-featured">✓</td><td>Definito nel progetto</td></tr>
+              <tr><th scope="row">Tempi indicativi</th><td>1–2 settimane</td><td class="is-featured">2–4 settimane</td><td>In base alla complessità</td></tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td><a href="contact.html" class="btn btn--secondary">Richiedi informazioni</a></td>
+                <td class="is-featured"><a href="contact.html" class="btn btn--primary">Richiedi informazioni</a></td>
+                <td><a href="contact.html" class="btn btn--secondary">Parliamone</a></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
-        <!-- PRICING_COMPARISON_END -->
 
       </div>
     </section>
@@ -278,11 +214,11 @@
           <span class="section-eyebrow">Perché TRAZIO</span>
           <h2 class="section-title">Cosa trovi in ogni progetto</h2>
           <p class="section-subtitle">
-            Non consegniamo semplici pagine web, ma strumenti pensati per durare e crescere nel tempo.
+            Non consegno semplici pagine web, ma strumenti pensati per durare e crescere nel tempo.
           </p>
         </div>
 
-        <div class="reasons reveal">
+        <div class="reasons reveal stagger">
           <div class="reason">
             <h3>Design su misura</h3>
             <p>
@@ -309,7 +245,7 @@
     </section>
 
     <!-- MANUTENZIONE -->
-    <section class="section section--alt" id="manutenzione">
+    <section class="section section--light" id="manutenzione">
       <div class="container">
 
         <!-- MAINTENANCE_PLANS_START -->
@@ -322,7 +258,7 @@
           </p>
         </div>
 
-        <div class="plans reveal">
+        <div class="plans reveal stagger">
 
           <article class="plan">
             <div>
@@ -401,11 +337,13 @@
 
     <!-- CALCOLATORE PREVENTIVO -->
     <section class="section" id="calculator">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">Preventivo rapido</span>
-          <h2 class="section-title">Calcola una stima in tempo reale</h2>
-          <p class="section-subtitle">Scegli pacchetto e opzioni: il totale si aggiorna subito. Nessun dato viene inviato, è solo una stima indicativa.</p>
+      <div class="container split">
+        <div class="split__aside reveal">
+          <div class="section-header">
+            <span class="section-eyebrow">Preventivo rapido</span>
+            <h2 class="section-title">Calcola una stima in tempo reale</h2>
+            <p class="section-subtitle">Scegli pacchetto e opzioni: il totale si aggiorna subito. Nessun dato viene inviato, è solo una stima indicativa.</p>
+          </div>
         </div>
 
         <div class="card calculator-box reveal" id="price-calculator">
@@ -451,20 +389,23 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section section--alt" id="faq">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">FAQ</span>
-          <h2 class="section-title">Domande frequenti</h2>
+    <section class="section section--light" id="faq">
+      <div class="container split">
+        <div class="split__aside reveal">
+          <div class="section-header">
+            <span class="section-eyebrow">FAQ</span>
+            <h2 class="section-title">Domande frequenti</h2>
+          </div>
+          <a href="contact.html" class="btn btn--primary">Richiedi un preventivo</a>
         </div>
 
-        <div class="faq-list reveal">
+        <div class="faq-list reveal stagger">
 
           <details class="faq-item">
             <summary>Quanto tempo serve?
               <svg class="faq-item__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <p>Dipende dal progetto: un sito START richiede in genere 1–2 settimane, un BUSINESS 2–4. Per i progetti CUSTOM definiamo i tempi insieme dopo l'analisi.</p>
+            <p>Dipende dal progetto: un sito START richiede in genere 1–2 settimane, un BUSINESS 2–4. Per i progetti CUSTOM definiamo insieme i tempi dopo l'analisi.</p>
           </details>
 
           <details class="faq-item">
@@ -478,35 +419,32 @@
             <summary>Posso modificare il sito dopo?
               <svg class="faq-item__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <p>Sì, offriamo supporto e manutenzione per aggiornamenti futuri, con i piani mensili che vedi qui sopra o con interventi singoli.</p>
+            <p>Sì, offro supporto e manutenzione per aggiornamenti futuri, con i piani mensili che vedi qui sopra o con interventi singoli.</p>
           </details>
 
           <details class="faq-item">
             <summary>Quanto costa un sito?
               <svg class="faq-item__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <p>I pacchetti partono da 590€. Il prezzo finale dipende dalle funzionalità richieste: usa il calcolatore per una stima e ti confermiamo il preventivo dopo la prima consulenza.</p>
+            <p>I pacchetti partono da 590€. Il prezzo finale dipende dalle funzionalità richieste: usa il calcolatore per una stima e ti confermo il preventivo dopo la prima consulenza.</p>
           </details>
 
           <details class="faq-item">
             <summary>Dominio e hosting sono inclusi?
               <svg class="faq-item__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <p>Possiamo occuparci della configurazione e consigliarti la soluzione più adatta per pubblicare il sito online.</p>
+            <p>Posso occuparmi della configurazione e consigliarti la soluzione più adatta per pubblicare il sito online.</p>
           </details>
 
           <details class="faq-item">
             <summary>Posso partire anche solo da un'idea?
               <svg class="faq-item__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <p>Sì, analizziamo insieme l'obiettivo e trasformiamo l'idea in un progetto digitale concreto.</p>
+            <p>Sì, analizziamo insieme l'obiettivo e trasformo l'idea in un progetto digitale concreto.</p>
           </details>
 
         </div>
 
-        <div class="reveal u-text-center u-mt-4xl">
-          <a href="contact.html" class="btn btn--primary">Richiedi un preventivo</a>
-        </div>
       </div>
     </section>
 
@@ -528,7 +466,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+  <button class="back-to-top" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
   <script src="js/calculator.js"></script>

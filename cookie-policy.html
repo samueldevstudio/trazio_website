@@ -24,21 +24,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
-  <div class="loader">
-    <div class="loader__logo"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg></div>
-  </div>
-  <div class="scroll-progress"></div>
 
   <header class="navbar">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="TRAZIO — Home"><svg class="brand-mark" viewBox="0 8 96 93" aria-hidden="true" focusable="false"><path fill="#126BFF" d="M0 30 96 8 48 82 57 43 13 54Z"/><path fill="#0C57E6" d="M0 30 13 54 48 43 96 8Z"/><path fill="#0750D8" d="M48 82 57 43 48 43 36 96Z"/><path fill="#E2E8F0" d="M31 55 55 48 36 96 20 101 20 68Z"/><path fill="#D6DEEA" d="M20 68 31 55 36 96 20 101Z"/></svg><span class="brand-word">TRAZIO</span></a>
       <nav class="navbar__links" id="primary-nav" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
-        <a href="about.html">Chi siamo</a>
+        <a href="about.html">Chi sono</a>
         <a href="services.html">Servizi</a>
         <a href="projects.html">Progetti</a>
         <a href="contact.html">Contatti</a>
@@ -49,21 +46,21 @@
 
   <main id="main-content">
     <section class="section section--page-top">
-      <div class="container">
+      <div class="container legal">
         <div class="section-header reveal">
           <span class="section-eyebrow">Legal</span>
           <h1 class="section-title">Cookie Policy</h1>
-          <p class="section-subtitle">Informazioni dettagliate sui cookie utilizzati dal nostro sito web</p>
+          <p class="section-subtitle">Informazioni dettagliate sui cookie utilizzati dal sito web</p>
         </div>
 
-        <div class="card reveal u-mb-3xl">
+        <div class="legal__intro reveal u-mb-3xl">
           <p class="u-mb-lg"><strong>Ultimo aggiornamento:</strong> 18 Settembre 2026</p>
           <p>Questa policy spiega cosa sono i cookie e quali tecnologie utilizza questo sito. In sintesi: <strong>il sito non installa cookie propri</strong> e non usa strumenti di tracciamento o analisi statistica; per questo motivo non viene mostrato alcun banner di consenso.</p>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">1. Cosa sono i Cookie</h2>
-          <div class="card">
+          <h2 class="legal__title">1. Cosa sono i Cookie</h2>
+          <div class="legal__body">
             <p class="u-mb-md">I cookie sono piccoli file di testo che vengono salvati sul tuo dispositivo quando visiti un sito web. Vengono utilizzati per:</p>
             <ul>
               <li>Ricordare le tue preferenze</li>
@@ -75,13 +72,13 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">2. Cookie Utilizzati da Questo Sito</h2>
-          <div class="card">
+          <h2 class="legal__title">2. Cookie Utilizzati da Questo Sito</h2>
+          <div class="legal__body">
             <h3 class="u-mb-md">2.1 Cookie Tecnici Propri</h3>
             <p class="u-mb-lg"><strong>Nessuno.</strong> Il sito è composto da pagine statiche e non imposta cookie né salva dati nel browser per il proprio funzionamento. Non esistono cookie di sessione, di preferenze o di profilazione impostati da TRAZIO.</p>
 
             <h3 class="u-mb-md">2.2 Cookie Analytics e di Profilazione</h3>
-            <p class="u-mb-lg"><strong>Non utilizzati.</strong> Non impieghiamo Google Analytics né altri strumenti di analisi statistica, pubblicità o tracciamento. Se in futuro decidessimo di attivarne uno, aggiorneremo questa pagina e chiederemo il tuo consenso preventivo tramite un apposito banner, prima di qualsiasi raccolta di dati.</p>
+            <p class="u-mb-lg"><strong>Non utilizzati.</strong> Il sito non impiega Google Analytics né altri strumenti di analisi statistica, pubblicità o tracciamento. Se in futuro ne venisse attivato uno, questa pagina sarà aggiornata e il tuo consenso preventivo verrà richiesto tramite un apposito banner, prima di qualsiasi raccolta di dati.</p>
 
             <h3 class="u-mb-md">2.3 Servizi di Terze Parti</h3>
             <p class="u-mb-md">Alcune funzionalità del sito si appoggiano a servizi esterni, che potrebbero impostare tecnologie proprie sul loro dominio secondo le rispettive policy:</p>
@@ -93,8 +90,8 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">3. Dettaglio dei Cookie Specifici</h2>
-          <div class="card">
+          <h2 class="legal__title">3. Dettaglio dei Cookie Specifici</h2>
+          <div class="legal__body">
             <table class="legal-table">
               <thead>
                 <tr>
@@ -118,8 +115,8 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">4. Gestione dei Cookie</h2>
-          <div class="card">
+          <h2 class="legal__title">4. Gestione dei Cookie</h2>
+          <div class="legal__body">
             <p class="u-mb-lg">Poiché il sito non installa cookie propri, non è necessario alcun banner né alcuna scelta da parte tua. Puoi comunque controllare e cancellare in qualsiasi momento i cookie impostati da servizi terzi direttamente dal tuo browser:</p>
             <ul>
               <li><strong>Chrome:</strong> Impostazioni > Privacy e sicurezza > Cookie</li>
@@ -131,16 +128,16 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">5. Disabilitare i Cookie</h2>
-          <div class="card">
+          <h2 class="legal__title">5. Disabilitare i Cookie</h2>
+          <div class="legal__body">
             <p>Puoi bloccare tutti i cookie dalle impostazioni del browser: il sito continuerà a funzionare normalmente, perché non dipende da alcun cookie. L'unica funzionalità che coinvolge un servizio esterno è il modulo di contatto, gestito da Formspree.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">6. Cookie di Terze Parti</h2>
-          <div class="card">
-            <p class="u-mb-md">Utilizziamo i seguenti servizi di terze parti, che possono impostare cookie o tecnologie simili sui propri domini:</p>
+          <h2 class="legal__title">6. Cookie di Terze Parti</h2>
+          <div class="legal__body">
+            <p class="u-mb-md">Il sito utilizza i seguenti servizi di terze parti, che possono impostare cookie o tecnologie simili sui propri domini:</p>
             
             <h3 class="u-mb-md">6.1 Google Fonts</h3>
             <p class="u-mb-md"><strong>Scopo:</strong> Caricamento dei font utilizzati nel sito</p>
@@ -153,16 +150,16 @@
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">7. Aggiornamenti alla Cookie Policy</h2>
-          <div class="card">
-            <p>Ci riserviamo il diritto di modificare questa cookie policy in qualsiasi momento per riflettere cambiamenti nei cookie utilizzati o per motivi legali/regolatori. Le modifiche verranno pubblicate su questa pagina con l'indicazione della data di aggiornamento.</p>
+          <h2 class="legal__title">7. Aggiornamenti alla Cookie Policy</h2>
+          <div class="legal__body">
+            <p>TRAZIO si riserva il diritto di modificare questa cookie policy in qualsiasi momento per riflettere cambiamenti nei cookie utilizzati o per motivi legali/regolatori. Le modifiche verranno pubblicate su questa pagina con l'indicazione della data di aggiornamento.</p>
           </div>
         </div>
 
         <div class="reveal u-mb-3xl">
-          <h2 class="service-card__title u-mb-md">8. Contatti</h2>
-          <div class="card">
-            <p class="u-mb-md">Per qualsiasi domanda relativa alla nostra cookie policy o all'utilizzo dei cookie, contattaci:</p>
+          <h2 class="legal__title">8. Contatti</h2>
+          <div class="legal__body">
+            <p class="u-mb-md">Per qualsiasi domanda relativa a questa cookie policy o all'utilizzo dei cookie, puoi scrivere a:</p>
             <ul>
               <li>Email: info@trazio.it</li>
               <li>Sito web: www.trazio.it</li>
@@ -170,7 +167,7 @@
           </div>
         </div>
 
-        <div class="reveal u-text-center">
+        <div class="reveal">
           <a href="index.html" class="btn btn--primary">Torna alla Home</a>
         </div>
       </div>
@@ -193,7 +190,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top btn--secondary" aria-label="Torna su">↑</button>
+  <button class="back-to-top" aria-label="Torna su">↑</button>
 
   <script src="js/config.js"></script>
   <script src="js/navbar.js"></script>

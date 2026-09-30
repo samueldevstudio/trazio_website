@@ -2,9 +2,10 @@
    SCROLL.JS
    Obiettivo: tutto ciò che reagisce allo scroll dell'utente:
    - reveal delle sezioni (fade-in quando entrano nello schermo)
-   - barra di progresso dello scroll in alto
+   - liste .stagger: ogni elemento riceve il proprio indice (--i)
+     per comparire uno dopo l'altro
+   - metodo: linea di avanzamento che si riempie con lo scroll
    - bottone "torna su" che appare dopo un certo scroll
-   - leggero effetto parallax sul glow della hero
    ============================================================ */
 
 function initScrollReveal() {
@@ -12,6 +13,12 @@ function initScrollReveal() {
   // agli elementi che vogliamo animare quando diventano visibili).
   const revealElements = document.querySelectorAll('.reveal');
   if (!revealElements.length) return;
+
+  // Indice di ogni figlio delle liste .stagger: il CSS lo usa per
+  // calcolare il ritardo d'entrata (70ms per elemento)
+  document.querySelectorAll('.stagger').forEach((list) => {
+    Array.from(list.children).forEach((child, i) => child.style.setProperty('--i', i));
+  });
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
@@ -31,21 +38,6 @@ function initScrollReveal() {
   revealElements.forEach((el) => observer.observe(el));
 }
 
-function initScrollProgress() {
-  const progressBar = document.querySelector('.scroll-progress');
-  if (!progressBar) return;
-
-  function updateProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = `${percent}%`;
-  }
-
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-}
-
 function initBackToTop() {
   const button = document.querySelector('.back-to-top');
   if (!button) return;
@@ -61,47 +53,48 @@ function initBackToTop() {
   toggleVisibility();
 }
 
-function initParallax() {
-  // Effetto molto sottile: il glow della hero si muove leggermente
-  // in direzione opposta allo scroll, dando profondità senza esagerare
-  // (il brief chiede "mai eccessivo").
-  const glow = document.querySelector('.hero__glow');
-  if (!glow) return;
+// --- Metodo: la linea sopra i passi si riempie mentre la sezione
+// attraversa lo schermo, e ogni passo si "accende" quando la linea lo
+// raggiunge. Mostra la sequenza invece di limitarsi a elencarla. ---
+function initMethodProgress() {
+  const list = document.querySelector('.method-list');
+  if (!list) return;
+
+  const items = Array.from(list.querySelectorAll('.method-item'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setProgress(progress) {
+    list.style.setProperty('--progress', progress.toFixed(3));
+    items.forEach((item, i) => {
+      // un passo è attivo quando la linea ha raggiunto il suo inizio
+      item.classList.toggle('is-active', progress >= i / items.length + 0.01 || progress === 1);
+    });
+  }
+
+  if (reduceMotion) {
+    setProgress(1);
+    return;
+  }
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const rect = list.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // 0 quando la lista entra dal basso (85% dello schermo),
+    // 1 quando la sua fine arriva a metà schermo
+    const start = vh * 0.85;
+    const end = vh * 0.5;
+    const progress = (start - rect.top) / (start - end + rect.height);
+    setProgress(Math.min(Math.max(progress, 0), 1));
+  }
 
   window.addEventListener('scroll', () => {
-    const offset = window.scrollY * 0.2;
-    glow.style.transform = `translateY(${offset}px)`;
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
   }, { passive: true });
-}
-
-// --- Contatori statistici animati (0 -> valore finale) ---
-function initStatCounters() {
-  const counters = document.querySelectorAll('.stat-item__number[data-count]');
-  if (!counters.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseInt(el.dataset.count, 10);
-        const duration = 1500;
-        const startTime = performance.now();
-
-        function tick(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          // easing "ease-out" semplice: parte veloce, rallenta alla fine
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target);
-          if (progress < 1) requestAnimationFrame(tick);
-          else el.textContent = target;
-        }
-        requestAnimationFrame(tick);
-        obs.unobserve(el);
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  counters.forEach((el) => observer.observe(el));
+  window.addEventListener('resize', update);
+  update();
 }

@@ -3,6 +3,7 @@
     {
       "id": "lucifero",
       "title": "Lucifero Service",
+      "group": "client",
       "description": "Sito web professionale per un'azienda di organizzazione eventi — design moderno e presenza online curata.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "status": "in_development",
@@ -15,6 +16,7 @@
     {
       "id": "molinari",
       "title": "Molinari Connect",
+      "group": "client",
       "description": "Piattaforma digitale scolastica — concept e sviluppo iniziale per la gestione della comunicazione istituzionale.",
       "technologies": ["Web App", "UI/UX"],
       "status": "early_development",
@@ -27,6 +29,7 @@
     {
       "id": "training",
       "title": "Smart Training Planner",
+      "group": "lab",
       "description": "Applicazione web per la pianificazione intelligente degli allenamenti — soluzione custom su misura.",
       "technologies": ["JavaScript", "Firebase"],
       "status": "completed",
@@ -39,6 +42,7 @@
     {
       "id": "toolkit",
       "title": "Cybersecurity Toolkit",
+      "group": "lab",
       "description": "Strumento interno per analisi e studio della cybersecurity — sviluppo su misura.",
       "technologies": ["Python", "Networking"],
       "status": "completed",

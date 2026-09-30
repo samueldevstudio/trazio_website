@@ -7,7 +7,7 @@ Sito statico (HTML, CSS, JavaScript vanilla) pubblicato su GitHub Pages con domi
 ```
 TRAZIO/
 ├── index.html              → home
-├── about.html              → chi siamo
+├── about.html              → chi sono
 ├── services.html           → servizi, pacchetti, manutenzione, calcolatore, FAQ
 ├── projects.html           → progetti (caricati da js/projects.json)
 ├── contact.html            → contatti (form Formspree)
@@ -17,7 +17,7 @@ TRAZIO/
 ├── css/
 │   ├── variables.css       → design system (colori, font, spaziature)
 │   ├── style.css           → reset, layout e tutti i componenti
-│   ├── animations.css      → keyframes e animazione d'entrata della hero
+│   ├── animations.css      → entrata della hero, reveal, liste in sequenza, linea del metodo
 │   └── responsive.css      → media query tablet/mobile + reduced motion
 ├── js/
 │   ├── config.js           → endpoint Formspree e dati del sito
@@ -29,11 +29,12 @@ TRAZIO/
 │   └── calculator.js       → calcolatore preventivo (solo services.html)
 ├── assets/
 │   ├── images/             → cover progetti, pattern, og-cover (png + svg sorgente)
-│   ├── icons/favicon.svg
-│   └── files/curriculum.pdf
-├── projects/               → pagine dettaglio progetto
-└── TRAZIO_BRAND_KIT_3/     → brand kit (logo, simbolo, guidelines, mockup)
+│   └── icons/favicon.svg
+└── projects/               → pagine dettaglio progetto
 ```
+
+Il brand kit (`TRAZIO_BRAND_KIT_3/`) resta solo in locale: è in `.gitignore`
+per non essere pubblicato sul sito né su GitHub.
 
 ## Note
 
@@ -47,4 +48,4 @@ TRAZIO/
 python3 -m http.server 8000
 ```
 
-Poi apri http://localhost:8000. Vedi `README_DEV.md` per la guida completa e `DEPLOYMENT.md` per la pubblicazione.
+Poi apri http://localhost:8000. La guida per sviluppatori (`README_DEV.md`) e quella di pubblicazione (`DEPLOYMENT.md`) restano solo in locale.
