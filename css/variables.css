@@ -3,6 +3,30 @@
    Design System — TRAZIO Digital Growth Studio
    ============================================================ */
 
+/* Font ospitati sul sito (niente richieste a Google Fonts):
+   Inter variabile 400–700 e Poppins 600/700, solo sottoinsieme latin. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-600-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-700-latin.woff2') format('woff2');
+}
+
 :root {
 
   /* ----------------------------------------------------------

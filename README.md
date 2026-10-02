@@ -28,6 +28,7 @@ TRAZIO/
 │   ├── projects.json       → dati dei progetti
 │   └── calculator.js       → calcolatore preventivo (solo services.html)
 ├── assets/
+│   ├── fonts/              → Inter e Poppins in woff2 (ospitati sul sito, niente Google Fonts)
 │   ├── images/             → cover progetti, screenshot della home (chi sono), pattern, og-cover
 │   └── icons/favicon.svg
 └── projects/               → pagine dettaglio progetto
