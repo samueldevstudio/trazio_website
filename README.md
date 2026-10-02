@@ -28,7 +28,7 @@ TRAZIO/
 │   ├── projects.json       → dati dei progetti
 │   └── calculator.js       → calcolatore preventivo (solo services.html)
 ├── assets/
-│   ├── images/             → cover progetti, pattern, og-cover (png + svg sorgente)
+│   ├── images/             → cover progetti, screenshot della home (chi sono), pattern, og-cover
 │   └── icons/favicon.svg
 └── projects/               → pagine dettaglio progetto
 ```
@@ -38,7 +38,7 @@ per non essere pubblicato sul sito né su GitHub.
 
 ## Note
 
-- **Logo**: in navbar, loader e footer il logo è composto da simbolo SVG inline + parola "TRAZIO" in Poppins (classi `.brand-mark` / `.brand-word`), così resta nitido a ogni dimensione. `assets/images/logo-white.svg` è il lockup completo per usi esterni su fondo scuro, `logo-light.svg` la versione per fondo chiaro (usata nei dati strutturati).
+- **Logo**: in navbar, loader e footer il logo è composto da simbolo SVG inline + parola "TRAZIO" in Poppins (classi `.brand-mark` / `.brand-word`), così resta nitido a ogni dimensione. `assets/images/logo-light.svg` è il lockup per fondo chiaro (usato nei dati strutturati); `trazio-bimi-logo.svg` serve al BIMI delle email e non va rimosso anche se il sito non lo usa.
 - **Cookie**: il sito non imposta cookie propri e non usa analytics, quindi non c'è banner di consenso. Se in futuro si aggiunge un servizio di analytics, va reintrodotto un banner e aggiornata `cookie-policy.html`.
 - **Prezzi**: i prezzi del calcolatore (`js/calculator.js`) devono coincidere con quelli scritti in `services.html`.
 
