@@ -100,9 +100,8 @@
     "serviceType": "Business Automation"
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
@@ -359,6 +358,8 @@
 
         <form class="contact-form reveal" action="https://formspree.io/f/xwvgbkjb" method="POST">
           <input type="hidden" name="_subject" value="Nuova richiesta dal sito TRAZIO">
+          <!-- Anti-spam Formspree: campo invisibile, se un bot lo compila l'invio viene scartato -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Il tuo nome">

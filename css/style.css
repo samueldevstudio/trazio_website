@@ -39,6 +39,10 @@ img, video, svg {
   display: block;
 }
 
+/* Con width/height nell'HTML il browser riserva lo spazio prima del
+   caricamento; height:auto mantiene comunque le proporzioni reali. */
+img { height: auto; }
+
 a {
   color: inherit;
   text-decoration: none;
