@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRAZIO | Digital Growth Studio</title>
   <meta name="description" content="TRAZIO è il digital growth studio che progetta siti web, automazioni e soluzioni digitali per far crescere il tuo business.">
@@ -359,7 +360,7 @@
         <form class="contact-form reveal" action="https://formspree.io/f/xwvgbkjb" method="POST">
           <input type="hidden" name="_subject" value="Nuova richiesta dal sito TRAZIO">
           <!-- Anti-spam Formspree: campo invisibile, se un bot lo compila l'invio viene scartato -->
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Il tuo nome">

@@ -43,35 +43,45 @@ class ProjectsManager {
     if (typeof initImageFallback === 'function') initImageFallback();
   }
 
+  // I dati del JSON finiscono in innerHTML: li tratto sempre come testo,
+  // così un valore con < > " ' & non può mai diventare markup o script
+  escape(value) {
+    return String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[char]);
+  }
+
   // "In sviluppo · HTML, CSS, JavaScript"
   getMeta(project) {
     const status = this.getStatusLabel(project.status);
     const tech = project.technologies.join(', ');
-    return status ? `${status} · ${tech}` : tech;
+    return this.escape(status ? `${status} · ${tech}` : tech);
   }
 
+  // Link esterni solo http(s): blocca URL come javascript:
   getLink(project) {
-    return project.externalLink
-      ? `href="${project.externalLink}" target="_blank" rel="noopener"`
-      : `href="projects/${project.id}.html"`;
+    return /^https?:\/\//i.test(project.externalLink || '')
+      ? `href="${this.escape(project.externalLink)}" target="_blank" rel="noopener"`
+      : `href="projects/${encodeURIComponent(project.id)}.html"`;
   }
 
   createProjectCard(project, index) {
     const delay = index * 100;
+    const title = this.escape(project.title);
 
     const privateNote = project.isPrivate && project.privateNote
-      ? `<p class="project-card__private-note">${project.privateNote}</p>`
+      ? `<p class="project-card__private-note">${this.escape(project.privateNote)}</p>`
       : '';
 
     return `
       <article class="project-card reveal" data-delay="${delay}">
         <div class="project-card__media">
-          <img src="${project.image}" alt="${project.title} - anteprima progetto" loading="lazy">
+          <img src="${this.escape(project.image)}" alt="${title} - anteprima progetto" loading="lazy">
         </div>
         <div class="project-card__body">
           <p class="project-card__meta">${this.getMeta(project)}</p>
-          <h3 class="project-card__title"><a ${this.getLink(project)}>${project.title}</a></h3>
-          <p>${project.description}</p>
+          <h3 class="project-card__title"><a ${this.getLink(project)}>${title}</a></h3>
+          <p>${this.escape(project.description)}</p>
           ${privateNote}
         </div>
       </article>
@@ -82,8 +92,8 @@ class ProjectsManager {
     return `
       <a ${this.getLink(project)} class="service-row">
         <div class="service-content">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
+          <h3>${this.escape(project.title)}</h3>
+          <p>${this.escape(project.description)}</p>
           <p class="service-row__meta">${this.getMeta(project)}</p>
         </div>
         <span class="service-arrow" aria-hidden="true">↗</span>
