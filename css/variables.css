@@ -47,10 +47,13 @@
   --color-primary-light: #2991FF;
   --color-primary-dark: #084BCB;
 
+  /* Grigi ricavati dal brand: Ice Grey mescolato con Deep Navy
+     (84% e 62% di Ice), invece della scala slate di Tailwind.
+     Contrasto AA verificato su fondo, Ink e card. */
   --color-white: #FFFFFF;
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #CBD5E1;
-  --color-text-muted: #94A3B8;
+  --color-text-primary: #E9EEF5;  /* Ice Grey */
+  --color-text-secondary: #C5CBD3;
+  --color-text-muted: #949AA4;
   --color-accent-ink: #2991FF;    /* blu per testo piccolo (link, eyebrow) */
   --color-focus: #2991FF;
 
@@ -122,9 +125,21 @@
   /* ----------------------------------------------------------
      TRANSIZIONI
      ---------------------------------------------------------- */
+  /* Curve: ease-out per ciò che entra o risponde a un'azione,
+     ease-in-out per ciò che si sposta sullo schermo, drawer per il
+     menu mobile. Le transizioni di solo colore usano "ease". */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Durate: pressione, risposta dell'interfaccia, pannelli e immagini */
+  --duration-fast: 160ms;
+  --duration-base: 200ms;
+  --duration-slow: 400ms;
+
+  /* Scorciatoie per colore, bordo, fondo e opacità */
   --transition-fast: 0.2s ease;
-  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.25s ease;
 
   /* ----------------------------------------------------------
      Z-INDEX

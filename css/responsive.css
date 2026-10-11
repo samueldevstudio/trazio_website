@@ -57,14 +57,27 @@
     /* chiuso: nascosto anche a tastiera e screen reader (visibility),
        ma solo dopo che il pannello è uscito, così l'animazione resta */
     visibility: hidden;
-    transition: transform var(--transition-base), visibility 0s linear 0.35s;
+    transition: transform var(--duration-slow) var(--ease-drawer), visibility 0s linear var(--duration-slow);
     z-index: var(--z-navbar);
   }
 
   .navbar__links.is-open {
     transform: translateX(0);
     visibility: visible;
-    transition: transform var(--transition-base), visibility 0s;
+    transition: transform var(--duration-slow) var(--ease-drawer), visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navbar__links {
+      transform: none;
+      opacity: 0;
+      transition: opacity var(--duration-base) ease, visibility 0s linear var(--duration-base);
+    }
+
+    .navbar__links.is-open {
+      opacity: 1;
+      transition: opacity var(--duration-base) ease, visibility 0s;
+    }
   }
 
   .navbar__links a { font-size: var(--fs-body-lg); }
@@ -121,6 +134,7 @@
   .method-number { font-size: 2rem; margin-bottom: var(--space-md); }
 
   .facts {
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
@@ -186,13 +200,7 @@
   .brand-word { font-size: 0.95rem; }
 }
 
-/* Rispetta la preferenza di sistema "riduci animazioni" per accessibilità
-   (la regola per .reveal è in animations.css) */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+/* "Riduci animazioni": ogni movimento ha la sua variante (animations.css,
+   hover in style.css, menu mobile qui sopra). Niente azzeramento globale:
+   le dissolvenze brevi e i cambi di colore restano, perché aiutano a
+   capire cosa è cambiato. */

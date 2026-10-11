@@ -1,26 +1,26 @@
 /* ============================================================
    ANIMATIONS.CSS
-   Movimento con uno scopo, mai decorativo:
-   - hero: il titolo entra riga per riga, poi il resto (una volta sola)
-   - .reveal: le sezioni compaiono quando entrano nello schermo
-   - .stagger: gli elementi di una lista compaiono uno dopo l'altro
-   - metodo: una linea si riempie con lo scroll e accende i passi
-   Tutto vale solo se il JS è attivo (classe .js su <html>, impostata
+   Pochi movimenti, ognuno con un compito preciso:
+   - hero: il titolo sale riga per riga, poi testo e dati compaiono
+     insieme. È l'unico ingresso orchestrato del sito, una volta sola.
+   - immagini dei lavori (.reveal-media): si scoprono dal basso quando
+     entrano nello schermo, così il lavoro è il momento visivo.
+   - metodo: una linea si riempie con lo scroll e accende i passi,
+     perché lì l'ordine conta.
+   Tutte le altre sezioni sono ferme: il testo si legge subito.
+   Valgono solo con JS attivo (classe .js su <html>, impostata
    nell'<head>): senza JS il contenuto è subito visibile e statico.
-   Con "riduci animazioni" attivo non si muove nulla.
+   Con "riduci animazioni" restano solo dissolvenze brevi, nessuno
+   spostamento. Curve e durate: token in variables.css.
    ============================================================ */
-
-:root {
-  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
-}
 
 @keyframes lineUp {
   to { transform: none; }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: none; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ---------- HERO ---------- */
@@ -36,84 +36,58 @@
 .js .hero__line > span {
   display: inline-block;
   transform: translateY(105%);
-  animation: lineUp 0.8s var(--ease-out) forwards;
+  animation: lineUp 700ms var(--ease-out) forwards;
 }
 
-.js .hero__line:nth-child(2) > span { animation-delay: 0.08s; }
+.js .hero__line:nth-child(2) > span { animation-delay: 80ms; }
 
-.js .hero__eyebrow,
+/* Testo, azioni e dati arrivano insieme quando il titolo è quasi
+   fermo: una sola dissolvenza, senza spostamento e senza cascata.
+   L'etichetta sopra il titolo resta ferma e fa da àncora. */
 .js .hero__row,
 .js .hero__facts {
   opacity: 0;
-  animation: fadeUp 0.6s var(--ease-out) forwards;
+  animation: fadeIn 500ms var(--ease-out) 350ms forwards;
 }
 
-.js .hero__eyebrow { animation-delay: 0.1s; }
-.js .hero__row     { animation-delay: 0.35s; }
-.js .hero__facts   { animation-delay: 0.5s; }
-
-/* ---------- REVEAL ---------- */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s var(--ease-out);
+/* ---------- IMMAGINI DEI LAVORI ----------
+   La copertina si scopre dal basso verso l'alto (clip-path, niente
+   layout). scroll.js aggiunge .is-visible una volta sola. */
+.js .reveal-media {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 600ms var(--ease-in-out);
 }
 
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* ---------- STAGGER ----------
-   Il contenitore resta fermo, si muovono i figli con un piccolo
-   ritardo progressivo (--i è impostato da scroll.js). Il ritardo vale
-   solo per l'entrata: gli hover (colore di fondo) restano immediati. */
-.js .reveal.stagger {
-  opacity: 1;
-  transform: none;
-}
-
-.js .stagger > * {
-  opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s var(--ease-out),
-    background-color 0.25s ease;
-  transition-delay:
-    calc(var(--i, 0) * 70ms),
-    calc(var(--i, 0) * 70ms),
-    0s;
-}
-
-.js .stagger.is-visible > * {
-  opacity: 1;
-  transform: none;
-}
+.js .reveal-media.is-visible { clip-path: inset(0); }
 
 /* ---------- METODO: linea di avanzamento ----------
    scroll.js aggiorna --progress (0→1) sulla lista e aggiunge
    .is-active ai passi raggiunti. */
+.js .method-item .method-number { transition: color 300ms ease; }
 .js .method-item:not(.is-active) .method-number { color: var(--color-text-muted); }
-.js .method-item .method-number { transition: color 0.4s ease; }
 
-/* ---------- RIDUCI ANIMAZIONI ---------- */
+/* ---------- RIDUCI ANIMAZIONI ----------
+   Meno movimento, non zero: niente spostamenti né tendine, ma
+   dissolvenze brevi dove aiutano a capire che qualcosa è comparso. */
 @media (prefers-reduced-motion: reduce) {
-  .js .hero__line > span,
-  .js .hero__eyebrow,
+  .js .hero__line > span {
+    animation: none;
+    transform: none;
+  }
+
   .js .hero__row,
   .js .hero__facts {
-    animation: none;
-    opacity: 1;
-    transform: none;
+    animation-duration: 200ms;
+    animation-delay: 0ms;
   }
 
-  .js .reveal,
-  .js .stagger > * {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .js .reveal-media {
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 200ms ease;
   }
+
+  .js .reveal-media.is-visible { opacity: 1; }
 
   .js .method-item:not(.is-active) .method-number { color: var(--color-primary); }
 }

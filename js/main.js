@@ -11,38 +11,25 @@
 
 // Esegue ogni init in isolamento: se uno di questi moduli lancia un
 // errore (es. su un browser particolare), non deve bloccare gli altri —
-// altrimenti sezioni come initScrollReveal non partirebbero mai e il
-// contenuto (che parte da opacity:0 via CSS) resterebbe invisibile.
-function runSafe(fn, name) {
+// altrimenti, per esempio, le copertine dei progetti (che partono
+// nascoste via CSS) resterebbero coperte. onError è il ripiego.
+function runSafe(fn, name, onError) {
   try {
     fn();
   } catch (err) {
     console.error(`Errore nell'inizializzazione di "${name}":`, err);
+    if (onError) onError();
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   runSafe(initNavbar, 'initNavbar');                // da navbar.js
-  runSafe(initScrollReveal, 'initScrollReveal');    // da scroll.js
+  runSafe(initMediaReveal, 'initMediaReveal', revealAllMedia); // da scroll.js
   runSafe(initBackToTop, 'initBackToTop');          // da scroll.js
   runSafe(initMethodProgress, 'initMethodProgress'); // da scroll.js
   runSafe(initContactForm, 'initContactForm');
   runSafe(initImageFallback, 'initImageFallback');
-  runSafe(initRevealFallback, 'initRevealFallback');
 });
-
-/* --- Rete di sicurezza per le animazioni allo scroll: gli elementi
-   .reveal partono a opacity:0 via CSS e dipendono da initScrollReveal
-   (IntersectionObserver) per diventare visibili. Se per qualsiasi
-   motivo quell'osservatore non li raggiunge mai, dopo un breve timeout
-   li rendo comunque visibili invece di lasciarli invisibili per sempre. --- */
-function initRevealFallback() {
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => {
-      el.classList.add('is-visible');
-    });
-  }, 2500);
-}
 
 /* --- Fallback immagini: se un'immagine progetto non carica (404),
    nascondo l'icona "rotta" del browser e mostro uno sfondo elegante
@@ -78,6 +65,15 @@ function initContactForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
 
+    // Messaggio sotto il pulsante (role="status"): letto anche dai lettori
+    // di schermo. state: 'error' | 'success' | '' per il colore.
+    const status = form.querySelector('.form-status');
+    const setStatus = (text, state = '') => {
+      if (!status) return;
+      status.textContent = text;
+      status.dataset.state = state;
+    };
+
     const nameField = form.querySelector('#name');
     const emailField = form.querySelector('#email');
     const messageField = form.querySelector('#message');
@@ -86,7 +82,7 @@ function initContactForm() {
     const message = messageField ? messageField.value.trim() : '';
 
     if (!name || !email || !message) {
-      alert('Per favore compila tutti i campi obbligatori.');
+      setStatus('Compila nome, email e messaggio prima di inviare.', 'error');
       return;
     }
 
@@ -104,6 +100,7 @@ function initContactForm() {
     // Stato di caricamento
     submitBtn.textContent = 'Invio in corso...';
     submitBtn.disabled = true;
+    setStatus('');
 
     try {
       const response = await fetch(CONFIG.formspreeEndpoint, {
@@ -118,10 +115,11 @@ function initContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        submitBtn.textContent = 'Messaggio inviato ✓';
+        submitBtn.textContent = 'Messaggio inviato';
+        setStatus("Messaggio inviato. Ti rispondo all'indirizzo email che hai indicato.", 'success');
         form.reset();
-        
-        // Ripristina il bottone dopo 3 secondi
+
+        // Ripristina il bottone dopo 3 secondi (il messaggio sotto resta)
         setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
@@ -131,12 +129,10 @@ function initContactForm() {
       }
     } catch (error) {
       console.error('Errore form:', error);
-      submitBtn.textContent = 'Errore - Riprova';
+      // Il testo scritto resta nei campi: basta premere di nuovo il pulsante
+      submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-      
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-      }, 3000);
+      setStatus('Il messaggio non è partito. Riprova tra qualche minuto oppure scrivimi a info@trazio.it.', 'error');
     }
   });
 }

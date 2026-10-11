@@ -1,41 +1,42 @@
 /* ============================================================
    SCROLL.JS
    Obiettivo: tutto ciò che reagisce allo scroll dell'utente:
-   - reveal delle sezioni (fade-in quando entrano nello schermo)
-   - liste .stagger: ogni elemento riceve il proprio indice (--i)
-     per comparire uno dopo l'altro
+   - copertine dei lavori (.reveal-media) che si scoprono quando
+     entrano nello schermo, una volta sola
    - metodo: linea di avanzamento che si riempie con lo scroll
    - bottone "torna su" che appare dopo un certo scroll
    ============================================================ */
 
-function initScrollReveal() {
-  // Prendo tutti gli elementi con classe .reveal (assegnata nell'HTML
-  // agli elementi che vogliamo animare quando diventano visibili).
-  const revealElements = document.querySelectorAll('.reveal');
-  if (!revealElements.length) return;
+function initMediaReveal() {
+  const items = document.querySelectorAll('.reveal-media:not(.is-visible)');
+  if (!items.length) return;
 
-  // Indice di ogni figlio delle liste .stagger: il CSS lo usa per
-  // calcolare il ritardo d'entrata (70ms per elemento)
-  document.querySelectorAll('.stagger').forEach((list) => {
-    Array.from(list.children).forEach((child, i) => child.style.setProperty('--i', i));
-  });
+  // Browser senza IntersectionObserver: mostro tutto subito
+  if (!('IntersectionObserver' in window)) {
+    revealAllMedia();
+    return;
+  }
 
+  // Osservo il contenitore, non l'immagine: il clip-path la rende
+  // "invisibile" anche per l'IntersectionObserver, che non scatterebbe mai.
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Piccolo delay a cascata se l'elemento ha data-delay,
-          // utile per animare le card di una griglia una dopo l'altra
-          const delay = entry.target.dataset.delay || 0;
-          setTimeout(() => entry.target.classList.add('is-visible'), delay);
-          obs.unobserve(entry.target); // una volta mostrato, non serve ricontrollarlo
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.reveal-media').forEach((el) => el.classList.add('is-visible'));
+        obs.unobserve(entry.target); // una volta scoperta, resta così
       });
     },
-    { threshold: 0.15 } // si attiva quando il 15% dell'elemento è visibile
+    { threshold: 0.2 } // parte quando un quinto del contenitore è nello schermo
   );
 
-  revealElements.forEach((el) => observer.observe(el));
+  new Set(Array.from(items, (el) => el.parentElement)).forEach((parent) => observer.observe(parent));
+}
+
+// Rete di sicurezza: le copertine partono nascoste via CSS, quindi se
+// qualcosa va storto le rendo visibili invece di lasciarle coperte.
+function revealAllMedia() {
+  document.querySelectorAll('.reveal-media').forEach((el) => el.classList.add('is-visible'));
 }
 
 function initBackToTop() {
@@ -47,8 +48,10 @@ function initBackToTop() {
   }
 
   window.addEventListener('scroll', toggleVisibility, { passive: true });
+  // Con "riduci animazioni" il salto in cima è immediato
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   button.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
   });
   toggleVisibility();
 }

@@ -20,7 +20,6 @@
 }
 
 html {
-  scroll-behavior: smooth; /* scroll fluido quando si clicca un link ancora (#faq, #pacchetti...) */
   scroll-padding-top: calc(var(--navbar-height) + var(--space-md)); /* evita che la navbar fissa copra il titolo della sezione */
 }
 
@@ -73,6 +72,12 @@ legend { padding: 0; display: block; width: 100%; }
   border-radius: var(--radius-sm);
 }
 
+/* Scroll fluido sui link ancora (#faq, #pacchetti...), solo per chi
+   non ha chiesto di ridurre le animazioni */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 /* ---------- LAYOUT ---------- */
 .container {
   max-width: var(--container-max);
@@ -94,10 +99,11 @@ legend { padding: 0; display: block; width: 100%; }
   --color-card: #FFFFFF;
   --color-card-hover: #F6F8FB;
   --color-text-primary: #08111F;
-  --color-text-secondary: #334155;
+  --color-text-secondary: #353D4A; /* 80% Deep Navy, 20% Ice Grey */
   --color-text-muted: #55627A;
   --color-accent-ink: var(--color-primary-dark);
   --color-focus: var(--color-primary-dark);
+  --color-error: #B3261E;          /* rosso più scuro: contrasto AA sul fondo chiaro */
   --color-border: rgba(8, 17, 31, 0.14);
   --color-border-hover: rgba(8, 17, 31, 0.4);
   --color-row-hover: rgba(8, 17, 31, 0.045);
@@ -184,11 +190,11 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
   color: var(--color-accent-ink);
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
-  transition: gap var(--transition-fast);
 }
 
-.link-arrow::after { content: '→'; }
-.link-arrow:hover { gap: var(--space-sm); }
+.link-arrow::after { transition: transform var(--duration-base) var(--ease-out); }
+
+.link-arrow::after { -webkit-mask-image: url('../assets/icons/ui/arrow-right.svg'); mask-image: url('../assets/icons/ui/arrow-right.svg'); }
 
 /* ---------- BRAND (simbolo + wordmark) ----------
    Il logo è composto in HTML: simbolo SVG inline + parola "TRAZIO"
@@ -210,6 +216,38 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
   transform: translateY(1px); /* allinea otticamente le maiuscole al centro del simbolo */
 }
 
+/* ---------- ICONE ----------
+   Tabler Icons (MIT) in assets/icons/ui, usate come maschera: prendono
+   il colore del testo e la dimensione del font. Un solo set di icone
+   per tutto il sito, niente simboli unicode al loro posto.
+   (I file sono locali perché la CSP permette solo immagini da 'self'.) */
+.icon,
+.link-arrow::after,
+.check-list li::before,
+.plan__list li::before,
+.calc-dropdown summary::after {
+  content: '';
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon--arrow-right    { -webkit-mask-image: url('../assets/icons/ui/arrow-right.svg'); mask-image: url('../assets/icons/ui/arrow-right.svg'); }
+.icon--arrow-left     { -webkit-mask-image: url('../assets/icons/ui/arrow-left.svg'); mask-image: url('../assets/icons/ui/arrow-left.svg'); }
+.icon--arrow-up       { -webkit-mask-image: url('../assets/icons/ui/arrow-up.svg'); mask-image: url('../assets/icons/ui/arrow-up.svg'); }
+.icon--arrow-up-right { -webkit-mask-image: url('../assets/icons/ui/arrow-up-right.svg'); mask-image: url('../assets/icons/ui/arrow-up-right.svg'); }
+.icon--check          { -webkit-mask-image: url('../assets/icons/ui/check.svg'); mask-image: url('../assets/icons/ui/check.svg'); }
+.icon--chevron-down   { -webkit-mask-image: url('../assets/icons/ui/chevron-down.svg'); mask-image: url('../assets/icons/ui/chevron-down.svg'); }
+
 /* ---------- BOTTONI ----------
    Poppins per le CTA (brand guidelines), blu pieno, angoli contenuti.
    Nessun sollevamento o alone: l'hover cambia solo colore. */
@@ -225,7 +263,7 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
   font-size: 0.9375rem;
   font-weight: var(--fw-semibold);
   line-height: 1.2;
-  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform 0.1s ease;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--duration-fast) var(--ease-out);
 }
 
 .btn--primary {
@@ -243,7 +281,7 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
 
 .btn--secondary:hover { border-color: var(--color-text-primary); }
 
-.btn:active { transform: translateY(1px); }
+.btn:active { transform: scale(0.97); }
 
 .btn:disabled {
   opacity: 0.7;
@@ -324,10 +362,12 @@ a.card:hover,
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--color-primary);
-  transition: width var(--transition-base);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 .navbar__links a:hover,
@@ -335,10 +375,7 @@ a.card:hover,
   color: var(--color-white);
 }
 
-.navbar__links a:hover::after,
-.navbar__links a.is-active::after {
-  width: 100%;
-}
+.navbar__links a.is-active::after { transform: none; }
 
 /* Hamburger — visibile solo da mobile (vedi responsive.css) */
 .navbar__hamburger {
@@ -354,7 +391,7 @@ a.card:hover,
   width: 24px;
   height: 2px;
   background: var(--color-text-primary);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-base) ease;
 }
 
 /* Stato "menu aperto", classe aggiunta via JS */
@@ -471,7 +508,8 @@ a.card:hover,
    <dt> il dato, <dd> la spiegazione. */
 .facts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;   /* una colonna per ogni dato, quanti che siano */
+  grid-auto-columns: minmax(0, 1fr);
   gap: var(--space-xl);
 }
 
@@ -538,10 +576,10 @@ a.card:hover,
 
 .service-arrow {
   flex-shrink: 0;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   line-height: 1;
   color: var(--color-accent-ink);
-  transition: transform var(--transition-fast);
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 /* Riga cliccabile: un fondo tenue si riempie da sinistra, il titolo
@@ -559,15 +597,14 @@ a.service-row::before {
   background: var(--color-row-hover);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.4s var(--ease-out, ease);
+  transition: transform var(--duration-base) var(--ease-out);
   z-index: -1;
 }
 
-a.service-row:hover::before { transform: scaleX(1); }
 
 a.service-row:hover h3,
 a.service-row:hover h2 { color: var(--color-accent-ink); }
-a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
+
 
 /* ---------- METODO ----------
    L'unico elenco numerato del sito: è una sequenza, i numeri servono. */
@@ -670,10 +707,8 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
   height: 100%;
   object-fit: cover;
   object-position: top; /* le cover verticali mostrano l'intestazione, non il centro */
-  transition: transform var(--transition-slow);
+  transition: transform var(--duration-slow) var(--ease-out);
 }
-
-.project-card:hover .project-card__media img { transform: scale(1.03); }
 
 .project-card__body { padding: var(--space-xl); }
 
@@ -681,6 +716,22 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
   font-size: var(--fs-small);
   color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
+}
+
+/* Stato e tecnologie: due voci separate da un filo verticale */
+.project-card__meta,
+.service-row__meta,
+.project-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-sm);
+}
+
+.project-card__meta > span + span,
+.service-row__meta > span + span,
+.project-hero__meta > span + span {
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--color-border-hover);
 }
 
 .project-card__title {
@@ -797,10 +848,10 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
 .check-list li { color: var(--color-text-secondary); }
 
 .check-list li::before {
-  content: "✓";
   color: var(--color-accent-ink);
-  font-weight: var(--fw-bold);
   margin-right: var(--space-sm);
+  -webkit-mask-image: url('../assets/icons/ui/check.svg');
+  mask-image: url('../assets/icons/ui/check.svg');
 }
 
 /* ---------- TAG ---------- */
@@ -885,6 +936,15 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
 .checkbox-label a:hover { color: var(--color-text-primary); }
 
 .contact-form .btn--primary { justify-self: start; margin-top: var(--space-sm); }
+
+/* Esito dell'invio sotto il pulsante (vuoto finché non serve) */
+.form-status {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+.form-status:empty { display: none; }
+.form-status[data-state="error"] { color: var(--color-error); }
 
 /* Email diretta nella sezione contatti: un link grande e leggibile */
 .contact-direct {
@@ -985,6 +1045,11 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
   line-height: var(--lh-normal);
 }
 
+.pricing-table td .icon {
+  font-size: 1.25rem;
+  color: var(--color-accent-ink);
+}
+
 .pricing-table tbody th {
   font-weight: var(--fw-medium);
   color: var(--color-text-primary);
@@ -1079,9 +1144,10 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
 }
 
 .plan__list li::before {
-  content: "✓";
   color: var(--color-accent-ink);
   margin-right: var(--space-xs);
+  -webkit-mask-image: url('../assets/icons/ui/check.svg');
+  mask-image: url('../assets/icons/ui/check.svg');
 }
 
 .plan__action { align-self: center; }
@@ -1117,9 +1183,9 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
 .faq-item summary::-webkit-details-marker { display: none; }
 
 .faq-item summary .faq-item__chevron {
-  flex-shrink: 0;
+  font-size: 1.25rem;
   color: var(--color-accent-ink);
-  transition: transform 0.25s ease;
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 .faq-item[open] summary .faq-item__chevron { transform: rotate(180deg); }
@@ -1145,6 +1211,13 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
   cursor: pointer;
   font-size: var(--fs-body);
   color: var(--color-text-secondary);
+}
+
+.calc-option__price {
+  margin-left: auto;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .calc-option input {
@@ -1187,11 +1260,13 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
 .calc-dropdown summary::-webkit-details-marker { display: none; }
 
 .calc-dropdown summary::after {
-  content: '▾';
   margin-left: var(--space-xs);
+  -webkit-mask-image: url('../assets/icons/ui/chevron-down.svg');
+  mask-image: url('../assets/icons/ui/chevron-down.svg');
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
-.calc-dropdown[open] summary::after { content: '▴'; }
+.calc-dropdown[open] summary::after { transform: rotate(180deg); }
 
 .calc-dropdown .calc-option { padding-left: var(--space-sm); }
 
@@ -1274,8 +1349,21 @@ a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
   color: var(--color-text-muted);
 }
 
+/* ---------- HOVER CON MOVIMENTO ----------
+   Solo con un puntatore vero (sul touch il tap lascia l'hover
+   "incollato") e solo se non si è chiesto di ridurre le animazioni.
+   I cambi di colore restano sempre attivi. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .navbar__links a:hover::after { transform: none; }
+  .link-arrow:hover::after { transform: translateX(3px); }
+  a.service-row:hover::before { transform: scaleX(1); }
+  a.service-row:hover .service-arrow { transform: translate(3px, -3px); }
+  .project-card:hover .project-card__media img { transform: scale(1.03); }
+}
+
 /* ---------- UTILITY DI PAGINA ---------- */
 .back-to-top {
+  font-size: 1.25rem;
   position: fixed;
   bottom: var(--space-xl);
   right: var(--space-xl);

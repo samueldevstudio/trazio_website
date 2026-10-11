@@ -33,13 +33,13 @@ class ProjectsManager {
         ? this.projects.filter(project => project.group === group)
         : this.projects;
 
-      container.innerHTML = projects.map((project, index) => {
-        return asList ? this.createProjectRow(project) : this.createProjectCard(project, index);
+      container.innerHTML = projects.map((project) => {
+        return asList ? this.createProjectRow(project) : this.createProjectCard(project);
       }).join('');
     });
 
     // Attiva le animazioni e il fallback immagini per i nuovi elementi
-    if (typeof initScrollReveal === 'function') initScrollReveal();
+    if (typeof initMediaReveal === 'function') initMediaReveal();
     if (typeof initImageFallback === 'function') initImageFallback();
   }
 
@@ -51,11 +51,11 @@ class ProjectsManager {
     })[char]);
   }
 
-  // "In sviluppo · HTML, CSS, JavaScript"
+  // Stato e tecnologie come due voci separate da un filo (vedi CSS)
   getMeta(project) {
     const status = this.getStatusLabel(project.status);
-    const tech = project.technologies.join(', ');
-    return this.escape(status ? `${status} · ${tech}` : tech);
+    const tech = this.escape(project.technologies.join(', '));
+    return status ? `<span>${this.escape(status)}</span><span>${tech}</span>` : tech;
   }
 
   // Link esterni solo http(s): blocca URL come javascript:
@@ -65,8 +65,7 @@ class ProjectsManager {
       : `href="projects/${encodeURIComponent(project.id)}.html"`;
   }
 
-  createProjectCard(project, index) {
-    const delay = index * 100;
+  createProjectCard(project) {
     const title = this.escape(project.title);
 
     const privateNote = project.isPrivate && project.privateNote
@@ -74,8 +73,8 @@ class ProjectsManager {
       : '';
 
     return `
-      <article class="project-card reveal" data-delay="${delay}">
-        <div class="project-card__media">
+      <article class="project-card">
+        <div class="project-card__media reveal-media">
           <img src="${this.escape(project.image)}" alt="${title} - anteprima progetto" loading="lazy">
         </div>
         <div class="project-card__body">
@@ -96,7 +95,7 @@ class ProjectsManager {
           <p>${this.escape(project.description)}</p>
           <p class="service-row__meta">${this.getMeta(project)}</p>
         </div>
-        <span class="service-arrow" aria-hidden="true">↗</span>
+        <span class="service-arrow icon icon--arrow-up-right" aria-hidden="true"></span>
       </a>
     `;
   }
