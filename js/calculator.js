@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     newsletter: 150,
     copywriting: 200,
     branding: 300,
-    hosting: 120,
     rush: 250
   };
 
