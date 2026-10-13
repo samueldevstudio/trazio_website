@@ -1,8 +1,5 @@
-// Gestione dinamica dei progetti dal file JSON
-// Questo script carica i progetti da projects.json e li renderizza nelle pagine.
-// Ogni contenitore .projects-grid può indicare:
-//   data-group="client" | "lab"  → quali progetti mostrare (default: tutti)
-//   data-layout="list"           → righe di testo invece delle card con copertina
+// Progetti da projects.json.
+// .projects-grid accetta data-group="client|lab" e data-layout="list".
 
 class ProjectsManager {
   constructor() {
@@ -11,7 +8,6 @@ class ProjectsManager {
   }
 
   async init() {
-    // Nessuna griglia in pagina: niente fetch inutile
     if (!document.querySelector('.projects-grid')) return;
     try {
       const response = await fetch('js/projects.json');
@@ -38,27 +34,23 @@ class ProjectsManager {
       }).join('');
     });
 
-    // Attiva le animazioni e il fallback immagini per i nuovi elementi
     if (typeof initMediaReveal === 'function') initMediaReveal();
     if (typeof initImageFallback === 'function') initImageFallback();
   }
 
-  // I dati del JSON finiscono in innerHTML: li tratto sempre come testo,
-  // così un valore con < > " ' & non può mai diventare markup o script
   escape(value) {
     return String(value ?? '').replace(/[&<>"']/g, (char) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     })[char]);
   }
 
-  // Stato e tecnologie come due voci separate da un filo (vedi CSS)
   getMeta(project) {
     const status = this.getStatusLabel(project.status);
     const tech = this.escape(project.technologies.join(', '));
     return status ? `<span>${this.escape(status)}</span><span>${tech}</span>` : tech;
   }
 
-  // Link esterni solo http(s): blocca URL come javascript:
+  // Solo link http(s)
   getLink(project) {
     return /^https?:\/\//i.test(project.externalLink || '')
       ? `href="${this.escape(project.externalLink)}" target="_blank" rel="noopener"`
@@ -111,7 +103,6 @@ class ProjectsManager {
   }
 }
 
-// Inizializza quando il DOM è pronto
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     new ProjectsManager();

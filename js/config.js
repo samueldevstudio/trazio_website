@@ -1,5 +1,3 @@
-// Configurazione centrale del sito TRAZIO
-
 const CONFIG = {
   formspreeEndpoint: 'https://formspree.io/f/xwvgbkjb',
 

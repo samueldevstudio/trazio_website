@@ -1,18 +1,4 @@
-/* ============================================================
-   STYLE.CSS — Base styles, reset, componenti riutilizzabili
-   Ordine: reset → layout e temi → tipografia → componenti base
-   (bottoni, card, navbar, hero) → componenti di pagina → utility.
-   I token (colori, spazi, font) vivono in variables.css.
-
-   Linguaggio visivo: tipografia forte, fondi pieni che alternano
-   Deep Navy e Ice Grey, un solo accento blu pieno, angoli contenuti,
-   linee sottili al posto di ombre e card dove possibile.
-   ============================================================ */
-
-/* ---------- RESET ----------
-   Azzero i margini/padding di default del browser e imposto
-   box-sizing: border-box ovunque, così padding/border non
-   alterano le dimensioni dichiarate degli elementi. */
+/* Reset */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -20,7 +6,7 @@
 }
 
 html {
-  scroll-padding-top: calc(var(--navbar-height) + var(--space-md)); /* evita che la navbar fissa copra il titolo della sezione */
+  scroll-padding-top: calc(var(--navbar-height) + var(--space-md));
 }
 
 body {
@@ -29,7 +15,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   line-height: var(--lh-normal);
-  overflow-x: hidden; /* blocca lo scroll orizzontale indesiderato */
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,8 +24,6 @@ img, video, svg {
   display: block;
 }
 
-/* Con width/height nell'HTML il browser riserva lo spazio prima del
-   caricamento; height:auto mantiene comunque le proporzioni reali. */
 img { height: auto; }
 
 a {
@@ -64,21 +48,17 @@ input, textarea, select {
 fieldset { border: 0; min-width: 0; }
 legend { padding: 0; display: block; width: 100%; }
 
-/* Focus visibile e coerente per tutto ciò che è interattivo (tastiera).
-   Il colore cambia con il tema della sezione (vedi .section--light). */
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* Scroll fluido sui link ancora (#faq, #pacchetti...), solo per chi
-   non ha chiesto di ridurre le animazioni */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
 
-/* ---------- LAYOUT ---------- */
+/* Layout */
 .container {
   max-width: var(--container-max);
   margin-inline: auto;
@@ -90,20 +70,17 @@ legend { padding: 0; display: block; width: 100%; }
   position: relative;
 }
 
-/* Sezione scura alternativa (Ink) */
 .section--alt { background: var(--color-bg-secondary); }
 
-/* Sezione chiara (Ice Grey). Ridefinisce i colori semantici: tutto ciò
-   che sta dentro (testi, bordi, card, form, bottoni) si adatta da solo. */
 .section--light {
   --color-card: #FFFFFF;
   --color-card-hover: #F6F8FB;
   --color-text-primary: #08111F;
-  --color-text-secondary: #353D4A; /* 80% Deep Navy, 20% Ice Grey */
+  --color-text-secondary: #353D4A;
   --color-text-muted: #55627A;
   --color-accent-ink: var(--color-primary-dark);
   --color-focus: var(--color-primary-dark);
-  --color-error: #B3261E;          /* rosso più scuro: contrasto AA sul fondo chiaro */
+  --color-error: #B3261E;
   --color-border: rgba(8, 17, 31, 0.14);
   --color-border-hover: rgba(8, 17, 31, 0.4);
   --color-row-hover: rgba(8, 17, 31, 0.045);
@@ -111,11 +88,8 @@ legend { padding: 0; display: block; width: 100%; }
   color: var(--color-text-primary);
 }
 
-/* Sezione di apertura pagina (sotto la navbar fissa), usata su tutte
-   le pagine interne diverse dalla home */
 .section--page-top { padding-top: calc(var(--navbar-height) + var(--space-4xl)); }
 
-/* Intestazione di sezione: allineata a sinistra, larghezza di lettura */
 .section-header {
   max-width: 720px;
   margin-bottom: var(--space-3xl);
@@ -143,8 +117,6 @@ h1.section-title { font-size: var(--fs-h1); }
   font-size: var(--fs-body-lg);
 }
 
-/* Layout a due colonne: intestazione a sinistra (resta visibile mentre
-   si scorre il contenuto), contenuto a destra. */
 .split {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -159,13 +131,13 @@ h1.section-title { font-size: var(--fs-h1); }
 
 .split__aside .section-header { margin-bottom: var(--space-xl); }
 
-/* ---------- TIPOGRAFIA ---------- */
+/* Tipografia */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
-  text-wrap: balance; /* evita parole isolate sull'ultima riga */
+  text-wrap: balance;
 }
 
 h3, h4 { line-height: var(--lh-snug); letter-spacing: -0.01em; }
@@ -174,13 +146,11 @@ p { color: var(--color-text-secondary); }
 
 strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
 
-/* Titolo standard delle card e dei blocchi di contenuto */
 .service-card__title {
   font-size: var(--fs-h3);
   margin-bottom: var(--space-sm);
 }
 
-/* Link testuale con freccia ("La nostra storia →") */
 .link-arrow {
   display: inline-flex;
   align-items: center;
@@ -196,10 +166,7 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
 
 .link-arrow::after { -webkit-mask-image: url('../assets/icons/ui/arrow-right.svg'); mask-image: url('../assets/icons/ui/arrow-right.svg'); }
 
-/* ---------- BRAND (simbolo + wordmark) ----------
-   Il logo è composto in HTML: simbolo SVG inline + parola "TRAZIO"
-   in Poppins. Così resta nitido a qualsiasi dimensione e non
-   dipende da un file immagine con testo rasterizzato. */
+/* Logo */
 .brand-mark {
   height: 30px;
   width: auto;
@@ -213,14 +180,10 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
   letter-spacing: 0.18em;
   line-height: 1;
   color: var(--color-white);
-  transform: translateY(1px); /* allinea otticamente le maiuscole al centro del simbolo */
+  transform: translateY(1px);
 }
 
-/* ---------- ICONE ----------
-   Tabler Icons (MIT) in assets/icons/ui, usate come maschera: prendono
-   il colore del testo e la dimensione del font. Un solo set di icone
-   per tutto il sito, niente simboli unicode al loro posto.
-   (I file sono locali perché la CSP permette solo immagini da 'self'.) */
+/* Icone */
 .icon,
 .link-arrow::after,
 .check-list li::before,
@@ -248,9 +211,7 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
 .icon--check          { -webkit-mask-image: url('../assets/icons/ui/check.svg'); mask-image: url('../assets/icons/ui/check.svg'); }
 .icon--chevron-down   { -webkit-mask-image: url('../assets/icons/ui/chevron-down.svg'); mask-image: url('../assets/icons/ui/chevron-down.svg'); }
 
-/* ---------- BOTTONI ----------
-   Poppins per le CTA (brand guidelines), blu pieno, angoli contenuti.
-   Nessun sollevamento o alone: l'hover cambia solo colore. */
+/* Bottoni */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -288,9 +249,7 @@ strong { color: var(--color-text-primary); font-weight: var(--fw-semibold); }
   cursor: progress;
 }
 
-/* ---------- CARD ----------
-   Contenitore neutro, senza ombra. Si "accende" al passaggio del mouse
-   solo quando è davvero cliccabile (a.card o .card--link). */
+/* Card */
 .card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
@@ -307,7 +266,7 @@ a.card:hover,
   background: var(--color-card-hover);
 }
 
-/* ---------- NAVBAR ---------- */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -321,8 +280,6 @@ a.card:hover,
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
-/* Classe aggiunta via JS (navbar.js) quando si scrolla oltre una soglia:
-   fondo pieno, così resta leggibile anche sopra le sezioni chiare */
 .navbar.is-scrolled {
   background: rgba(8, 17, 31, 0.97);
   border-bottom-color: rgba(233, 238, 245, 0.1);
@@ -357,7 +314,6 @@ a.card:hover,
 }
 
 .navbar__links a::after {
-  /* linea sotto il link attivo/hover */
   content: '';
   position: absolute;
   bottom: -6px;
@@ -377,12 +333,11 @@ a.card:hover,
 
 .navbar__links a.is-active::after { transform: none; }
 
-/* Hamburger — visibile solo da mobile (vedi responsive.css) */
 .navbar__hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 10px; /* area di tocco più generosa senza cambiare l'aspetto */
+  padding: 10px;
   margin-right: -10px;
   z-index: var(--z-navbar);
 }
@@ -394,15 +349,11 @@ a.card:hover,
   transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-base) ease;
 }
 
-/* Stato "menu aperto", classe aggiunta via JS */
 .navbar__hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .navbar__hamburger.is-open span:nth-child(2) { opacity: 0; }
 .navbar__hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ---------- HERO (home) ----------
-   Una colonna: titolo grande in basso a sinistra, sotto testo + azioni
-   e una fascia con i fatti concreti. Nessuna animazione d'entrata:
-   il titolo è il contenuto principale e deve comparire subito. */
+/* Hero */
 .hero {
   position: relative;
   display: flex;
@@ -419,7 +370,6 @@ a.card:hover,
   width: 100%;
 }
 
-/* Pattern del brand kit in sottofondo, sfumato verso il basso */
 .hero__glow {
   position: absolute;
   inset: 0;
@@ -449,7 +399,6 @@ a.card:hover,
   margin-bottom: var(--space-2xl);
 }
 
-/* Parola chiave del titolo: blu pieno del brand */
 .hero__accent { color: var(--color-primary-light); }
 
 .hero__row {
@@ -474,15 +423,12 @@ a.card:hover,
 
 .hero__facts { margin-top: var(--space-4xl); }
 
-/* Variante 404: hero centrata */
 .hero--static { align-items: center; }
 .hero__content--centered { text-align: center; max-width: 640px; margin-inline: auto; justify-content: center; }
 .hero__content--centered .hero__subtitle { margin: 0 auto var(--space-2xl); }
 .hero__content--centered .hero__actions { justify-content: center; }
 .hero__title--404 { font-size: clamp(4rem, 12vw, 9rem); margin-bottom: var(--space-md); }
 
-/* Scheda dei fatti in "Chi sono": etichetta piccola a sinistra,
-   valore a destra; un solo bordo attorno, nessuna riga divisoria. */
 .about-facts {
   display: grid;
   gap: var(--space-lg);
@@ -519,7 +465,7 @@ a.card:hover,
 
 .about-facts a:hover { color: var(--color-accent-ink); }
 
-/* ---------- GRID GENERICHE ---------- */
+/* Grid generiche */
 .grid {
   display: grid;
   gap: var(--space-xl);
@@ -527,12 +473,10 @@ a.card:hover,
 
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 
-/* ---------- FATTI ----------
-   Dati concreti già dichiarati altrove nel sito, come definizioni:
-   <dt> il dato, <dd> la spiegazione. */
+/* Fatti */
 .facts {
   display: grid;
-  grid-auto-flow: column;   /* una colonna per ogni dato, quanti che siano */
+  grid-auto-flow: column;
   grid-auto-columns: minmax(0, 1fr);
   gap: var(--space-xl);
 }
@@ -557,9 +501,7 @@ a.card:hover,
   max-width: 22rem;
 }
 
-/* ---------- LISTE EDITORIALI ----------
-   Righe separate da un filo sottile: titolo e testo, eventuale
-   numero a sinistra e freccia a destra se la riga è un link. */
+/* Liste editoriali */
 .services-list {
   display: flex;
   flex-direction: column;
@@ -606,8 +548,6 @@ a.card:hover,
   transition: transform var(--duration-base) var(--ease-out);
 }
 
-/* Riga cliccabile: un fondo tenue si riempie da sinistra, il titolo
-   prende l'accento e la freccia si sposta nella direzione del link */
 a.service-row {
   position: relative;
   isolation: isolate;
@@ -625,13 +565,10 @@ a.service-row::before {
   z-index: -1;
 }
 
-
 a.service-row:hover h3,
 a.service-row:hover h2 { color: var(--color-accent-ink); }
 
-
-/* ---------- METODO ----------
-   L'unico elenco numerato del sito: è una sequenza, i numeri servono. */
+/* Metodo */
 .method-list {
   list-style: none;
   position: relative;
@@ -641,8 +578,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   padding-top: var(--space-lg);
 }
 
-/* Binario e riempimento: --progress (0→1) è aggiornato da scroll.js
-   mentre la sezione attraversa lo schermo; senza JS la linea è piena. */
 .method-list::before,
 .method-list::after {
   content: '';
@@ -680,9 +615,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .method-item p { font-size: var(--fs-small); }
 
-/* ---------- COLONNE DI TESTO ----------
-   Titolo + testo con un filo in alto: niente card, niente icone.
-   (servizi "Perché TRAZIO", home "Chi siamo") */
+/* Colonne di testo */
 .reasons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -703,9 +636,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .reasons--2 .reason h3 { font-size: var(--fs-body-lg); }
 
-/* ---------- PROGETTI ----------
-   Card con copertina: tutta la card è cliccabile tramite il link nel
-   titolo (::after esteso), così resta un solo link per lettori di schermo. */
+/* Progetti */
 .project-card {
   position: relative;
   display: flex;
@@ -730,7 +661,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top; /* le cover verticali mostrano l'intestazione, non il centro */
+  object-position: top;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
@@ -742,7 +673,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   margin-bottom: var(--space-sm);
 }
 
-/* Stato e tecnologie: due voci separate da un filo verticale */
 .project-card__meta,
 .service-row__meta,
 .project-hero__meta {
@@ -788,7 +718,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   margin-top: var(--space-md);
 }
 
-/* Gruppo "Progetti e sperimentazioni" sotto i lavori per clienti */
 .lab { margin-top: var(--space-4xl); }
 
 .lab__header {
@@ -801,14 +730,11 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 .lab__header h2,
 .lab__header h3 { font-size: var(--fs-h3); }
 
-/* Titolo di gruppo nella pagina progetti ("Lavori per clienti") */
 .projects-group-title {
   font-size: var(--fs-h3);
   margin-bottom: var(--space-xl);
 }
 
-/* Placeholder quando un'immagine progetto non è disponibile
-   (invece dell'icona "rotta" del browser). Attivato via JS. */
 .project-card__media.is-missing {
   display: flex;
   align-items: center;
@@ -823,9 +749,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .project-card__media.is-missing img { display: none; }
 
-/* ---------- PAGINA PROGETTO ----------
-   Apertura con titolo, stato e descrizione, poi la copertina; sotto,
-   righe con etichetta a sinistra e contenuto a destra. */
+/* Pagina progetto */
 .project-hero {
   max-width: 760px;
   margin-bottom: var(--space-3xl);
@@ -862,7 +786,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .detail-row .project-card__tags { margin: 0; }
 
-/* Elenco con spunte (funzionalità nelle pagine progetto) */
 .check-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -878,7 +801,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   mask-image: url('../assets/icons/ui/check.svg');
 }
 
-/* ---------- TAG ---------- */
+/* Tag */
 .tag {
   font-size: var(--fs-xs);
   padding: var(--space-2xs) var(--space-sm);
@@ -887,8 +810,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   border: 1px solid var(--color-border);
 }
 
-
-/* ---------- FORM ---------- */
+/* Form */
 .contact-form {
   display: grid;
   gap: var(--space-lg);
@@ -961,7 +883,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .contact-form .btn--primary { justify-self: start; margin-top: var(--space-sm); }
 
-/* Esito dell'invio sotto il pulsante (vuoto finché non serve) */
 .form-status {
   font-size: var(--fs-small);
   color: var(--color-text-secondary);
@@ -970,7 +891,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 .form-status:empty { display: none; }
 .form-status[data-state="error"] { color: var(--color-error); }
 
-/* Email diretta nella sezione contatti: un link grande e leggibile */
 .contact-direct {
   margin-top: var(--space-2xl);
   padding-top: var(--space-lg);
@@ -995,10 +915,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .contact-direct a:hover { color: var(--color-accent-ink); }
 
-/* ---------- TABELLA PACCHETTI (servizi) ----------
-   Unico punto in cui compaiono i pacchetti: in testata nome, prezzo e
-   a chi è rivolto; nelle righe cosa include; in fondo le azioni.
-   La colonna consigliata ha un fondo leggermente tinto di blu. */
+/* Tabella pacchetti */
 .pricing-table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -1089,7 +1006,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .pricing-table tfoot .btn { width: 100%; }
 
-/* Indicazione di scorrimento, mostrata solo su mobile (responsive.css) */
 .pricing-table-hint {
   display: none;
   font-size: var(--fs-small);
@@ -1097,7 +1013,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   margin-bottom: var(--space-sm);
 }
 
-/* Prima colonna ferma durante lo scroll orizzontale (mobile) */
 .pricing-table thead td:first-child,
 .pricing-table tbody th,
 .pricing-table tfoot td:first-child {
@@ -1107,9 +1022,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   z-index: 1;
 }
 
-/* ---------- PIANI DI MANUTENZIONE (servizi) ----------
-   Righe editoriali: nome e canone a sinistra, contenuto al centro,
-   azione a destra. Stesso linguaggio delle liste. */
+/* Manutenzione */
 .plans {
   margin-top: var(--space-3xl);
   border-top: 1px solid var(--color-border);
@@ -1183,7 +1096,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   line-height: 1.7;
 }
 
-/* ---------- FAQ (accordion basato su <details>/<summary>, nativo e accessibile) ---------- */
+/* FAQ */
 .faq-list {
   max-width: 760px;
   border-top: 1px solid var(--color-border);
@@ -1220,7 +1133,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   max-width: 640px;
 }
 
-/* ---------- CALCOLATORE PREVENTIVO ---------- */
+/* Calcolatore preventivo */
 .calculator-box { max-width: 600px; }
 
 .calculator-box__row { margin-bottom: var(--space-xl); }
@@ -1294,8 +1207,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .calc-dropdown .calc-option { padding-left: var(--space-sm); }
 
-/* ---------- FOOTER ----------
-   Marchio e payoff a sinistra, link a destra, copyright sotto. */
+/* Footer */
 .footer {
   padding-block: var(--space-3xl) var(--space-xl);
   border-top: 1px solid var(--color-border);
@@ -1373,10 +1285,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   color: var(--color-text-muted);
 }
 
-/* ---------- HOVER CON MOVIMENTO ----------
-   Solo con un puntatore vero (sul touch il tap lascia l'hover
-   "incollato") e solo se non si è chiesto di ridurre le animazioni.
-   I cambi di colore restano sempre attivi. */
+/* Hover con movimento */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .navbar__links a:hover::after { transform: none; }
   .link-arrow:hover::after { transform: translateX(3px); }
@@ -1385,7 +1294,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   .project-card:hover .project-card__media img { transform: scale(1.03); }
 }
 
-/* ---------- UTILITY DI PAGINA ---------- */
+/* Utility di pagina */
 .back-to-top {
   font-size: 1.25rem;
   position: fixed;
@@ -1413,12 +1322,11 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   visibility: visible;
 }
 
-/* Link "salta al contenuto" per la navigazione da tastiera */
 .skip-to-content {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-120%); /* fuori schermo per intero (margine contro gli arrotondamenti subpixel) */
+  transform: translateY(-120%);
   background: var(--color-primary);
   color: var(--color-white);
   padding: 8px 16px;
@@ -1429,7 +1337,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 
 .skip-to-content:focus { transform: none; }
 
-/* Solo screen reader */
 .u-sr-only {
   position: absolute;
   width: 1px;
@@ -1442,10 +1349,6 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   border: 0;
 }
 
-/* ============================================================
-   UTILITY CLASSES
-   Sostituiscono gli stili inline sparsi nelle pagine HTML.
-   ============================================================ */
 .u-text-center { text-align: center; }
 .u-mt-md  { margin-top: var(--space-md); }
 .u-mt-lg  { margin-top: var(--space-lg); }
@@ -1464,9 +1367,7 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
 .u-max-w-sm { max-width: 640px; margin-inline: auto; }
 .u-max-w-md { max-width: 860px; margin-inline: auto; }
 
-/* ---------- PAGINE LEGALI ----------
-   Testo lungo da leggere: colonna stretta, elenchi puntati visibili,
-   niente card. */
+/* Pagine legali */
 .legal > * { max-width: 760px; }
 
 .legal__intro {
@@ -1501,12 +1402,10 @@ a.service-row:hover h2 { color: var(--color-accent-ink); }
   text-decoration: underline;
 }
 
-/* Tabella semplice usata nelle pagine legali */
 .legal-table { width: 100%; border-collapse: collapse; margin-top: var(--space-md); }
 .legal-table th,
 .legal-table td { text-align: left; padding: var(--space-md); vertical-align: top; }
 .legal-table th { color: var(--color-text-primary); border-bottom: 1px solid var(--color-border); }
 .legal-table td { color: var(--color-text-secondary); }
 
-/* Bottone compatto in linea (link esterni nelle pagine legali) */
 .btn--inline { display: inline-flex; padding: 0.5rem 1rem; font-size: var(--fs-small); }

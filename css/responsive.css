@@ -1,15 +1,7 @@
-/* ============================================================
-   RESPONSIVE.CSS
-   Approccio: stile base scritto per desktop in style.css,
-   qui adattiamo verso il basso (tablet -> mobile). Il mobile non è
-   una versione "stretta" del desktop: dove serve cambia struttura.
-   ============================================================ */
-
-/* ---------- TABLET (<= 1024px) ---------- */
+/* Tablet */
 @media (max-width: 1024px) {
   .section { padding-block: var(--space-4xl); }
 
-  /* Split: intestazione sopra, contenuto sotto; niente sticky */
   .split,
   .lab__header {
     grid-template-columns: 1fr;
@@ -22,7 +14,6 @@
 
   .method-list { grid-template-columns: repeat(2, 1fr); row-gap: var(--space-2xl); }
 
-  /* Piani manutenzione: nome+prezzo sopra, contenuto sotto, azione a fondo */
   .plan {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -31,14 +22,13 @@
   .plan__action { align-self: start; }
 }
 
-/* ---------- MOBILE LARGE (<= 768px) ---------- */
+/* Mobile */
 @media (max-width: 768px) {
 
   .grid--2 {
-    grid-template-columns: 1fr; /* su mobile tutto si impila in singola colonna */
+    grid-template-columns: 1fr;
   }
 
-  /* Menu di navigazione: da orizzontale a pannello a comparsa */
   .navbar__links {
     position: fixed;
     top: 0;
@@ -54,8 +44,6 @@
     padding: var(--space-3xl) var(--space-xl);
     gap: var(--space-xl);
     transform: translateX(100%);
-    /* chiuso: nascosto anche a tastiera e screen reader (visibility),
-       ma solo dopo che il pannello è uscito, così l'animazione resta */
     visibility: hidden;
     transition: transform var(--duration-slow) var(--ease-drawer), visibility 0s linear var(--duration-slow);
     z-index: var(--z-navbar);
@@ -84,7 +72,6 @@
 
   .navbar__hamburger { display: flex; }
 
-  /* Hero: altezza del contenuto, niente 100svh forzato */
   .hero {
     min-height: 0;
     padding-top: calc(var(--navbar-height) + var(--space-3xl));
@@ -110,7 +97,6 @@
   .service-row { gap: var(--space-md); padding: var(--space-lg) 0; }
   .service-number { flex-basis: 2rem; }
 
-  /* Metodo in colonna: la linea diventa verticale, a sinistra */
   .method-list {
     grid-template-columns: 1fr;
     row-gap: var(--space-xl);
@@ -160,7 +146,6 @@
   .pricing-table th,
   .pricing-table td { padding: var(--space-sm) var(--space-md); }
 
-  /* Prima colonna più stretta: lascia spazio ai pacchetti */
   .pricing-table thead td:first-child,
   .pricing-table tbody th,
   .pricing-table tfoot td:first-child { width: 8.5rem; min-width: 8.5rem; }
@@ -170,7 +155,6 @@
 
   .contact-form .btn--primary { justify-self: stretch; }
 
-  /* Footer: tutto in colonna, allineato a sinistra */
   .footer .container { grid-template-columns: 1fr; }
   .footer__socials,
   .footer__legal {
@@ -189,7 +173,7 @@
   }
 }
 
-/* ---------- MOBILE SMALL (<= 480px) ---------- */
+/* Mobile piccolo */
 @media (max-width: 480px) {
   .container { padding-inline: var(--space-md); }
 
@@ -203,7 +187,3 @@
   .brand-word { font-size: 0.95rem; }
 }
 
-/* "Riduci animazioni": ogni movimento ha la sua variante (animations.css,
-   hover in style.css, menu mobile qui sopra). Niente azzeramento globale:
-   le dissolvenze brevi e i cambi di colore restano, perché aiutano a
-   capire cosa è cambiato. */

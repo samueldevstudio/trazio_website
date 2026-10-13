@@ -1,52 +1,43 @@
-## TRAZIO WEBSITE
+## TRAZIO website
 
-Sito statico (HTML, CSS, JavaScript vanilla) pubblicato su GitHub Pages con dominio `www.trazio.it`.
+Sito statico (HTML, CSS, JavaScript) pubblicato su GitHub Pages con il dominio `www.trazio.it`.
 
-## Struttura del progetto
+## Struttura
 
 ```
-TRAZIO/
-├── index.html              → home
-├── about.html              → chi sono
-├── services.html           → servizi, pacchetti, manutenzione, calcolatore, FAQ
-├── projects.html           → progetti (caricati da js/projects.json)
-├── contact.html            → contatti (form Formspree)
-├── 404.html
-├── privacy-policy.html · cookie-policy.html · terms-of-service.html
-├── robots.txt · sitemap.xml · CNAME
-├── css/
-│   ├── variables.css       → design system (colori, font, spaziature)
-│   ├── style.css           → reset, layout e tutti i componenti
-│   ├── animations.css      → entrata della hero, reveal, liste in sequenza, linea del metodo
-│   └── responsive.css      → media query tablet/mobile + reduced motion
-├── js/
-│   ├── config.js           → endpoint Formspree e dati del sito
-│   ├── main.js             → entry point: loader, ripple, form, fallback immagini
-│   ├── navbar.js           → navbar sticky + menu mobile accessibile
-│   ├── scroll.js           → reveal, progress bar, back-to-top, parallax
-│   ├── projects.js         → render dei progetti da projects.json
-│   ├── projects.json       → dati dei progetti
-│   └── calculator.js       → calcolatore preventivo (solo services.html)
-├── assets/
-│   ├── fonts/              → Inter e Poppins in woff2 (ospitati sul sito, niente Google Fonts)
-│   ├── images/             → cover progetti, screenshot della home (chi sono), pattern, og-cover
-│   └── icons/favicon.svg
-└── projects/               → pagine dettaglio progetto
-```
+index.html, about.html, services.html, projects.html, contact.html, 404.html
+privacy-policy.html, cookie-policy.html, terms-of-service.html
+robots.txt, sitemap.xml, CNAME
 
-Il brand kit (`TRAZIO_BRAND_KIT_3/`) resta solo in locale: è in `.gitignore`
-per non essere pubblicato sul sito né su GitHub.
+css/
+  variables.css     colori, font, spaziature
+  style.css         layout e componenti
+  animations.css    hero, copertine dei lavori, linea del metodo
+  responsive.css    tablet e mobile
+
+js/
+  config.js         endpoint Formspree e dati del sito
+  main.js           avvio, form contatti, fallback immagini
+  navbar.js         navbar e menu mobile
+  scroll.js         copertine, metodo, torna su
+  projects.js       progetti da projects.json
+  projects.json     dati dei progetti
+  calculator.js     calcolatore preventivo (services.html)
+
+assets/             font, immagini, icone
+projects/           pagine dei singoli progetti
+```
 
 ## Note
 
-- **Logo**: in navbar, loader e footer il logo è composto da simbolo SVG inline + parola "TRAZIO" in Poppins (classi `.brand-mark` / `.brand-word`), così resta nitido a ogni dimensione. `assets/images/logo-light.svg` è il lockup per fondo chiaro (usato nei dati strutturati); `trazio-bimi-logo.svg` serve al BIMI delle email e non va rimosso anche se il sito non lo usa.
-- **Cookie**: il sito non imposta cookie propri e non usa analytics, quindi non c'è banner di consenso. Se in futuro si aggiunge un servizio di analytics, va reintrodotto un banner e aggiornata `cookie-policy.html`.
-- **Prezzi**: i prezzi del calcolatore (`js/calculator.js`) devono coincidere con quelli scritti in `services.html`.
+- `assets/images/trazio-bimi-logo.svg` serve al BIMI delle email: non va rimosso anche se il sito non lo usa.
+- Il sito non usa cookie né analytics, quindi non c'è banner. Se si aggiunge un servizio esterno va aggiornata la cookie policy e la Content-Security-Policy nelle pagine.
+- I prezzi in `js/calculator.js` devono coincidere con quelli in `services.html`.
 
-## Sviluppo locale
+## In locale
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Poi apri http://localhost:8000. La guida per sviluppatori (`README_DEV.md`) e quella di pubblicazione (`DEPLOYMENT.md`) restano solo in locale.
+Poi apri http://localhost:8000.
