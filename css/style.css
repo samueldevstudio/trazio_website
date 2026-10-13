@@ -481,19 +481,43 @@ a.card:hover,
 .hero__content--centered .hero__actions { justify-content: center; }
 .hero__title--404 { font-size: clamp(4rem, 12vw, 9rem); margin-bottom: var(--space-md); }
 
-/* Immagine con cornice sottile (usata in "Chi siamo") */
-.hero__visual {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
+/* Scheda dei fatti in "Chi sono": etichetta piccola a sinistra,
+   valore a destra; un solo bordo attorno, nessuna riga divisoria. */
+.about-facts {
+  display: grid;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
 }
 
-.hero__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.about-facts__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-md);
+  align-items: baseline;
 }
+
+.about-facts dt {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.about-facts dd {
+  color: var(--color-text-primary);
+}
+
+.about-facts a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+  transition: color var(--transition-fast);
+}
+
+.about-facts a:hover { color: var(--color-accent-ink); }
 
 /* ---------- GRID GENERICHE ---------- */
 .grid {

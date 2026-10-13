@@ -195,6 +195,9 @@
 
   .card { padding: var(--space-lg); }
 
+  .about-facts { padding: var(--space-lg); }
+  .about-facts__row { grid-template-columns: 1fr; gap: var(--space-2xs); }
+
   .project-card__body { padding: var(--space-lg); }
 
   .brand-word { font-size: 0.95rem; }
